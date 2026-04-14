@@ -3,29 +3,36 @@
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start",
-    "heroku-prebuild": "rm -f package-lock.json"
-
+    "update:last-verified": "node scripts/update-last-verified.js",
+    "prepare": "husky"
   },
   "dependencies": {
     "@dwp/dwp-frontend": "3.4.0",
+    "@faker-js/faker": "^10.3.0",
+    "@govuk-one-login/service-header": "^5.0.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
-    "@govuk-prototype-kit/step-by-step": "2.2.4",
-    "body-parser": "2.2.2",
-    "express": "5.2.1",
-    "govuk-frontend": "5.14.0",
+    "@ministryofjustice/frontend": "^8.0.0",
+    "@x-govuk/govuk-prototype-filters": "^2.1.0",
+    "govuk-frontend": "^5.13.0",
     "govuk-prototype-kit": "13.18.1",
-    "qs": "6.14.2"
+    "hmrc-frontend": "6.109.0",
+    "moment": "^2.30.1",
+    "nhsuk-frontend": "^10.0.0",
+    "qs": "^6.14.1",
+    "socket.io-parser": "^4.2.6"
   },
-  
-    "overrides": {
-      "qs": "6.14.2",
+  "overrides": {
+    "govuk-prototype-kit": {
       "express": {
-        "qs": "6.14.2"
+        "qs": "6.14.1"
       },
       "body-parser": {
-        "qs": "6.14.2"
+        "qs": "6.14.1"
       }
-    
+    }
+  },
+  "devDependencies": {
+    "husky": "^9.1.7",
+    "js-yaml": "^4.1.1"
   }
-
-  }
+}

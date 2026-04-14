@@ -1,0 +1,101 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{ dwpHeader({
+  serviceName: "Access to Work",
+  serviceHref: '/index',
+  container: true,
+  classes: "govuk-header--blue"
+}) }}
+
+{{ govukServiceNavigation({
+  navigation: [
+    {
+      href: "/index",
+      text: "Home"
+    },
+    {
+      href: "/prototypes",
+      text: "View prototypes",
+      active: true
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block pageTitle %}
+  Prototypes – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Prototypes
+      </h1>
+
+      <p>This page documents the prototypes which form the Access to Work (AtW) service.</p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">
+        AtWIS prototype
+      </h2>
+
+      <p>The AtWIS prototype is the part of the service which is used by agents to manage cases, applications and documents.</p>
+
+      <p class="govuk-body"> <a href="atwis/atwis-version-history" class="govuk-link">View AtWIS prototype</a></p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">
+        Apply for AtW prototype
+      </h2>
+
+      <p>The AtW apply prototype covers the citizen facing side of the service which allows citizens to check their eligibility and start & complete an application. </p>
+
+      <p class="govuk-body"> <a href="apply/apply-version-history" class="govuk-link">View Apply prototype</a></p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">
+        Claims prototype
+      </h2>
+
+      <p>The AtW claims prototype covers the citizen facing side of the service which allows citizens to claim back the money given to them as part of the grant. </p>
+
+      <p class="govuk-body"> <a href="claims/claims-version-history" class="govuk-link">View Claims prototype</a></p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      
+      <h2 class="govuk-heading-m">
+        DiSC prototype
+      </h2>
+
+      <p>This prototype includes the jouneys from the refactor of the DiSC system.</p>
+
+      <p class="govuk-body"> <a href="disc/disc-version-history" class="govuk-link">View DiSC prototype</a></p>
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    </div>
+  </div>
+
+{% endblock %}
