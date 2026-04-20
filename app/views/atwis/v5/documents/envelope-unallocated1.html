@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% set userName = "John Smith" if data['atwis-user-type'] == 'team-leader' else "Jane Doe"%}
-{% set userRole = "Case manager team leader" if data['atwis-user-type'] == 'team-leader' else "Service centre agent" %} 
+{% set userRole = "Service centre team leader" if data['atwis-user-type'] == 'team-leader' else "Service centre agent" %} 
 
 {% block header %}
 {% if data['atwis-user-type'] == "team-leader" %}
@@ -35,10 +35,6 @@
                 {
                   href: "../referrals/referrals",
                   text: "Referrals"
-                },
-                {
-                  href: "../data-retention/manage-data",
-                  text: "Manage data"
                 }
           ]
       }  
@@ -61,20 +57,8 @@
                   text: "Your cases"
                 },
                 {
-                  href: "../unallocated/unallocated-main-page",
-                  text: "Unallocated"
-                },
-                {
                   href: "../search/search",
                   text: "Search"
-                },
-                {
-                  href: "../referrals/referrals",
-                  text: "Referrals"
-                },
-                {
-                  href: "../data-retention/manage-data",
-                  text: "Manage data"
                 }
           ]
       }  
@@ -146,10 +130,14 @@
       <h3 class="govuk-heading-m">DRS envelope ID</h3>
       <p class="govuk-body">Use the envelope ID to find these documents on DRS.</p>
       <p class="govuk-body govuk-!-margin-bottom-5">Envelope ID: 20260223983272208457</p>
+
+
+<p class="govuk-body"><a href="{{versionPath}}/search/find-a-case" class="govuk-link">Back to search</a></p>
+
       </div>
       <div class="govuk-grid-column-one-third">
       <form action="envelope-allocated1">
-          {% if userRole == "Case manager team leader" %} 
+          {% if userRole == "Service centre team leader" %} 
             {{ govukSelect({
               id: "allocate-document",
               name: "allocate-document",
