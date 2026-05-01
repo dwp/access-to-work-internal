@@ -101,21 +101,6 @@ router.all(versionPath + '/documents/envelope-unallocated', function(req, res, n
 
     next()
 })
-router.all(versionPath + '/documents/user-case-allocated', function(req, res, next){
-   let caseId = req.query.id;
-
-    res.locals.case = yourDocs.find(x => x.id == caseId);
-    next()
-})
-
-
-
-router.all(versionPath + '/documents/user-case-allocated', function(req, res, next){
-   let caseId = req.query.id;
-
-    res.locals.case = yourDocs.find(x => x.id == caseId);
-    next()
-})
 
 router.all(versionPath + '/documents/user-case-allocate-docs', function(req, res, next){
     asignCaseToView(req, res)

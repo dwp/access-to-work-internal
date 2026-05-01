@@ -97,18 +97,20 @@
   html: 'This is a prototype. It is not a real service.'
 }) }}
 
-{% import versionPath + "/includes/key-details.njk" as keyDetails %}
-
-
-{{ keyDetails.keyDetails({
-  name: "Gary Boyd",
-  nino: "AB123456C",
-  urn: "6195739165"
-})}}
-
-
 
 {% endblock %}
+
+<div class="atw-key-details-wrapper">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2 atw-key-details-details ">Gary Boyd</h1>
+        <p class="govuk-body govuk-!-margin-bottom-1 atw-key-details-details"><strong>NI number:</strong> QQ740997O</p>
+        <p class="govuk-body govuk-!-margin-bottom-1 atw-key-details-details"><strong>URN:</strong> 9590321167</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 {% block content %}
 
