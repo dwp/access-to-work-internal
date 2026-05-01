@@ -180,7 +180,7 @@
               namePrefix: "initial-contact", 
               fieldset: {
                 legend: {
-                  text: "Date of birth"
+                  text: "Date of initial contact"
                 }
               },  
               items: [ { 
@@ -379,194 +379,65 @@
             </h2>
           </div>
           <div id="accordion-default-content-3" class="govuk-accordion__section-content">
-            {{ govukSelect({
-              id: "primaryMedicalCondition",
-              name: "primaryMedicalCondition",
-              value: data['primaryMedicalCondition'],
-              label: {
-                text: "Primary medical condition"
-              },
-              classes: "govuk-!-width-full",
-              items: [
-                {
-                  value: "",
-                  text: ""
-                },  
-                {
-                  value: "Arms or hands",
-                  text: "Arms or hands"
-                },
-                {
-                  value: "Legs or feet",
-                  text: "Legs or feet"
-                },
-                {
-                  value: "Back or neck",
-                  text: "Back or neck"
-                },
-                {
-                  value: "Stomach, liver, kidney or digestion",
-                  text: "Stomach, liver, kidney or digestion"
-                },
-                {
-                  value: "Heart, blood, blood pressure or circulation",
-                  text: "Heart, blood, blood pressure or circulation"
-                },
-                {
-                  value: "Chest or breathing",
-                  text: "Chest or breathing"
-                },
-                {
-                  value: "Skin conditions and severe disfigurements",
-                  text: "Skin conditions and severe disfigurements"
-                },
-                {
-                  value: "Difficulty in hearing",
-                  text: "Difficulty in hearing"
-                },
-                {
-                  value: "Difficulty in seeing",
-                  text: "Difficulty in seeing"
-                },
-                {
-                  value: "Difficulty in speaking",
-                  text: "Difficulty in speaking"
-                },
-                {
-                  value: "Learning disability",
-                  text: "Learning disability"
-                },
-                {
-                  value: "Progressive illness",
-                  text: "Progressive illness"
-                },
-                {
-                  value: "Dyslexia",
-                  text: "Dyslexia"
-                },
-                {
-                  value: "Epilepsy",
-                  text: "Epilepsy"
-                },
-                {
-                  value: "Diabetes",
-                  text: "Diabetes"
-                },
-                {
-                  value: "Mental health condition",
-                  text: "Mental health condition"
-                },
-                {
-                  value: "Cerebral Palsy",
-                  text: "Cerebral Palsy"
-                },
-                {
-                  value: "Spina Bifida",
-                  text: "Spina Bifida"
-                },
-                {
-                  value: "Other",
-                  text: "Other"
-                }
-              ]
-            }) }}
-
-            {{ govukSelect({
-              id: "secondaryMedicalCondition",
-              name: "secondaryMedicalCondition",
-              value: data['secondaryMedicalCondition'],
-              label: {
-                text: "Secondary medical condition (optional)"
-              },
-              classes: "govuk-!-width-full",
-              items: [
-                {
-                  value: "",
-                  text: ""
-                },  
-                {
-                  value: "Arms or hands",
-                  text: "Arms or hands"
-                },
-                {
-                  value: "Legs or feet",
-                  text: "Legs or feet"
-                },
-                {
-                  value: "Back or neck",
-                  text: "Back or neck"
-                },
-                {
-                  value: "Stomach, liver, kidney or digestion",
-                  text: "Stomach, liver, kidney or digestion"
-                },
-                {
-                  value: "Heart, blood, blood pressure or circulation",
-                  text: "Heart, blood, blood pressure or circulation"
-                },
-                {
-                  value: "Chest or breathing",
-                  text: "Chest or breathing"
-                },
-                {
-                  value: "Skin conditions and severe disfigurements",
-                  text: "Skin conditions and severe disfigurements"
-                },
-                {
-                  value: "Difficulty in hearing",
-                  text: "Difficulty in hearing"
-                },
-                {
-                  value: "Difficulty in seeing",
-                  text: "Difficulty in seeing"
-                },
-                {
-                  value: "Difficulty in speaking",
-                  text: "Difficulty in speaking"
-                },
-                {
-                  value: "Learning disability",
-                  text: "Learning disability"
-                },
-                {
-                  value: "Progressive illness",
-                  text: "Progressive illness"
-                },
-                {
-                  value: "Dyslexia",
-                  text: "Dyslexia"
-                },
-                {
-                  value: "Epilepsy",
-                  text: "Epilepsy"
-                },
-                {
-                  value: "Diabetes",
-                  text: "Diabetes"
-                },
-                {
-                  value: "Mental health condition",
-                  text: "Mental health condition"
-                },
-                {
-                  value: "Cerebral Palsy",
-                  text: "Cerebral Palsy"
-                },
-                {
-                  value: "Spina Bifida",
-                  text: "Spina Bifida"
-                },
-                {
-                  value: "Other",
-                  text: "Other"
-                }
-              ]
-            }) }}
-
-            {{ govukButton({
-              text: "Add another",
-              classes: "govuk-button--secondary"
-            }) }}
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="primaryMedicalCondition">
+                Primary medical condition
+              </label>
+              <select class="govuk-select govuk-!-width-full" id="primaryMedicalCondition" name="primaryMedicalCondition" value="primaryMedicalCondition">
+                <option value=""></option>
+                <option value="Arms or hands">Arms or hands</option>
+                <option value="Legs or feet">Legs or feet</option>
+                <option value="Stomach, liver, kidney or digestion">Stomach, liver, kidney or digestion</option>
+                <option value="Heart, blood, blood pressure or circulation">Heart, blood, blood pressure or circulation</option>
+                <option value="Chest or breathing">Chest or breathing</option>
+                <option value="Skin conditions and severe disfigurements">Skin conditions and severe disfigurements</option>
+                <option value="Difficulty in hearing">Difficulty in hearing</option>
+                <option value="Difficulty in seeing">Difficulty in seeing</option>
+                <option value="Difficulty in speaking">Difficulty in speaking</option>
+                <option value="Learning disability">Learning disability</option>
+                <option value="Progressive illness">Progressive illness</option>
+                <option value="Dyslexia">Dyslexia</option>
+                <option value="Epilepsy">Epilepsy</option>
+                <option value="Diabetes">Diabetes</option>
+                <option value="Mental health condition">Mental health condition</option>
+                <option value="Cerebral Palsy">Cerebral Palsy</option>
+                <option value="Spina Bifida">Spina Bifida</option>
+                <option value="Other">Other</option>
+              </select>
+            </div>
+            <div data-module="moj-add-another">
+                <fieldset class="govuk-fieldset moj-add-another__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="person[0][secondaryMedicalCondition]">
+                      Secondary medical condition (optional)
+                    </label>
+                    <select class="govuk-select govuk-!-width-full" id="person[0][secondaryMedicalCondition]" name="person[0][secondaryMedicalCondition]" value="person[0][secondaryMedicalCondition]" style="margin-top: 15px;">
+                      <option value=""></option>
+                      <option value="Arms or hands">Arms or hands</option>
+                      <option value="Legs or feet">Legs or feet</option>
+                      <option value="Stomach, liver, kidney or digestion">Stomach, liver, kidney or digestion</option>
+                      <option value="Heart, blood, blood pressure or circulation">Heart, blood, blood pressure or circulation</option>
+                      <option value="Chest or breathing">Chest or breathing</option>
+                      <option value="Skin conditions and severe disfigurements">Skin conditions and severe disfigurements</option>
+                      <option value="Difficulty in hearing">Difficulty in hearing</option>
+                      <option value="Difficulty in seeing">Difficulty in seeing</option>
+                      <option value="Difficulty in speaking">Difficulty in speaking</option>
+                      <option value="Learning disability">Learning disability</option>
+                      <option value="Progressive illness">Progressive illness</option>
+                      <option value="Dyslexia">Dyslexia</option>
+                      <option value="Epilepsy">Epilepsy</option>
+                      <option value="Diabetes">Diabetes</option>
+                      <option value="Mental health condition">Mental health condition</option>
+                      <option value="Cerebral Palsy">Cerebral Palsy</option>
+                      <option value="Spina Bifida">Spina Bifida</option>
+                      <option value="Other">Other</option>
+                    </select>
+                  </div>
+                </fieldset>
+                <div class="moj-button-action">
+                  <button type="submit" class="govuk-button govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4" data-module="govuk-button">Add another</button>
+                </div>
+            </div>
           </div>
         </div>
         <div class="govuk-accordion__section">
