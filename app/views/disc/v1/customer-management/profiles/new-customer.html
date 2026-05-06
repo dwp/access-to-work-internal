@@ -1,0 +1,204 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+        dwpHeader({
+            serviceName: "DiSC",
+            serviceHref: '/index',
+            actionHref: "#",
+            container: true,
+            navigation: {
+              selectedItem: "authorise-payments",
+              items: [
+                   {
+                      href: "search-for-a-customer",
+                      text: "Customer management"
+                    }
+              ]
+          }  
+        })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View customer– {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search for a customer",
+      href: "#"
+    },
+    {
+      text: "Customer details",
+      href: "#"
+    },
+    {
+      text: "View jobs",
+      href: "#"
+    },
+    {
+      text: "Employer and job details",
+      href: "#"
+    }
+    
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">{{data.forename}} {{data.surname}}</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>{{data.nino}}</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h1 class="govuk-tabs__title">Payment details</h1>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#payments">
+            Customer
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#payees">
+            Jobs
+          </a>
+        </li>
+
+      </ul>
+  <div class="govuk-tabs__panel" id="payments">
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <h2 class="govuk-heading-l">Customer details</h2>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <p class="govuk-body govuk-!-text-align-right"><a href="#" class="govuk-link">Update customer details</a></p>
+          </div>
+        </div>
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+
+        <h3 class="govuk-heading-m">Personal details</h3>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Name</dt>
+          <dd class="govuk-summary-list__value">{{data.forename}} {{data.surname}}</dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">National Insurance number</dt>
+          <dd class="govuk-summary-list__value">{{data.nino}}</dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Date of birth</dt>
+          <dd class="govuk-summary-list__value">{{data['date-of-birth']}}</dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Address</dt>
+          <dd class="govuk-summary-list__value">{{data.address}}</dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Gender</dt>
+          <dd class="govuk-summary-list__value">{{data.gender}}</dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Ethnicity</dt>
+          <dd class="govuk-summary-list__value">{{data.ethnicity}}</dd>
+        </div>
+
+      </dl>
+
+      <h3 class="govuk-heading-m">Contact information</h3>
+
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Mobile Phone</dt>
+          <dd class="govuk-summary-list__value">{{data.phone}}</dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Email</dt>
+          <dd class="govuk-summary-list__value">johnsmith@testemail.com</dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Reasonable adjustments</dt>
+          <dd class="govuk-summary-list__value">Use email as primary contact method</dd>
+        </div>
+
+      </dl>
+
+      <h3 class="govuk-heading-m">Conditions or disabilities</h3>
+
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Primary medical condition</dt>
+          <dd class="govuk-summary-list__value">Difficulty seeing</dd>
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Secondary medical conditions</dt>
+          <dd class="govuk-summary-list__value"></dd>
+        </div>
+
+      </dl>
+      <h3 class="govuk-heading-m">Additional information</h3>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Additional information</dt>
+          <dd class="govuk-summary-list__value">Customer should be contacted for additional information regarding their case as we need to know their reasonable adjustments</dd>
+        </div>
+
+
+
+
+      </dl>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h3 class="gem-c-related-navigation__main-heading">Other customer information</h3>
+      <p class="govuk-body"><a href="#" class="govuk-link">Notes</a></p>
+      <p class="govuk-body"><a href="#" class="govuk-link">Elements</a></p>
+      <p class="govuk-body"><a href="#" class="govuk-link">Payees</a></p>
+      <p class="govuk-body"><a href="#" class="govuk-link">Payments</a></p>
+    </div>
+    </div>
+  </div>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="payees">
+    <h2 class="govuk-heading-l">Jobs</h2>
+  </div>
+  
+</div>
+  </div>
+</div>
+
+{% endblock %}

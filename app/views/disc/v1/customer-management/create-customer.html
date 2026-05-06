@@ -1,0 +1,371 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+        dwpHeader({
+            serviceName: "DiSC",
+            serviceHref: '/index',
+            actionHref: "#",
+            container: true,
+            navigation: {
+              selectedItem: "search-for-a-customer",
+              items: [
+                   {
+                      href: "search-for-a-customer",
+                      text: "Customer management"
+                    },
+                    {
+                      href: "search-for-a-payment",
+                      text: "Claims management"
+                    },
+                    {
+                      href: "select-report",
+                      text: "Business information"
+                    }
+              ]
+          }  
+        })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  Search for a customer – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="profiles/new-customer" method="post">
+      <h1 class="govuk-heading-l">Create a new customer</h1>
+
+
+        <div class="govuk-accordion" data-module="govuk-accordion" id="customer-accordian">
+      
+
+
+
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="customer-accordian-heading-1">
+                  Personal details
+                </span>
+              </h2>
+            </div>
+            <div id="customer-accordian-content-1" class="govuk-accordion__section-content">
+              {{ govukInput({
+              label: {
+                text: "Forename(s)"
+              },
+              id: "forename",
+              name: "forename"
+            }) }}
+
+
+            {{ govukInput({
+              label: {
+                text: "Surame"
+              },
+              id: "surname",
+              name: "surname"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "National Insurance number"
+              },
+              id: "nino",
+              name: "nino"
+            }) }}
+
+            {{ govukDateInput({
+              id: "date-od-birth",
+              namePrefix: "date-of-birth",
+              fieldset: {
+                legend: {
+                  text: "Date of birth"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 2007"
+              }
+            }) }}
+
+
+
+            {% call govukFieldset({
+              legend: {
+                text: "Address"
+                
+              }
+            }) %}
+
+              {{ govukInput({
+                label: {
+                  text: "Address line 1"
+                },
+                id: "address-line-1",
+                name: "addressLine1",
+                autocomplete: "address-line1"
+              }) }}
+
+              {{ govukInput({
+                label: {
+                  text: "Address line 2 (optional)"
+                },
+                id: "address-line-2",
+                name: "addressLine2",
+                autocomplete: "address-line2"
+              }) }}
+
+              {{ govukInput({
+                label: {
+                  text: "Town or city"
+                },
+                classes: "govuk-!-width-two-thirds",
+                id: "address-town",
+                name: "addressTown",
+                autocomplete: "address-level2"
+              }) }}
+
+              {{ govukInput({
+                label: {
+                  text: "County (optional)"
+                },
+                classes: "govuk-!-width-two-thirds",
+                id: "address-county",
+                name: "addressCounty"
+              }) }}
+
+              {{ govukInput({
+                label: {
+                  text: "Postcode"
+                },
+                classes: "govuk-input--width-10",
+                id: "address-postcode",
+                name: "addressPostcode",
+                autocomplete: "postal-code"
+              }) }}
+
+            {% endcall %}
+
+
+            {{ govukDateInput({
+              id: "date-initial-contact",
+              namePrefix: "date-initial-contact",
+              fieldset: {
+                legend: {
+                  text: "Date of initial contact"
+                }
+              },
+              hint: {
+                text: "For example, 27 3 2007"
+              }
+            }) }}
+
+            {{ govukSelect({
+              id: "gender",
+              name: "gender",
+              label: {
+                text: "Gender (optional)"
+              },
+              items: [
+                {
+                  value: "",
+                  text: ""
+                },
+                {   
+                  value: "value-1",
+                  text: "Option 1"
+                },{
+                  value: "value-1",
+                  text: "Option 1"
+                },
+                {
+                  value: "value-2",
+                  text: "Option 2"
+                }
+              ]
+            }) }}
+
+            {{ govukSelect({
+              id: "ethnicity",
+              name: "ethnicity",
+              label: {
+                text: "Ethnicity (optional)"
+              },
+              items: [
+                {
+                  value: "",
+                  text: ""
+                },
+                {
+                  value: "value-1",
+                  text: "Option 1"
+                },{
+                  value: "value-1",
+                  text: "Option 1"
+                },
+                {
+                  value: "value-2",
+                  text: "Option 2"
+                }
+              ]
+            }) }}
+            </div>
+          </div>
+
+
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="customer-accordian-heading-1">
+                  How we contact the customer
+                </span>
+              </h2>
+            </div>
+            <div id="customer-accordian-content-1" class="govuk-accordion__section-content">
+              {{ govukInput({
+              label: {
+                text: "Mobile phone"
+              },
+              id: "mobile",
+              name: "mobile",
+              classes: "govuk-input--width-20"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Email"
+              },
+              id: "email",
+              name: "email"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Reasonable adjustment (optional)"
+              },
+              id: "reasonable-adjustment",
+              name: "reasonable-adjustment",
+              hint: {
+                text: "If the customer gives a reason a phone number can't be the primary contact add it here."
+              }
+            }) }}
+            </div>
+          </div>
+
+
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="customer-accordian-heading-1">
+                  Conditions or disabilities
+                </span>
+              </h2>
+            </div>
+            <div id="customer-accordian-content-1" class="govuk-accordion__section-content">
+
+
+              
+              {{ govukSelect({
+                id: "primary-condition",
+                name: "primary-condition",
+                classes: "govuk-!-width-full",
+                label: {
+                  text: "Primary medical condition"
+                },
+                items: [
+                  {
+                    value: "",
+                    text: ""
+                  },{
+                    value: "value-1",
+                    text: "Option 1"
+                  },
+                  {
+                    value: "value-2",
+                    text: "Option 2"
+                  }
+                ]
+              }) }}
+
+              {{ govukSelect({
+                id: "secondary-condition",
+                name: "secondary-condition",
+                classes: "govuk-!-width-full",
+                label: {
+                  text: "Secondary medical condition (optional)"
+                },
+                items: [
+                  {
+                    value: "",
+                    text: ""
+                  },{
+                    value: "value-1",
+                    text: "Option 1"
+                  },
+                  {
+                    value: "value-2",
+                    text: "Option 2"
+                  }
+                ]
+              }) }}
+
+
+              <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Add another
+              </button>
+
+            </div>
+          </div>
+
+
+          <div class="govuk-accordion__section">
+            <div class="govuk-accordion__section-header">
+              <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="customer-accordian-heading-1">
+                  Anything else
+                </span>
+              </h2>
+            </div>
+            <div id="customer-accordian-content-1" class="govuk-accordion__section-content">
+                
+
+                {{ govukCharacterCount({
+                  name: "additional-info",
+                  id: "additional-info",
+                  maxlength: 1024,
+                  label: {
+                    text: "Additional information (optional)"
+                  }
+                }) }}
+            </div>
+          </div>
+        </div>
+
+        {{ govukButton({
+          text: "Create new customer"
+        }) }}
+
+        <p><a href="search-for-a-customer">Back to search for a customer</a></p>
+
+       </form>
+     
+  </div>
+</div>
+
+{% endblock %}
