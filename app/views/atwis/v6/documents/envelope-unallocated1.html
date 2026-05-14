@@ -148,6 +148,7 @@
       <h3 class="govuk-heading-m">DRS envelope ID</h3>
       <p class="govuk-body">Use the envelope ID to find these documents on DRS.</p>
       <p class="govuk-body govuk-!-margin-bottom-5">Envelope ID: 20260223983272208457</p>
+      Back to all unallocated envelopes
       </div>
       <div class="govuk-grid-column-one-third">
       <form action="envelope-allocated1">
@@ -155,7 +156,6 @@
             {{ govukSelect({
               id: "allocate-document",
               name: "allocate-document",
-              value: data['allocate-document'],
               label: {
                 html: '<h2 class="govuk-heading-m">Who do you want to allocate this to?</h2>'
               },

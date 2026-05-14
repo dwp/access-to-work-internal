@@ -13,6 +13,8 @@ router.use('/atwis/v4', require('./views/atwis/v4/_routes'))
 router.use('/atwis/v5', require('./views/atwis/v5/_routes'))
 router.use('/atwis/v6', require('./views/atwis/v6/_routes'))
 
+router.use('/disc/v1', require('./views/disc/v1/_routes'))
+
 // Add your routes here
 
 

@@ -121,11 +121,10 @@
           <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">Success</h2>
         </div>
         <div class="govuk-notification-banner__content">
-          <h3 class="govuk-notification-banner__heading">Envelope allocated</h3>
-          <p class="govuk-body">This envelope has been allocated.</p>
+          <h3 class="govuk-notification-banner__heading">Envelope unallocated</h3>
+          <p class="govuk-body">This envelope has been unallocated.</p>
         </div>
       </div>
-      <!-- <p class="govuk-body"><a href="user-case-allocated1" class="govuk-link govuk-link--no-visited-state">Back to all envelopes</a></p> -->
       <h2 class="govuk-heading-l">Documents scanned on 23 February 2026</h2>
       <table class="govuk-table">
         <caption class="govuk-table__caption govuk-table__caption--m">Document details</caption>
@@ -154,50 +153,92 @@
           </tr>
         </tbody>
       </table>
+
       <h3 class="govuk-heading-m">DRS envelope ID</h3>
       <p class="govuk-body">Use the envelope ID to find these documents on DRS.</p>
       <p class="govuk-body govuk-!-margin-bottom-5">Envelope ID: 20260223983272208457</p>
-    </div>
-    <div class="govuk-grid-column-one-third">
-      <form action="unallocate-confirmation2">
-        <h2 class="govuk-heading-m">Allocated to</h2>
-        <p class="govuk-body">{{ data['allocate-document'] }}</p>
-        {{ govukButton({
-          text: "Unallocate",
-          classes: "govuk-button--secondary"
+      </div>
+      <div class="govuk-grid-column-one-third">
+      <form action="envelope-allocated1">
+          {% if userRole == "Case manager team leader" %} 
+            {{ govukSelect({
+              id: "allocate-document",
+              name: "allocate-document",
+              label: {
+                html: '<h2 class="govuk-heading-m">Who do you want to allocate this to?</h2>'
+              },
+              items: [
+              {
+                  value: "blank",
+                  text: "",
+                  selected: true
+                },
+                {
+                  value: "John Doe",
+                  text: "John Doe"
+                },
+                {
+                  value: "Susan Quantas",
+                  text: "Susan Quantas"
+                },
+                {
+                  value: "Savannah Eastwood",
+                  text: "Savannah Eastwood"
+                },
+                {
+                  value: "David Connolly",
+                  text: "David Connolly"
+                },
+                {
+                  value: "Sophia Wanless",
+                  text: "Sophia Wanless"
+                }
+              ]
+            }) }}
+            {{ govukButton({
+              text: "Allocate",
+              href: ""
+            }) }}
+          {% else %}
+          {% endif %}
+          </form>
+
+
+        {{ govukSelect({
+          id: "update-status",
+          name: "update-status",
+          label: {
+            html: '<h2 class="govuk-heading-m">Update status</h2>'
+          },
+          items: [
+          {
+              value: "blank",
+              text: "",
+              selected: true
+            },
+            {
+              value: "not started",
+              text: "Not started"
+            },
+            {
+              value: "in progress",
+              text: "In progress"
+            },
+            {
+              value: "completed",
+              text: "Completed"
+            }
+          ]
         }) }}
-      </form>
-      {{ govukSelect({
-        id: "update-status",
-        name: "update-status",
-        label: {
-          html: '<h2 class="govuk-heading-m">Update status</h2>'
-        },
-        items: [
-        {
-            value: "blank",
-            text: "",
-            selected: true
-          },
-          {
-            value: "not started",
-            text: "Not started"
-          },
-          {
-            value: "in progress",
-            text: "In progress"
-          },
-          {
-            value: "completed",
-            text: "Completed"
-          }
-        ]
-      }) }}
-    <form action="end-date" method="post" novalidate>
+
+      <form action="end-date" method="post" novalidate>
+
       {{ govukButton({
         text: "Update"
       }) }}
-    </form>
+
+      </form>
+    </div>   
   </div>
 </div>
 {% endblock %}

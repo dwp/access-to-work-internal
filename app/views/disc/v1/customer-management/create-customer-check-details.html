@@ -3,29 +3,29 @@
 {% block header %}
 
 {{
-        dwpHeader({
-            serviceName: "DiSC",
-            serviceHref: '/index',
-            actionHref: "#",
-            container: true,
-            navigation: {
-              selectedItem: "search-for-a-customer",
-              items: [
-                   {
-                      href: "search-for-a-customer",
-                      text: "Customer management"
-                    },
-                    {
-                      href: "search-for-a-payment",
-                      text: "Claims management"
-                    },
-                    {
-                      href: "select-report",
-                      text: "Business information"
-                    }
-              ]
-          }  
-        })
+  dwpHeader({
+      serviceName: "DiSC",
+      serviceHref: '/index',
+      actionHref: "#",
+      container: true,
+      navigation: {
+        selectedItem: "search/search-for-a-customer",
+        items: [
+              {
+                href: "search/search-for-a-customer",
+                text: "Customer management"
+              },
+              {
+                href: "search-for-a-payment",
+                text: "Claims management"
+              },
+              {
+                href: "select-report",
+                text: "Business information"
+              }
+        ]
+    }  
+  })
 }}
 {% endblock %}
 
@@ -226,7 +226,7 @@
           text: "Create new customer"
         }) }}
       <p class="govuk-body">
-        <a href="customer-search-results" class="govuk-link govuk-link--no-visited-state">Cancel and return to search results</a>
+        <a href="search/customer-search-results" class="govuk-link govuk-link--no-visited-state">Cancel and return to search results</a>
       </p>
     </form>
   </div>

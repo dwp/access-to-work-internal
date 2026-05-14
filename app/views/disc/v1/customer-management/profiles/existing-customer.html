@@ -3,27 +3,35 @@
 {% block header %}
 
 {{
-        dwpHeader({
-            serviceName: "DiSC",
-            serviceHref: '/index',
-            actionHref: "#",
-            container: true,
-            navigation: {
-              selectedItem: "authorise-payments",
-              items: [
-                   {
-                      href: "search-for-a-customer",
-                      text: "Customer management"
-                    }
-              ]
-          }  
-        })
+    dwpHeader({
+        serviceName: "DiSC",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "search-for-a-customer",
+          items: [
+              {
+                  href: "search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "select-report",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
 }}
 {% endblock %}
 
 
 {% block pageTitle %}
-  View customer– {{ serviceName }} – GOV.UK Prototype Kit
+  View customer – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -38,21 +46,8 @@
   items: [
     {
       text: "Search for a customer",
-      href: "#"
-    },
-    {
-      text: "Customer details",
-      href: "#"
-    },
-    {
-      text: "View jobs",
-      href: "#"
-    },
-    {
-      text: "Employer and job details",
-      href: "#"
+      href: "../search/search-for-a-customer"
     }
-    
   ]
 }) }}
 
@@ -63,26 +58,23 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">    
     <h2 class="govuk-heading-m">John Smith Doe</h2>
-    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>QQ123456C</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>QQ123456B</p>
     <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
-
-    <div class="govuk-tabs" data-module="govuk-tabs">
-      <h1 class="govuk-tabs__title">Payment details</h1>
+    <div class="govuk-tabs">
+      <h1 class="govuk-tabs__title">Customer details</h1>
       <ul class="govuk-tabs__list">
         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-          <a class="govuk-tabs__tab" href="#payments">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/profiles/existing-customer">
             Customer
           </a>
         </li>
         <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#payees">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/jobs/view-jobs">
             Jobs
           </a>
         </li>
-
       </ul>
-  <div class="govuk-tabs__panel" id="payments">
-
+      <div class="govuk-tabs__panel" id="customer">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-one-third">
             <h2 class="govuk-heading-l">Customer details</h2>
@@ -91,113 +83,87 @@
             <p class="govuk-body govuk-!-text-align-right"><a href="#" class="govuk-link">Update customer details</a></p>
           </div>
         </div>
-
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
-
-        <h3 class="govuk-heading-m">Personal details</h3>
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Name</dt>
-          <dd class="govuk-summary-list__value">{{data.forename}} {{data.surname}}</dd>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m">Personal details</h3>
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">URN</dt>
+                <dd class="govuk-summary-list__value">12345678</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Name</dt>
+                <dd class="govuk-summary-list__value">Mr John Smith Doe</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">National Insurance number</dt>
+                <dd class="govuk-summary-list__value">QQ123456B</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Date of birth</dt>
+                <dd class="govuk-summary-list__value">24 April 2000</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">53 Main Street, London, Wandsworth, SW11 1AB</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Date of initial contact</dt>
+                <dd class="govuk-summary-list__value">12 May 2024</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Gender</dt>
+                <dd class="govuk-summary-list__value">Male</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Ethnicity</dt>
+                <dd class="govuk-summary-list__value">White British</dd>
+              </div>
+            </dl>
+          <h3 class="govuk-heading-m">Contact information</h3>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Mobile Phone</dt>
+              <dd class="govuk-summary-list__value">07712345678</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Email</dt>
+              <dd class="govuk-summary-list__value">johnsmith@email.com</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Reasonable adjustments</dt>
+              <dd class="govuk-summary-list__value">Use email as primary contact method</dd>
+            </div>
+          </dl>
+          <h3 class="govuk-heading-m">Conditions or disabilities</h3>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Primary medical condition</dt>
+              <dd class="govuk-summary-list__value">Difficulty seeing</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Secondary medical conditions</dt>
+              <dd class="govuk-summary-list__value"></dd>
+            </div>
+          </dl>
+          <h3 class="govuk-heading-m">Additional information</h3>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Additional information</dt>
+              <dd class="govuk-summary-list__value">Customer should be contacted for additional information regarding their case as we need to know their reasonable adjustments</dd>
+            </div>
+          </dl>
         </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">National Insurance number</dt>
-          <dd class="govuk-summary-list__value">QQ123456C</dd>
+        <div class="govuk-grid-column-one-third">
+          <h3 class="gem-c-related-navigation__main-heading">Other customer information</h3>
+          <p class="govuk-body"><a href="#" class="govuk-link">Notes</a></p>
+          <p class="govuk-body"><a href="#" class="govuk-link">Elements</a></p>
+          <p class="govuk-body"><a href="#" class="govuk-link">Payees</a></p>
+          <p class="govuk-body"><a href="#" class="govuk-link">Payments</a></p>
         </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Date of birth</dt>
-          <dd class="govuk-summary-list__value">1 January 1970</dd>
         </div>
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Address</dt>
-          <dd class="govuk-summary-list__value">53 Mainway Street, London, SW11 1AB</dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Gender</dt>
-          <dd class="govuk-summary-list__value">Male</dd>
-        </div>
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Ethnicity</dt>
-          <dd class="govuk-summary-list__value">White British</dd>
-        </div>
-
-      </dl>
-
-      <h3 class="govuk-heading-m">Contact information</h3>
-
-      <dl class="govuk-summary-list">
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Mobile Phone</dt>
-          <dd class="govuk-summary-list__value">07712345678</dd>
-        </div>
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Email</dt>
-          <dd class="govuk-summary-list__value">johnsmith@fakemail.com</dd>
-        </div>
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Reasonable adjustments</dt>
-          <dd class="govuk-summary-list__value">Use email as primary contact method</dd>
-        </div>
-
-      </dl>
-
-      <h3 class="govuk-heading-m">Conditions or disabilities</h3>
-
-      <dl class="govuk-summary-list">
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Primary medical condition</dt>
-          <dd class="govuk-summary-list__value">Difficulty seeing</dd>
-        </div>
-
-
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Secondary medical conditions</dt>
-          <dd class="govuk-summary-list__value"></dd>
-        </div>
-
-      </dl>
-      <h3 class="govuk-heading-m">Additional information</h3>
-
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Additional information</dt>
-          <dd class="govuk-summary-list__value">Customer should be contacted for additional information regarding their case as we need to know their reasonable adjustments</dd>
-        </div>
-
-
-
-
-      </dl>
+      </div>
     </div>
-    <div class="govuk-grid-column-one-third">
-      <h3 class="gem-c-related-navigation__main-heading">Other customer information</h3>
-      <p class="govuk-body"><a href="#" class="govuk-link">Notes</a></p>
-      <p class="govuk-body"><a href="#" class="govuk-link">Elements</a></p>
-      <p class="govuk-body"><a href="#" class="govuk-link">Payees</a></p>
-      <p class="govuk-body"><a href="#" class="govuk-link">Payments</a></p>
-    </div>
-    </div>
-  </div>
-  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="payees">
-    <h2 class="govuk-heading-l">Jobs</h2>
-  </div>
-  
-</div>
   </div>
 </div>
 

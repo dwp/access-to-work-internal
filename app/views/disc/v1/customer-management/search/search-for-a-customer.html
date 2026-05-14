@@ -3,29 +3,29 @@
 {% block header %}
 
 {{
-        dwpHeader({
-            serviceName: "DiSC",
-            serviceHref: '/index',
-            actionHref: "#",
-            container: true,
-            navigation: {
-              selectedItem: "search-for-a-customer",
-              items: [
-                   {
-                      href: "search-for-a-customer",
-                      text: "Customer management"
-                    },
-                    {
-                      href: "search-for-a-payment",
-                      text: "Claims management"
-                    },
-                    {
-                      href: "select-report",
-                      text: "Business information"
-                    }
-              ]
-          }  
-        })
+    dwpHeader({
+        serviceName: "DiSC",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "search-for-a-customer",
+          items: [
+              {
+                  href: "search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "select-report",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
 }}
 {% endblock %}
 
@@ -75,6 +75,7 @@
         label: {
           text: "Forename(s)"
         },
+        classes: "govuk-!-width-three-quarters",
         id: "customer-forename",
         name: "CustomerForename",
         value: data['CustomerForename']
@@ -84,6 +85,7 @@
         label: {
           text: "Surname"
         },
+        classes: "govuk-!-width-three-quarters",
         id: "customer-surname",
         name: "CustomerSurname",
         value: data['CustomerSurname']
@@ -110,7 +112,7 @@
         classes: "govuk-input--width-10"
       }) }}
       {{ govukButton({
-        text: "Save and continue"
+        text: "Search"
       }) }}
     </form>
   </div>

@@ -1,0 +1,142 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "DiSC",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "search-for-a-customer",
+          items: [
+              {
+                  href: "search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "select-report",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View jobs – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search for a customer",
+      href: "../search/search-for-a-customer"
+    },
+    {
+      text: "Customer details",
+      href: "../profiles/existing-customer"
+    },
+    {
+      text: "View jobs",
+      href: "view-jobs"
+    }
+    
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">John Smith Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>QQ123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
+
+    <div class="govuk-tabs">
+      <h1 class="govuk-tabs__title">View Jobs</h1>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/profiles/existing-customer">
+            Customer
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/jobs/view-jobs">
+            Jobs
+          </a>
+        </li>
+      </ul>
+      <div class="govuk-tabs__panel">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <div class="moj-page-header-actions">
+              <div class="moj-page-header-actions__title">
+                <h2 class="govuk-heading-l">View jobs</h2>
+              </div>
+              <div class="moj-page-header-actions__actions">
+                <div class="moj-button-group moj-button-group--inline">
+                  <form action="create-new-job.html">
+                    <button type="submit" class="govuk-button" data-module="govuk-button">
+                      Create job
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <table class="govuk-table" data-module="moj-sortable-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header" aria-sort="ascending">Job title</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Employer name</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Start date</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Closed date</th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Admin assistant</td>
+                  <td class="govuk-table__cell">Glasgow Disabled Persons Housing</td>
+                  <td class="govuk-table__cell">12 May 2024</td>
+                  <td class="govuk-table__cell">09 May 2025</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link">Update</a><a href="job-details" class="govuk-link" style="border-left: 1px solid; border-left-color: #cecece; margin-left: 10px; padding-left: 10px;">View</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Classroom assistant</td>
+                  <td class="govuk-table__cell">Wandsworth Prepatory School</td>
+                  <td class="govuk-table__cell">13 April 2023</td>
+                  <td class="govuk-table__cell">09 April 2025</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link">Update</a><a href="job-details" class="govuk-link" style="border-left: 1px solid; border-left-color: #cecece; margin-left: 10px; padding-left: 10px;">View</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

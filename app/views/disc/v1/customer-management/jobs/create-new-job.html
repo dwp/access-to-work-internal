@@ -1,0 +1,546 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+        dwpHeader({
+            serviceName: "DiSC",
+            serviceHref: '/index',
+            actionHref: "#",
+            container: true,
+            navigation: {
+              selectedItem: "search/search-for-a-customer",
+              items: [
+                   {
+                      href: "search/search-for-a-customer",
+                      text: "Customer management"
+                    },
+                    {
+                      href: "search-for-a-payment",
+                      text: "Claims management"
+                    },
+                    {
+                      href: "select-report",
+                      text: "Business information"
+                    }
+              ]
+          }  
+        })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  Create a new customer – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">John Smith Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>QQ123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
+    <form class="form" action="workplace-contact-answer" method="post">
+      <h1 class="govuk-heading-l">Create employer and job</h1>
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                Employment details
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+            {{ govukInput({
+              label: {
+                text: "Employer name"
+              },
+              id: "employerName",
+              name: "employerName",
+              value: data['employerName']
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Job title"
+              },
+              id: "jobTitle",
+              name: "jobTitle",
+              value: data['jobTitle']
+            }) }}
+
+            {{ govukDateInput({ 
+              name: "jobStartDate", 
+              namePrefix: "jobStart", 
+              fieldset: {
+                legend: {
+                  text: "Job start date"
+                }
+              },  
+              items: [ { 
+                name: "day", 
+                value: data['jobStart-day'], 
+                classes: "govuk-input--width-2", 
+                autocomplete: "jobStart-day" 
+              },
+              { 
+                name: "month", 
+                value: data['jobStart-month'], 
+                classes: "govuk-input--width-2", 
+                autocomplete: "jobStart-month" 
+              }, 
+              { 
+                name: "year", 
+                value: data['jobStart-year'], 
+                classes: "govuk-input--width-4", 
+                autocomplete: "jobStart-year" 
+              } 
+              ] 
+            }) }} 
+
+            {{ govukSelect({
+              id: "employmentStatus",
+              name: "employmentStatus",
+              value: data['employmentStatus'],
+              label: {
+                text: "Employment status (optional)"
+              },
+              classes: "govuk-!-width-full",
+              items: [
+                {
+                  value: "",
+                  text: ""
+                },  
+                {
+                  value: "Employed",
+                  text: "Employed"
+                },
+                {
+                  value: "Self-employed",
+                  text: "Self-employed"
+                },
+                {
+                  value: "Unemployed",
+                  text: "Unemployed"
+                } 
+              ]
+            }) }}
+
+            {{ govukSelect({
+              id: "jobStatus",
+              name: "jobStatus",
+              value: data['jobStatus'],
+              label: {
+                text: "Job status (optional)"
+              },
+              classes: "govuk-!-width-full",
+              items: [
+                {
+                  value: "",
+                  text: ""
+                },  
+                {
+                  value: "Engaged to Change (Wales) - Temporary - Part Time",
+                  text: "Engaged to Change (Wales) - Temporary - Part Time"
+                },
+                {
+                  value: "Open - Permanent - Full Time",
+                  text: "Open - Permanent - Full Time"
+                },
+                {
+                  value: "Open - Permanent - Part Time",
+                  text: "Open - Permanent - Part Time"
+                },
+                {
+                  value: "Open - Permanent - Part Time - Permitted Work - Higher",
+                  text: "Open - Permanent - Part Time - Permitted Work - Higher"
+                },
+                {
+                  value: "Open - Permanent - Part Time - Permitted Work - Supported",
+                  text: "Open - Permanent - Part Time - Permitted Work - Supported"
+                },
+                {
+                  value: "Open - Temporary - Full Time",
+                  text: "Open - Temporary - Full Time"
+                },
+                {
+                  value: "Open - Temporary - Part Time",
+                  text: "Open - Temporary - Part Time"
+                },
+                {
+                  value: "Open - Temporary - Part Time - Permitted Work - Higher",
+                  text: "Open - Temporary - Part Time - Permitted Work - Higher"
+                },
+                {
+                  value: "Open - Temporary - Part Time - Permitted Work - Supported",
+                  text: "Open - Temporary - Part Time - Permitted Work - Supported"
+                },
+                {
+                  value: "Pre Employment (Scotland) - Temporary - Part Time",
+                  text: "Pre Employment (Scotland) - Temporary - Part Time"
+                },
+                {
+                  value: "Supported - Permanent - Full Time",
+                  text: "Supported - Permanent - Full Time"
+                },
+                {
+                  value: "Supported - Permanent - Part Time - Permitted Work - Higher",
+                  text: "Supported - Permanent - Part Time - Permitted Work - Higher"
+                },
+                {
+                  value: "Supported - Permanent - Part Time - Permitted Work - Supported",
+                  text: "Supported - Permanent - Part Time - Permitted Work - Supported"
+                },
+                {
+                  value: "Supported - Temporary - Full Time",
+                  text: "Supported - Temporary - Full Time"
+                },
+                {
+                  value: "Supported - Temporary - Part Time - Permitted Work - Higher",
+                  text: "Supported - Temporary - Part Time - Permitted Work - Higher"
+                },
+                {
+                  value: "Supported - Temporary - Part Time - Permitted Work - Supported",
+                  text: "Supported - Temporary - Part Time - Permitted Work - Supported"
+                },
+                {
+                  value: "Support Internship (England) - Temporary - Part Time",
+                  text: "Support Internship (England) - Temporary - Part Time"
+                },
+                {
+                  value: "Traineeship - Temporary - Part Time",
+                  text: "Traineeship - Temporary - Part Time"
+                }
+              ]
+            }) }}
+
+            {% set noHtml %}
+              {{ govukInput({
+                id: "uniqueTaxRef",
+                name: "uniqueTaxRef", 
+                classes: "govuk-!-width-one-third",
+                label: {
+                  text: "Unique tax reference number"
+                }
+              }) }}
+            {% endset -%}
+
+            {{ govukRadios({
+              name: "limitedCompany",
+              value: data['limitedCompany'],
+              fieldset: {
+                legend: {
+                  text: "Limited Company"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes",
+                  conditional: {
+                    html: emailHtml
+                  }
+                },
+                {
+                  value: "No",
+                  text: "No",
+                  conditional: {
+                    html: noHtml
+                  }
+                }
+              ]
+            }) }}
+          </div>
+        </div>
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                Workplace details
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-2" class="govuk-accordion__section-content">
+
+            {% call govukFieldset({
+              legend: {
+                text: "Workplace address (optional)"
+              }
+            }) %}
+
+              {{ govukInput({
+                label: {
+                  text: "Address line 1"
+                },
+                id: "WPaddress-line-1",
+                name: "WPaddressLine1",
+                value: data['WPaddressLine1'],
+                autocomplete: "address-line1"
+              }) }}
+
+              {{ govukInput({
+                label: {
+                  text: "Address line 2 (optional)"
+                },
+                id: "WPaddress-line-2",
+                name: "WPaddressLine2",
+                value: data['WPaddressLine2'],
+                autocomplete: "address-line2"
+              }) }}
+
+              {{ govukInput({
+                label: {
+                  text: "Town or city (optional)"
+                },
+                classes: "govuk-!-width-two-thirds",
+                id: "WPaddress-town",
+                name: "WPaddressTown",
+                value: data['WPaddressTown'],
+                autocomplete: "address-level2"
+              }) }}
+
+              {{ govukInput({
+                label: {
+                  text: "County (optional)"
+                },
+                classes: "govuk-!-width-two-thirds",
+                id: "WPaddress-county",
+                name: "WPaddressCounty",
+                value: data['WPaddressCounty']
+              }) }}
+
+              {{ govukInput({
+                label: {
+                  text: "Postcode (optional)"
+                },
+                classes: "govuk-input--width-10",
+                id: "WPaddress-postcode",
+                name: "WPaddressPostcode",
+                value: data['WPaddressPostcode'],
+                autocomplete: "postal-code"
+              }) }}
+            {% endcall %}
+
+            {{ govukInput({
+              label: {
+                text: "Workplace contact forename (optional)"
+              },
+              id: "WPconForename",
+              name: "WPconForename",
+              value: data['WPconForename']
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Workplace contact surname (optional)"
+              },
+              id: "WPconSurname",
+              name: "WPconSurname",
+              value: data['WPconSurname']
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Workplace contact job title or position (optional)"
+              },
+              id: "WPconJobTitle",
+              name: "WPconJobTitle",
+              value: data['WPconJobTitle']
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Workplace contact telephone number (optional)"
+              },
+              id: "WPconPhoneNumber",
+              name: "WPconPhoneNumber",
+              value: data['WPconPhoneNumber'],
+              type: "tel",
+              autocomplete: "tel",
+              classes: "govuk-!-width-one-half"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Workplace contact extention number (optional)"
+              },
+              id: "WPconExtNumber",
+              name: "WPconExtNumber",
+              value: data['WPconExtNumber'],
+              classes: "govuk-!-width-one-half"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Workplace contact email (optional)"
+              },
+              id: "WPconEmail",
+              name: "WPconEmail",
+              value: data['WPconEmail'],
+              type: "email",
+              autocomplete: "email",
+              spellcheck: false
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Workplace telephone number (optional)"
+              },
+              id: "WPphoneNumber",
+              name: "WPphoneNumber",
+              value: data['WPphoneNumber'],
+              type: "tel",
+              autocomplete: "tel",
+              classes: "govuk-!-width-one-half"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Workplace extention number (optional)"
+              },
+              id: "WPextNumber",
+              name: "WPextNumber",
+              value: data['WPextNumber'],
+              classes: "govuk-!-width-one-half"
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Workplace email (optional)"
+              },
+              id: "WPemail",
+              name: "WPemail",
+              value: data['WPemail'],
+              type: "email",
+              autocomplete: "email",
+              spellcheck: false
+            }) }}
+
+            {{ govukSelect({
+              id: "employmentSector",
+              name: "employmentSector",
+              value: data['employmentSector'],
+              label: {
+                text: "Employment sector (optional)"
+              },
+              classes: "govuk-!-width-full",
+              items: [
+                {
+                  value: "",
+                  text: ""
+                },  
+                {
+                  value: "Charitable Organisation",
+                  text: "Charitable Organisation"
+                },
+                {
+                  value: "Franchise",
+                  text: "Franchise"
+                },
+                {
+                  value: "Government Departments",
+                  text: "Government Departments"
+                },
+                {
+                  value: "None",
+                  text: "None"
+                },
+                {
+                  value: "Other Public Sector",
+                  text: "Other Public Sector"
+                },
+                {
+                  value: "Private Sector - local employer",
+                  text: "Private Sector - local employer"
+                },
+                {
+                  value: "Private Sector - national organisation",
+                  text: "Private Sector - national organisation"
+                }    
+              ]
+            }) }}
+
+            {{ govukSelect({
+              id: "employerThreshold",
+              name: "employerThreshold",
+              value: data['employerThreshold'],
+              label: {
+                text: "Employer threshold limit"
+              },
+              classes: "govuk-!-width-full",
+              items: [
+                {
+                  value: "",
+                  text: ""
+                },  
+                {
+                  value: "0.00",
+                  text: "0.00"
+                },
+                {
+                  value: "500.00",
+                  text: "500.00"
+                },
+                {
+                  value: "1000.00",
+                  text: "1000.00"
+                }
+              ]
+            }) }}
+
+            {{ govukInput({
+              label: {
+                text: "Hours worked per week (optional)"
+              },
+              id: "hoursWorkedWeek",
+              name: "hoursWorkedWeek",
+              value: data['hoursWorkedWeek'],
+              classes: "govuk-!-width-one-half"
+            }) }}
+
+            {{ govukRadios({
+              classes: "govuk-radios--inline",
+              name: "correspondenceMatch",
+              value: data['correspondenceMatch'],
+              fieldset: {
+                legend: {
+                  text: "Is the correspondence same as workplace?"
+                }
+              },
+              items: [
+                {
+                  value: "Yes",
+                  text: "Yes"
+                },
+                {
+                  value: "No",
+                  text: "No"
+                }
+              ]
+            }) }}
+          </div>
+        </div>
+      </div>
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+      <p class="govuk-body">
+        <a href="view-jobs" class="govuk-link govuk-link--no-visited-state">Return to view jobs</a>
+      </p>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
