@@ -92,10 +92,11 @@
               </div>
               <div class="moj-page-header-actions__actions">
                 <div class="moj-button-group moj-button-group--inline">
-                  <a href="#" class="govuk-link">Update details</a>
+                  <a href="update-job" class="govuk-link govuk-link--no-visited-state">Update details</a>
                 </div>
               </div>
             </div>
+            <h3 class="govuk-heading-m">Employer details</h3>
             <dl class="govuk-summary-list">
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
@@ -150,7 +151,7 @@
                   Job status
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  Full time
+                  Open - Permanent - Full Time
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -161,7 +162,6 @@
                   No
                 </dd>
               </div>
-              {% if (data['limitedCompany'] == "No") %}
               <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                   Unique tax reference number
@@ -170,9 +170,174 @@
                   1234567
                 </dd>
               </div>
-              {% endif %}
+            </dl>
+            <h3 class="govuk-heading-m">Workplace details</h3>
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  53 Main Street, London, Wandsworth, SW11 1AB
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Workplace contact name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Jane Doe
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Workplace contact job title
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Team lead
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Workplace contact telephone number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  07801345678
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Workplace contact extension number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  +44
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Workplace contact email
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  jane@workplaceemail.com
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Workplace telephone number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  078012345678
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Workplace extension number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  +44
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Workplace email
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  jane@workplaceemail.com
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Employer sector
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  None
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Employer threshold limit
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  0.00
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Hours worked per week
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  35
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Is the correspondence same as workplace?
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  No
+                </dd>
+              </div>
+            </dl>
+            <h3 class="govuk-heading-m">Correspondence contact details</h3>
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Address
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  53 Main Street, Wandsworth, London, SW11 1AB
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Correspondence contact name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Jane Doe
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Correspondence contact job title or position
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Team lead
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Correspondence contact telephone number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  07801345678
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Correspondence contact extension number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  +44
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Correspondence contact email
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  jane@workplaceemail.com
+                </dd>
+              </div>
             </dl>
           </div>
+          <div class="govuk-grid-column-one-third">
+          <h3 class="gem-c-related-navigation__main-heading">Other job information</h3>
+          <p class="govuk-body"><a href="#" class="govuk-link govuk-link--no-visited-state">Close job</a></p>
+          <p class="govuk-body"><a href="#" class="govuk-link govuk-link--no-visited-state">View associated eligibility assessments</a></p>
+          <p class="govuk-body"><a href="#" class="govuk-link govuk-link--no-visited-state">Associate job to eligibility</a></p>
+          <p class="govuk-body"><a href="#" class="govuk-link govuk-link--no-visited-state">View AtW periods</a></p>
+          <p class="govuk-body"><a href="#" class="govuk-link govuk-link--no-visited-state">View applications</a></p>
+        </div>
         </div>
       </div>
     </div>

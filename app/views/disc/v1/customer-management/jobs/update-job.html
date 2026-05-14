@@ -31,7 +31,7 @@
 
 
 {% block pageTitle %}
-  Create a new job – {{ serviceName }} – GOV.UK Prototype Kit
+  Update job – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -52,7 +52,7 @@
     <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>QQ123456B</p>
     <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
     <form class="form" action="workplace-contact-answer" method="post">
-      <h1 class="govuk-heading-l">Create employer and job</h1>
+      <h1 class="govuk-heading-l">Update employer and job</h1>
       <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
         <div class="govuk-accordion__section">
           <div class="govuk-accordion__section-header">
@@ -69,7 +69,7 @@
               },
               id: "employerName",
               name: "employerName",
-              value: data['employerName']
+              value: data['employerName'] or "Glasgow Disabled Persons Housing"
             }) }}
 
             {{ govukInput({
@@ -78,7 +78,7 @@
               },
               id: "jobTitle",
               name: "jobTitle",
-              value: data['jobTitle']
+              value: data['jobTitle'] or "Admin assistant"
             }) }}
 
             {{ govukDateInput({ 
@@ -86,24 +86,24 @@
               namePrefix: "jobStart", 
               fieldset: {
                 legend: {
-                  text: "Job start date"
+                  text: "Job start date" or "12 May 2024"
                 }
               },  
               items: [ { 
                 name: "day", 
-                value: data['jobStart-day'], 
+                value: data['jobStart-day'] or "12", 
                 classes: "govuk-input--width-2", 
                 autocomplete: "jobStart-day" 
               },
               { 
                 name: "month", 
-                value: data['jobStart-month'], 
+                value: data['jobStart-month'] or "5", 
                 classes: "govuk-input--width-2", 
                 autocomplete: "jobStart-month" 
               }, 
               { 
                 name: "year", 
-                value: data['jobStart-year'], 
+                value: data['jobStart-year'] or "2024", 
                 classes: "govuk-input--width-4", 
                 autocomplete: "jobStart-year" 
               } 
@@ -113,7 +113,7 @@
             {{ govukSelect({
               id: "employmentStatus",
               name: "employmentStatus",
-              value: data['employmentStatus'],
+              value: data['employmentStatus'] or "Employed",
               label: {
                 text: "Employment status (optional)"
               },
@@ -141,7 +141,7 @@
             {{ govukSelect({
               id: "jobStatus",
               name: "jobStatus",
-              value: data['jobStatus'],
+              value: data['jobStatus'] or "Open - Permanent - Full Time",
               label: {
                 text: "Job status (optional)"
               },
@@ -230,6 +230,7 @@
               {{ govukInput({
                 id: "uniqueTaxRef",
                 name: "uniqueTaxRef", 
+                value: data['uniqueTaxRef'] or "1234567",
                 classes: "govuk-!-width-one-third",
                 label: {
                   text: "Unique tax reference number"
@@ -239,7 +240,7 @@
 
             {{ govukRadios({
               name: "limitedCompany",
-              value: data['limitedCompany'],
+              value: data['limitedCompany'] or "No",
               fieldset: {
                 legend: {
                   text: "Limited Company"
@@ -286,7 +287,7 @@
                 },
                 id: "WPaddress-line-1",
                 name: "WPaddressLine1",
-                value: data['WPaddressLine1'],
+                value: data['WPaddressLine1'] or "53 Main Street",
                 autocomplete: "address-line1"
               }) }}
 
@@ -307,7 +308,7 @@
                 classes: "govuk-!-width-two-thirds",
                 id: "WPaddress-town",
                 name: "WPaddressTown",
-                value: data['WPaddressTown'],
+                value: data['WPaddressTown'] or "Wandsworth",
                 autocomplete: "address-level2"
               }) }}
 
@@ -318,7 +319,7 @@
                 classes: "govuk-!-width-two-thirds",
                 id: "WPaddress-county",
                 name: "WPaddressCounty",
-                value: data['WPaddressCounty']
+                value: data['WPaddressCounty'] or "London"
               }) }}
 
               {{ govukInput({
@@ -328,7 +329,7 @@
                 classes: "govuk-input--width-10",
                 id: "WPaddress-postcode",
                 name: "WPaddressPostcode",
-                value: data['WPaddressPostcode'],
+                value: data['WPaddressPostcode'] or "SW11 1AB",
                 autocomplete: "postal-code"
               }) }}
             {% endcall %}
@@ -339,7 +340,7 @@
               },
               id: "WPconForename",
               name: "WPconForename",
-              value: data['WPconForename']
+              value: data['WPconForename'] or "Jane"
             }) }}
 
             {{ govukInput({
@@ -348,7 +349,7 @@
               },
               id: "WPconSurname",
               name: "WPconSurname",
-              value: data['WPconSurname']
+              value: data['WPconSurname'] or "Doe"
             }) }}
 
             {{ govukInput({
@@ -357,7 +358,7 @@
               },
               id: "WPconJobTitle",
               name: "WPconJobTitle",
-              value: data['WPconJobTitle']
+              value: data['WPconJobTitle'] or "Team lead"
             }) }}
 
             {{ govukInput({
@@ -366,7 +367,7 @@
               },
               id: "WPconPhoneNumber",
               name: "WPconPhoneNumber",
-              value: data['WPconPhoneNumber'],
+              value: data['WPconPhoneNumber'] or "07801345678",
               type: "tel",
               autocomplete: "tel",
               classes: "govuk-!-width-one-half"
@@ -378,7 +379,7 @@
               },
               id: "WPconExtNumber",
               name: "WPconExtNumber",
-              value: data['WPconExtNumber'],
+              value: data['WPconExtNumber'] or "+44",
               classes: "govuk-!-width-one-half"
             }) }}
 
@@ -388,7 +389,7 @@
               },
               id: "WPconEmail",
               name: "WPconEmail",
-              value: data['WPconEmail'],
+              value: data['WPconEmail'] or "jane@workplaceemail.com",
               type: "email",
               autocomplete: "email",
               spellcheck: false
@@ -400,7 +401,7 @@
               },
               id: "WPphoneNumber",
               name: "WPphoneNumber",
-              value: data['WPphoneNumber'],
+              value: data['WPphoneNumber'] or "078012345678",
               type: "tel",
               autocomplete: "tel",
               classes: "govuk-!-width-one-half"
@@ -412,7 +413,7 @@
               },
               id: "WPextNumber",
               name: "WPextNumber",
-              value: data['WPextNumber'],
+              value: data['WPextNumber'] or "+44",
               classes: "govuk-!-width-one-half"
             }) }}
 
@@ -422,7 +423,7 @@
               },
               id: "WPemail",
               name: "WPemail",
-              value: data['WPemail'],
+              value: data['WPemail'] or "jane@workplaceemail.com",
               type: "email",
               autocomplete: "email",
               spellcheck: false
@@ -431,7 +432,7 @@
             {{ govukSelect({
               id: "employmentSector",
               name: "employmentSector",
-              value: data['employmentSector'],
+              value: data['employmentSector'] or "None",
               label: {
                 text: "Employment sector (optional)"
               },
@@ -475,7 +476,7 @@
             {{ govukSelect({
               id: "employerThreshold",
               name: "employerThreshold",
-              value: data['employerThreshold'],
+              value: data['employerThreshold'] or "0.00",
               label: {
                 text: "Employer threshold limit"
               },
@@ -506,14 +507,14 @@
               },
               id: "hoursWorkedWeek",
               name: "hoursWorkedWeek",
-              value: data['hoursWorkedWeek'],
+              value: data['hoursWorkedWeek'] or "35",
               classes: "govuk-!-width-one-half"
             }) }}
 
             {{ govukRadios({
               classes: "govuk-radios--inline",
               name: "correspondenceMatch",
-              value: data['correspondenceMatch'],
+              value: data['correspondenceMatch'] or "No",
               fieldset: {
                 legend: {
                   text: "Is the correspondence same as workplace?"

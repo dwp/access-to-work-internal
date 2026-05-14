@@ -35,10 +35,6 @@
                 {
                   href: "../referrals/referrals",
                   text: "Referrals"
-                },
-                {
-                  href: "../data-retention/manage-data",
-                  text: "Manage data"
                 }
           ]
       }  
@@ -71,10 +67,6 @@
                 {
                   href: "../referrals/referrals",
                   text: "Referrals"
-                },
-                {
-                  href: "../data-retention/manage-data",
-                  text: "Manage data"
                 }
           ]
       }  
@@ -145,7 +137,9 @@
           <th scope="col" class="govuk-table__header">Allocated to</th>
           <th scope="col" class="govuk-table__header">Total documents</th>
           <th scope="col" class="govuk-table__header">Oldest document</th>
+          {% if data['atwis-user-type'] == "team-leader" %}
           <th scope="col" class="govuk-table__header">Action</th>
+          {% endif %}
         </tr>
       </thead>
       <tbody class="govuk-table__body">
@@ -153,13 +147,17 @@
           <td class="govuk-table__cell">David Connolly</td>
           <td class="govuk-table__cell">8</td>
           <td class="govuk-table__cell">15 March 2026</td>
+          {% if data['atwis-user-type'] == "team-leader" %}
           <td class="govuk-table__cell"><a href="#" class="govuk-link">Unallocate</a></td>
+          {% endif %}
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Susan Quantas</td>
           <td class="govuk-table__cell">5</td>
           <td class="govuk-table__cell">15 March 2026</td>
+          {% if data['atwis-user-type'] == "team-leader" %}
           <td class="govuk-table__cell"><a href="#" class="govuk-link">Unallocate</a></td>
+          {% endif %}
         </tr>
       </tbody>
     </table>
