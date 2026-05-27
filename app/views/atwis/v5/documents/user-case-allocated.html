@@ -11,7 +11,7 @@
         serviceName: "Access to Work",
         serviceHref: '/index',
         action: userName,
-        actionHref: "#",
+        actionHref: versionPath + "/select-user",
         container: true,
         navigation: {
           selectedItem: "../your-cases",
@@ -47,7 +47,7 @@
         serviceName: "Access to Work",
         serviceHref: '/index',
         action: userName,
-        actionHref: "#",
+        actionHref: versionPath + "/select-user",
         container: true,
         navigation: {
           selectedItem: "../your-cases",
@@ -114,7 +114,8 @@
   <tbody class="govuk-table__body">
     {% for envelope in case.envelopes  %}
     <tr class="govuk-table__row">
-      <td scope="row" class="govuk-table__cell"><a href = "{{versionPath}}/documents/envelope-allocated?id={{case.id}}&envelope={{loop.index0}}">View envelope</a> <br>{{envelope.envelopeRef}}</td><td class="govuk-table__cell">
+      <td scope="row" class="govuk-table__cell"><a href = "{{versionPath}}/documents/envelope-allocated?id={{case.id}}&envelope={{loop.index0}}">View envelope</a> <br>{{envelope.envelopeRef}}</td>
+      <td class="govuk-table__cell">
         <strong>{{envelope.documents.length}} documents</strong> <br>
         {% for type in envelope.documentTypes %}
           {{type}} <br>

@@ -11,7 +11,7 @@
         serviceName: "Access to Work",
         serviceHref: '/index',
         action: userName,
-        actionHref: "#",
+        actionHref: versionPath + "/select-user",
         container: true,
         navigation: {
           selectedItem: "../unallocated/unallocated-main-page",
@@ -47,7 +47,7 @@
         serviceName: "Access to Work",
         serviceHref: '/index',
         action: userName,
-        actionHref: "#",
+        actionHref: versionPath + "/select-user",
         container: true,
         navigation: {
           selectedItem: "../unallocated/unallocated-main-page",
@@ -114,14 +114,14 @@
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <th class="govuk-table__header" scope="col">Allocated to</th>
-              <th class="govuk-table__header" scope="col">Total documents</th>
-              <th class="govuk-table__header" scope="col">Oldest document</th>
+              <th class="govuk-table__header" scope="col">Number of documents</th>
+              <th class="govuk-table__header" scope="col">Date scanned</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">{{ data['allocate-document'] }}</td>
-              <td class="govuk-table__cell">3</td>
+              <td class="govuk-table__cell">3 documents</td>
               <td class="govuk-table__cell">15 March 2026</td>
             </tr>
           </tbody>
