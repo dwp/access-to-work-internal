@@ -88,6 +88,7 @@
   },
   html: 'This is a prototype. It is not a real service.'
 }) }}
+
 <div class="atw-key-details-wrapper">
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
@@ -99,25 +100,31 @@
     </div>
   </div>
 </div>
-{% endblock %}
 
+
+{% endblock %}
 
 {% block content %}
 
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    {% if data.successBanner == "true" %}
-    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title"> Success</h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">Envelopes allocated</h3>
-        <p class="govuk-body">2 envelopes allocated to {{ data['allocate-document'] }}.</p>
-      </div>
-    </div>
-    {% endif %}
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Unallocated envelopes</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date scanned</th>
+          <th scope="col" class="govuk-table__header">Number of documents</th>
+          <th scope="col" class="govuk-table__header">Document types</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__cell"><a href="envelope-unallocated1" class="govuk-link">15 March 2026</a></td>
+          <td class="govuk-table__cell">3 documents<br>
+          <td class="govuk-table__cell">Change bank details<br>Support Worker (multiple)<br>Travel in work</td>
+        </tr>
+      </tbody>
+    </table>
     <table class="govuk-table">
       <caption class="govuk-table__caption govuk-table__caption--m">Allocated envelopes</caption>
       <thead class="govuk-table__head">
@@ -138,9 +145,7 @@
             Support Worker
           </td>
           <td class="govuk-table__cell">15 March 2026</td>
-          {% if data['atwis-user-type'] == "team-leader" %}
           <td class="govuk-table__cell"><a href="#" class="govuk-link">Unallocate</a></td>
-          {% endif %}
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Susan Quantas</td>
@@ -153,20 +158,7 @@
             One off costs (SAE)
           </td>
           <td class="govuk-table__cell">15 March 2026</td>
-          {% if data['atwis-user-type'] == "team-leader" %}
           <td class="govuk-table__cell"><a href="#" class="govuk-link">Unallocate</a></td>
-          {% endif %}
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">{{ data['allocate-document'] }}</td>
-          <td class="govuk-table__cell">
-            <strong>3 documents</strong><br>
-            Change bank details<br>
-            Support Worker (multiple)<br>
-            Travel in work
-          </td>
-          <td class="govuk-table__cell">15 March 2026</td>
-          <td class="govuk-table__cell"><a href="unallocate-confirmation" class="govuk-link govuk-link--no-visited-state">Unallocate</a></td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">{{ data['allocate-document'] }}</td>
@@ -176,11 +168,56 @@
             One off costs (SAE)
           </td>
           <td class="govuk-table__cell">2 May 2026</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link govuk-link--no-visited-state">Unallocate</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Unallocate</a></td>
         </tr>
       </tbody>
     </table>
     <p class="govuk-body"><a href="{{versionPath}}/unallocated/unallocated-documents" class="govuk-link">Back to all unallocated envelopes</a></p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <form action="{{versionPath}}/documents/user-case-allocated1">
+    {% if userRole == "Case manager team leader" %} 
+      {{ govukSelect({
+        id: "allocate-document",
+        name: "allocate-document",
+        label: {
+          html: '<h2 class="govuk-heading-m">Who do you want to allocate this to?</h2>'
+        },
+        items: [
+        {
+            value: "blank",
+            text: "",
+            selected: true
+          },
+          {
+            value: "John Doe",
+            text: "John Doe"
+          },
+          {
+            value: "Susan Quantas",
+            text: "Susan Quantas"
+          },
+          {
+            value: "Savannah Eastwood",
+            text: "Savannah Eastwood"
+          },
+          {
+            value: "David Connolly",
+            text: "David Connolly"
+          },
+          {
+            value: "Sophia Wanless",
+            text: "Sophia Wanless"
+          }
+        ]
+      }) }}
+      {{ govukButton({
+        text: "Allocate envelope",
+        href: ""
+      }) }}
+    {% else %}
+    {% endif %}
+    </form>
   </div>
 </div>
 {% endblock %}

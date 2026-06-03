@@ -114,20 +114,25 @@
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
               <th class="govuk-table__header" scope="col">Allocated to</th>
-              <th class="govuk-table__header" scope="col">Number of documents</th>
+              <th class="govuk-table__header" scope="col">Document types</th>
               <th class="govuk-table__header" scope="col">Date scanned</th>
             </tr>
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">{{ data['allocate-document'] }}</td>
-              <td class="govuk-table__cell">3 documents</td>
+              <td class="govuk-table__cell">
+                <strong>3 documents</strong><br>
+                Change bank details<br>
+                Support Worker (multiple)<br>
+                Travel in work
+              </td>
               <td class="govuk-table__cell">15 March 2026</td>
             </tr>
           </tbody>
         </table>
         <button type="submit" class="govuk-button" data-module="govuk-button">Unallocate envelope</button>
-        <p class="govuk-body"><a href="user-case-allocated1" class="govuk-link">Cancel and return</a></p>
+        <p class="govuk-body"><a href="envelope-allocated2" class="govuk-link">Cancel and return</a></p>
       </form>
     </div>
   </div>

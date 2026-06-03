@@ -14,7 +14,7 @@
         actionHref: versionPath + "/select-user",
         container: true,
         navigation: {
-          selectedItem: "../your-cases",
+          selectedItem: "../unallocated/unallocated-main-page",
           items: [
                 {
                   href: "../your-cases",
@@ -89,14 +89,11 @@
   html: 'This is a prototype. It is not a real service.'
 }) }}
 
-
-{% endblock %}
-
 <div class="atw-key-details-wrapper">
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-2 atw-key-details-details ">John Davis</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-2 atw-key-details-details ">Gary Boyd</h1>
         <p class="govuk-body govuk-!-margin-bottom-1 atw-key-details-details"><strong>NI number:</strong> QQ740997O</p>
         <p class="govuk-body govuk-!-margin-bottom-1 atw-key-details-details"><strong>URN:</strong> 9590321167</p>
       </div>
@@ -104,12 +101,18 @@
   </div>
 </div>
 
+  {{ govukBackLink({
+    text: "Back",
+    href: "user-case-allocated2"
+  }) }}
+
+{% endblock %}
+
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <p class="govuk-body"><a href="user-case-allocated2" class="govuk-link govuk-link--no-visited-state">Back to all envelopes</a></p>
-      <h2 class="govuk-heading-l">Documents scanned on 23 February 2026</h2>
+      <h2 class="govuk-heading-l">Documents scanned on 15 March 2026</h2>
       <table class="govuk-table">
         <caption class="govuk-table__caption govuk-table__caption--m">Document details</caption>
         <thead class="govuk-table__head">
@@ -121,7 +124,7 @@
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Change banks details</td>
+            <td class="govuk-table__cell">Change bank details</td>
             <td class="govuk-table__cell">AF572IP</td>
             <td class="govuk-table__cell"><a href="#">View b6af3cf0-31c1-4f6e-837d-9789731208d5</td>
           </tr>
@@ -140,9 +143,10 @@
       <h3 class="govuk-heading-m">DRS envelope ID</h3>
       <p class="govuk-body">Use the envelope ID to find these documents on DRS.</p>
       <p class="govuk-body govuk-!-margin-bottom-5">Envelope ID: 20260223983272208457</p>
+      <p class="govuk-body"><a href="{{versionPath}}/unallocated/unallocated-documents" class="govuk-link">Back to all unallocated envelopes</a></p>
     </div>
     <div class="govuk-grid-column-one-third">
-      <form action="envelope-unallocated2">
+      <form action="unallocate-confirmation2">
         <h2 class="govuk-heading-m">Allocated to</h2>
         <p class="govuk-body">{{ data['allocate-document'] }}</p>
         {{ govukButton({

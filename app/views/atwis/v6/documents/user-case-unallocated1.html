@@ -135,7 +135,7 @@
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header">Allocated to</th>
-          <th scope="col" class="govuk-table__header">Number of documents</th>
+          <th scope="col" class="govuk-table__header">Document types</th>
           <th scope="col" class="govuk-table__header">Date scanned</th>
           {% if data['atwis-user-type'] == "team-leader" %}
           <th scope="col" class="govuk-table__header">Action</th>
@@ -145,7 +145,12 @@
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">David Connolly</td>
-          <td class="govuk-table__cell">8 documents</td>
+          <td class="govuk-table__cell">
+            <strong>3 documents</strong><br>
+            Change bank details<br>
+            Travel in work<br>
+            Support Worker
+          </td>
           <td class="govuk-table__cell">15 March 2026</td>
           {% if data['atwis-user-type'] == "team-leader" %}
           <td class="govuk-table__cell"><a href="#" class="govuk-link">Unallocate</a></td>
@@ -153,7 +158,14 @@
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">Susan Quantas</td>
-          <td class="govuk-table__cell">5 documents</td>
+          <td class="govuk-table__cell">
+            <strong>5 documents</strong><br>
+            Invoice<br>
+            Support Worker<br>
+            Travel to work<br>
+            Change bank details<br>
+            One off costs (SAE)
+          </td>
           <td class="govuk-table__cell">15 March 2026</td>
           {% if data['atwis-user-type'] == "team-leader" %}
           <td class="govuk-table__cell"><a href="#" class="govuk-link">Unallocate</a></td>
@@ -164,7 +176,7 @@
     <p class="govuk-body"><a href="{{versionPath}}/unallocated/unallocated-documents" class="govuk-link">Back to all unallocated envelopes</a></p>
   </div>
   <div class="govuk-grid-column-one-third">
-    <form action="{{versionPath}}/documents/user-case-allocated1">
+    <form action="{{versionPath}}/documents/user-case-allocated1?success=true">
     {% if userRole == "Case manager team leader" %} 
       {{ govukSelect({
         id: "allocate-document",
@@ -200,6 +212,7 @@
           }
         ]
       }) }}
+      <input type="hidden" name="successBanner" value="true">
       {{ govukButton({
         text: "Allocate all envelopes",
         href: ""
