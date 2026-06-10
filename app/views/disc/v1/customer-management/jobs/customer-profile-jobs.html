@@ -1,0 +1,252 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "search-for-a-customer",
+          items: [
+              {
+                  href: "search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "select-report",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View customer profile – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search for a customer",
+      href: "../search/search-for-a-customer"
+    },
+    {
+      text: "Customer details",
+      href: "../profiles/existing-customer"
+    },
+    {
+      text: "View jobs",
+      href: "view-jobs"
+    },
+    {
+      text: "Employer and job details",
+      href: "job-details"
+    },
+    {
+      text: "Access to work periods",
+      href: "atw-periods"
+    },
+    {
+      text: "Access to work period",
+      href: "view-atw-period"
+    } 
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">John Smith Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>QQ123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
+    <div class="govuk-tabs">
+      <h1 class="govuk-tabs__title">View customer profile</h1>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/profiles/existing-customer">
+            Customer
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/jobs/view-jobs">
+            Jobs
+          </a>
+        </li>
+      </ul>
+      <div class="govuk-tabs__panel">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">View customer profile</h2>
+            <div class="moj-page-header-actions" style="justify-content: normal;">
+              <div class="moj-page-header-actions__title">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="profile-year">
+                    Profile year
+                  </label>
+                  <select class="govuk-select" id="profile-year" name="profile-year">
+                    <option value="2026" selected>2026</option>
+                    <option value="2025">2025</option>
+                    <option value="2024">2024</option>
+                    <option value="2023">2023</option>
+                  </select>
+                </div>
+              </div>
+              <div class="moj-page-header-actions__actions">
+                <div class="moj-button-group moj-button-group--inline">
+                  <button type="submit" class="govuk-button" data-module="govuk-button">
+                    View
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="moj-scrollable-pane" role="SAE" aria-label="SAE" tabindex="0">
+              <table class="govuk-table">
+                <caption class="govuk-table__caption">SAE</caption>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header"></th>
+                    <th scope="col" class="govuk-table__header"></th>
+                    <th scope="col" class="govuk-table__header">Jan</th>
+                    <th scope="col" class="govuk-table__header">Feb</th>
+                    <th scope="col" class="govuk-table__header">Mar</th>
+                    <th scope="col" class="govuk-table__header">Apr</th>
+                    <th scope="col" class="govuk-table__header">May</th>
+                    <th scope="col" class="govuk-table__header">Jun</th>
+                    <th scope="col" class="govuk-table__header">Juy</th>
+                    <th scope="col" class="govuk-table__header">Aug</th>
+                    <th scope="col" class="govuk-table__header">Sep</th>
+                    <th scope="col" class="govuk-table__header">Oct</th>
+                    <th scope="col" class="govuk-table__header">Nov</th>
+                    <th scope="col" class="govuk-table__header">Dec</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Anticipated</td>
+                    <td class="govuk-table__cell">£</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Actual</td>
+                    <td class="govuk-table__cell">£</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="moj-scrollable-pane" role="SW" aria-label="SW" tabindex="0">
+              <table class="govuk-table">
+                <caption class="govuk-table__caption">SW</caption>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header"></th>
+                    <th scope="col" class="govuk-table__header"></th>
+                    <th scope="col" class="govuk-table__header">Jan</th>
+                    <th scope="col" class="govuk-table__header">Feb</th>
+                    <th scope="col" class="govuk-table__header">Mar</th>
+                    <th scope="col" class="govuk-table__header">Apr</th>
+                    <th scope="col" class="govuk-table__header">May</th>
+                    <th scope="col" class="govuk-table__header">Jun</th>
+                    <th scope="col" class="govuk-table__header">Juy</th>
+                    <th scope="col" class="govuk-table__header">Aug</th>
+                    <th scope="col" class="govuk-table__header">Sep</th>
+                    <th scope="col" class="govuk-table__header">Oct</th>
+                    <th scope="col" class="govuk-table__header">Nov</th>
+                    <th scope="col" class="govuk-table__header">Dec</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Anticipated</td>
+                    <td class="govuk-table__cell">£</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">Actual</td>
+                    <td class="govuk-table__cell">£</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                    <td class="govuk-table__cell">0.00</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+
+          </div>
+          <div class="govuk-grid-column-one-third">
+          <h3 class="gem-c-related-navigation__main-heading">Other information</h3>
+          <p class="govuk-body"><a href="atw-periods" class="govuk-link govuk-link--no-visited-state">Atw periods</a></p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

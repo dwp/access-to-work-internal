@@ -4,7 +4,7 @@
 
 {{
         dwpHeader({
-            serviceName: "DiSC",
+            serviceName: "Access to Work - Case Management System",
             serviceHref: '/index',
             actionHref: "#",
             container: true,
@@ -63,7 +63,9 @@
             </div>
           </div>
           <p class="govuk-body">This job has now been added to the customer profile.</p>
-          <button type="submit" class="govuk-button" data-module="govuk-button">View job</button>
+          <form action="job-details" method="post">
+            <button type="submit" class="govuk-button" data-module="govuk-button">View job</button>
+          </form>
         </div>
       </div>
     </main>

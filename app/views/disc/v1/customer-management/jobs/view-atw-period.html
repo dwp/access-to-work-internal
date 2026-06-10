@@ -1,0 +1,175 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "search-for-a-customer",
+          items: [
+              {
+                  href: "search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "select-report",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  Access to Work period – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search for a customer",
+      href: "../search/search-for-a-customer"
+    },
+    {
+      text: "Customer details",
+      href: "../profiles/existing-customer"
+    },
+    {
+      text: "View jobs",
+      href: "view-jobs"
+    },
+    {
+      text: "Employer and job details",
+      href: "job-details"
+    },
+    {
+      text: "Access to work periods",
+      href: "atw-periods"
+    } 
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">John Smith Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>QQ123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
+    <div class="govuk-tabs">
+      <h1 class="govuk-tabs__title">Access to Work period</h1>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/profiles/existing-customer">
+            Customer
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/jobs/view-jobs">
+            Jobs
+          </a>
+        </li>
+      </ul>
+      <div class="govuk-tabs__panel">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">Access to Work period</h2>
+            <h3 class="govuk-heading-m">Period details</h3>
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Start date
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  12 May 2021
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  End date
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  12 May 2024
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Cost sharing applies
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Yes
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Employment status
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Employed
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Threshold amount
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  £300.00
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Threshold outstanding
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  £0.00
+                </dd>
+              </div>
+              </dl>
+              <h3 class="govuk-heading-m">All applications</h3>
+              <table class="govuk-table" data-module="moj-sortable-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header" aria-sort="ascending">Creation date</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">12 May 2024</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric"><a href="view-atw-period" class="govuk-link">View</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          <div class="govuk-grid-column-one-third">
+          <h3 class="gem-c-related-navigation__main-heading">Other information</h3>
+          <p class="govuk-body"><a href="job-details" class="govuk-link govuk-link--no-visited-state">View job</a></p>
+          <p class="govuk-body"><a href="customer-profile-jobs" class="govuk-link govuk-link--no-visited-state">View customer profile</a></p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

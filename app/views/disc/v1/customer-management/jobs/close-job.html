@@ -1,0 +1,108 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "search-for-a-customer",
+          items: [
+              {
+                  href: "../search/search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "select-report",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  Close job – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">John Smith Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>QQ123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
+    <form action="job-details-closed" method="post">
+      <h1 class="govuk-heading-l">Close job</h1>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group">
+          <legend class="govuk-fieldset__legend">
+            Date job ended
+          </legend>
+          <div class="govuk-date-input" id="job-close">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="job-close-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="job-close-day" name="job-close-day" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="job-close-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="job-close-month" name="job-close-month" type="text" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="job-close-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="job-close-year" name="job-close-year" type="text" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="255">
+        <label class="govuk-label" for="reason-closed">
+          Reason closed
+        </label>
+        <textarea class="govuk-textarea govuk-js-character-count" id="reason-closed" name="reasonClosed" rows="5" aria-describedby="reason-closed-info"></textarea>
+        <div id="reason-closed-info" class="govuk-hint govuk-character-count__message">
+          You can enter up to 200 characters
+        </div>
+      </div>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Close job
+      </button>
+    </form>
+    <p class="govuk-body">
+      <a href="job-details" class="govuk-link govuk-link--no-visited-state">Return to job details</a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}
