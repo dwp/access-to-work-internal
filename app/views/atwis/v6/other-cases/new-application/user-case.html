@@ -76,7 +76,7 @@
 {% endblock%}
 
 {% block pageTitle %}
-  Renewal case – {{ serviceName }}
+  New application – {{ serviceName }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -126,6 +126,11 @@
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-one-third"><p class="govuk-body"><strong>Condition</strong></p></div>
 <div class="govuk-grid-column-two-thirds"><p class="govuk-body">Deaf</p></div>
+</div>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-third"><p class="govuk-body"><strong>National Insurance Number</strong></p></div>
+<div class="govuk-grid-column-two-thirds"><p class="govuk-body">QQ 12 34 56 Z</p></div>
 </div>
 
 </div>
@@ -207,47 +212,265 @@
 {% endset -%}
 
 {% set applicationDetailsHtml %}
-<h2 class="govuk-heading-l">Copy this case over to DISC</h2>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h2 class="govuk-heading-l">Copy this case over to DISC</h2>
 
-<p class="govuk-body"><strong>Version of questions: </strong>1.19.0-rc</p>
+      <p class="govuk-body"><strong>Version of questions: </strong>1.19.0-rc</p>
 
-{{ govukAccordion({
-  id: "accordion-default",
-  items: [
-    {
-      heading: {
-        text: "About Alexandra Watson"
-      },
-      content: {
-        html: '<p class="govuk-body">This is the content for Writing well for the web.</p>'
-      }
-    },
-    {
-      heading: {
-        text: "Employment"
-      },
-      content: {
-        html: '<p class="govuk-body">This is the content for Writing well for specialists.</p>'
-      }
-    },
-    {
-      heading: {
-        text: "Support from Access to Work"
-      },
-      content: {
-        html: '<p class="govuk-body">This is the content for Know your audience.</p>'
-      }
-    },
-    {
-      heading: {
-        text: "Anything else"
-      },
-      content: {
-        html: '<p class="govuk-body">This is the content for How people read.</p>'
-      }
-    }
-  ]
-}) }}
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading"><span class="govuk-accordion__section-button" id="accordion-default-heading-1">About Alexandra Watson</span></h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+            <h3 class="govuk-heading-m">Alexandra Watson details</h3>
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Name</dt>
+                <dd class="govuk-summary-list__value">Alexandra Watson</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">National Insurance Number</dt>
+                <dd class="govuk-summary-list__value">QQ 12 34 56 Z</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Date of Birth</dt>
+                <dd class="govuk-summary-list__value">2 January 1990</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Address</dt>
+                <dd class="govuk-summary-list__value">1 Main Street<br> London<br> SW11 1AB</dd>
+              </div>
+            </dl>
+
+            <h3 class="govuk-heading-m">How we contact Alexandra Watson</h3>
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Who should we contact about your application?</dt>
+                <dd class="govuk-summary-list__value">Me</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Telephone number</dt>
+                <dd class="govuk-summary-list__value">07123456789</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Email address</dt>
+                <dd class="govuk-summary-list__value">a.watson@gmail.com</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">When are the best times to contact you?</dt>
+                <dd class="govuk-summary-list__value">Weekdays, 9am-5pm</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading"><span class="govuk-accordion__section-button" id="accordion-default-heading-2">Employment</span></h2>
+          </div>
+          <div id="accordion-default-content-2" class="govuk-accordion__section-content">
+            <h3 class="govuk-heading-m">Employment details</h3>
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Employment status</dt>
+                <dd class="govuk-summary-list__value">Registered director of a limited company</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Job title</dt>
+                <dd class="govuk-summary-list__value">Director</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Job description</dt>
+                <dd class="govuk-summary-list__value">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sagittis elit nibh, semper sagittis nisl condimentum non. Proin ac ornare nunc. Proin odio felis, mollis ut nisi quis, dignissim tempus elit. Sed viverra, neque sed consequat porttitor, orci est condimentum velit, sed pulvinar est urna nec nunc. Proin a finibus tortor. Phasellus rutrum dolor eu justo hendrerit eleifend. Duis porta elementum nunc et iaculis. In in dapibus enim, eu varius mi. Integer leo risus, posuere non molestie in, venenatis id ante. Morbi nec enim eleifend, elementum quam ac, ultricies urna. Mauris vitae vestibulum diam, pellentesque porttitor dui. Mauris sit amet ex vitae urna aliquam auctor vitae sed neque.</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">When did you start this job?</dt>
+                <dd class="govuk-summary-list__value">1 June 2024</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">What is your company registration number?</dt>
+                <dd class="govuk-summary-list__value">12345678</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Do you have a Unique Taxpayer Reference (UTR)?</dt>
+                <dd class="govuk-summary-list__value">Yes</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">What is your Unique Taxpayer Reference (UTR)?</dt>
+                <dd class="govuk-summary-list__value">1234567890</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">How many hours do you work per week?</dt>
+                <dd class="govuk-summary-list__value">40</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Which days of the week do you work?</dt>
+                <dd class="govuk-summary-list__value">
+                  <p class="govuk-body">Monday, Tuesday, Wednesday, Thursday, Friday</p>
+                  <p class="govuk-body">Alexandra Watson does not work flexibility or on a shift pattern</p>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Workplace address</dt>
+                <dd class="govuk-summary-list__value">1 Main Street<br> London<br> SW11 1AB</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading"><span class="govuk-accordion__section-button" id="accordion-default-heading-3">Conditions and disabilities</span></h2>
+          </div>
+          <div id="accordion-default-content-3" class="govuk-accordion__section-content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Health conditions or disabilities</dt>
+                <dd class="govuk-summary-list__value">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sagittis elit nibh, semper sagittis nisl condimentum non</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">How do your conditions or disabilities affect you at work?</dt>
+                <dd class="govuk-summary-list__value">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sagittis elit nibh, semper sagittis nisl condimentum non. Proin ac ornare nunc. Proin odio felis, mollis ut nisi quis, dignissim tempus elit. Sed viverra, neque sed consequat porttitor, orci est condimentum velit, sed pulvinar est urna nec nunc. Proin a finibus tortor. Phasellus rutrum dolor eu justo hendrerit eleifend. Duis porta elementum nunc et iaculis.</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading"><span class="govuk-accordion__section-button" id="accordion-default-heading-4">Support from Access to Work</span></h2>
+          </div>
+          <div id="accordion-default-content-4" class="govuk-accordion__section-content">
+            <h3 class="govuk-heading-m">Specialist equipment</h3>
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Does your condition mean that you need specialist equipment at work?</dt>
+                <dd class="govuk-summary-list__value">Yes</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Do you know what specialist equipment you need?</dt>
+                <dd class="govuk-summary-list__value">Yes, I know what I need</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">What specialist equipment do you need?</dt>
+                <dd class="govuk-summary-list__value">Ergonomic keyboard</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">How will this equipment help you at work?</dt>
+                <dd class="govuk-summary-list__value">Easier to type</dd>
+              </div>
+            </dl>
+            <h3 class="govuk-heading-m">Support worker</h3>
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Does your condition mean that you need a support worker at work?</dt>
+                <dd class="govuk-summary-list__value">Yes</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Do you know what type of support worker you need?</dt>
+                <dd class="govuk-summary-list__value">Yes, I know what I need</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Which type of support worker do you need?</dt>
+                <dd class="govuk-summary-list__value">A different type of support worker</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">What type of support worker do you need?</dt>
+                <dd class="govuk-summary-list__value">Test support worker</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">How will the Test support worker help you at work?</dt>
+                <dd class="govuk-summary-list__value">Help support at work</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Will you need this support worker on a temporary basis?</dt>
+                <dd class="govuk-summary-list__value">No</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">How many hours per week do you need this support at work?</dt>
+                <dd class="govuk-summary-list__value">32 hours per week</dd>
+              </div>
+            </dl>
+            <h3 class="govuk-heading-m">Mental health support</h3>
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Do you want to apply for mental health support from Access to Work?</dt>
+                <dd class="govuk-summary-list__value">No</dd>
+              </div>
+            </dl>
+            <h3 class="govuk-heading-m">Travelling to and from work</h3>
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Does your condition mean that it is difficult for you to drive or get public transport to work?</dt>
+                <dd class="govuk-summary-list__value">Yes</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">How do you get to and from work now?</dt>
+                <dd class="govuk-summary-list__value">Public transport</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">What type of support do you need to travel to work?</dt>
+                <dd class="govuk-summary-list__value">Taxi</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Which job do you need this travel to work support for?</dt>
+                <dd class="govuk-summary-list__value">Registered director of a limited company</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">How will support to travel to work meet your needs?</dt>
+                <dd class="govuk-summary-list__value">Help information</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">How many journeys will you need support for in a week?</dt>
+                <dd class="govuk-summary-list__value">10</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Will your journeys to and from work be between your home and work addresses?</dt>
+                <dd class="govuk-summary-list__value">No</dd>
+              </div>
+            </dl>
+            <h3 class="govuk-heading-m">Travelling during work</h3>
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Do you need support to travel to other locations during your working day?</dt>
+                <dd class="govuk-summary-list__value">Yes</dd>
+              </div>
+            </dl>
+            <h3 class="govuk-heading-m">Changes to workplace</h3>
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Does your condition mean that you would benefit from physical changes at your workplace?</dt>
+                <dd class="govuk-summary-list__value">Yes</dd>
+              </div>
+            </dl>
+            <h3 class="govuk-heading-m">Adaptations to your vehicle</h3>
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Does your condition mean that you need adaptations to the vehicle you use to travel to work?</dt>
+                <dd class="govuk-summary-list__value">Yes</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading"><span class="govuk-accordion__section-button" id="accordion-default-heading-5">Anything else</span></h2>
+          </div>
+          <div id="accordion-default-content-5" class="govuk-accordion__section-content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Do you have any other information you want to add to your application?</dt>
+                <dd class="govuk-summary-list__value">Yes</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Add anything else that you want to include in your application</dt>
+                <dd class="govuk-summary-list__value">Additional information text</dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <form action="user-case-info-copied#application-details" method="post" novalidate>
 
