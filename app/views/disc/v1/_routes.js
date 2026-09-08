@@ -27,3 +27,13 @@ router.post(versionPath + '/customer-management/jobs/workplace-contact-answer', 
 		response.redirect(versionPath + "/customer-management/jobs/workplace-contact-details")
 	}
 })
+
+router.post(versionPath + '/claims-management/search-for-a-payment/', function(request, response) {
+
+	var match = request.session.data['payment-search-results']
+	if (match == "Yes"){
+		response.redirect(versionPath + "/claims-management/payment-search-results/")
+	} else {
+		response.redirect(versionPath + "/claims-management/no-payment-search-results/")
+	}
+})

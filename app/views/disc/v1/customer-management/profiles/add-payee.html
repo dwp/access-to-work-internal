@@ -1,0 +1,284 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "search-for-a-customer",
+          items: [
+              {
+                  href: "search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "select-report",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View customer – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search for a customer",
+      href: "../search/search-for-a-customer"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+    <h2 class="govuk-heading-m">John Smith Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>QQ123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
+<!--date claim-->
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h3 class="govuk-fieldset__heading">
+                Add payee
+            </h3>
+            </legend>     
+            <!--div id="passport-issued-hint" class="govuk-label">
+            Date claim received
+            </div>
+            <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                </div>
+            </div>
+            <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                </div>
+            </div>
+            <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                </div>
+            </div>
+            </div>
+        </fieldset>
+        </div-->
+
+<!--payee type (optional)-->
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+            Payee type (optional)
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+        </div>
+
+<!--payee name-->
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+            Payee name
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+        </div>  
+        
+<!--status (optional)-->
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+            Status (optional)
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+        </div>    
+        
+    </div>
+
+    
+<!--contact details-->    
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h3 class="govuk-fieldset__heading">
+                Contact details
+            </h3>
+            </legend> 
+
+<!--address-->
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+            Address line 1
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+        </div> 
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+            Address line 2 (optional)
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+        </div> 
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="width-20">
+            Town or city
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="width-20">
+            County (optional)
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="width-20" name="width20" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="width-10">
+            Postcode
+        </label>
+        <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+            Telephone (optional)
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+        </div> 
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="width-10">
+            Extension (optional)
+        </label>
+        <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+            Email (optional)
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+        </div> 
+    </div>
+
+<!--bank details-->
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h3 class="govuk-fieldset__heading">
+                Bank details
+            </h3>
+            </legend> 
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+            Bank name (optional)
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+        </div> 
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+            Account name (optional)
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+        </div> 
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="width-5">
+            Sort code (optional)
+        </label>
+          <div id="account-number-hint" class="govuk-hint">
+            Must be between 6 and 8 digits long
+          </div>
+        <input class="govuk-input govuk-input--width-5" id="width-5" name="width5" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="width-10">
+            Account number (optional)
+        </label>
+          <div id="account-number-hint" class="govuk-hint">
+            Must be between 6 and 8 digits long
+          </div>
+        <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+        </div>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="width-10">
+            Building society number (optional)
+        </label>
+          <div id="account-number-hint" class="govuk-hint">
+            You can find it on your card, statement or passbook
+          </div>
+        <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+        </div>
+    </div>  
+    
+<!--RM details-->
+    <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h3 class="govuk-fieldset__heading">
+                RM details
+            </h3>
+            </legend> 
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+            RM Payee ID (Required for payment)
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+        </div> 
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+            RM Payee site code (Required for payment)
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+        </div> 
+    </div>     
+
+
+<br>
+      <a href="confirmation-add-payee" type="submit" class="govuk-button" data-module="govuk-button">
+      Add payee
+      </a>
+<br>
+      <a class="govuk-link govuk-link--no-visited-state" href="live-payee-results#payees">Return to live payee search results</a>
+
+    </div>
+</div>
+
+{% endblock %}

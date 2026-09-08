@@ -1,0 +1,230 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "search-for-a-customer",
+          items: [
+              {
+                  href: "search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "select-report",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View customer – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search for a customer",
+      href: "../search/search-for-a-customer"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">John Smith Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>QQ123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
+    <div class="govuk-tabs">
+      <h1 class="govuk-tabs__title">Employer and job details</h1>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/profiles/existing-customer">
+            Customer
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/jobs/jobs">
+            Jobs
+          </a>
+        </li>
+      </ul>
+
+      <div class="govuk-tabs__panel" id="customer">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+            <h2 class="govuk-heading-l">Element</h2>
+          </div>
+          <div class="govuk-grid-column-one-third">
+            <p class="govuk-body govuk-!-text-align-right"><a href="{{versionPath}}/customer-management/update-customer" class="govuk-link govuk-link--no-visited-state">Update customer details</a></p>
+          </div>
+        </div>
+
+
+        
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+<!--tables-->              
+<style>
+  #payments {
+  overflow-x: auto;
+  width: 100%;
+}
+
+#payments table {
+  min-width: 1200px;
+}  
+</style>
+
+          <table class="govuk-table" data-module="moj-sortable-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" aria-sort="none">Description</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Cost</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Delivery cost</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Installation cost</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Glasgow Disabled Persons Housing</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">£900.00</td>
+              <td class="govuk-table__cell">£100.00</td>
+              <td class="govuk-table__cell">£100.00</td>                      
+              <td class="govuk-table__cell">
+                <a class="govuk-link govuk-link--no-visited-state" href="../jobs/jobs">View</a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+<!--table ends here-->   
+
+
+            <h3 class="govuk-heading-m">Element details</h3>
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Element type</dt>
+                <dd class="govuk-summary-list__value">APE</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Sub-total</dt>
+                <dd class="govuk-summary-list__value">£900</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Employer voluntary contributions</dt>
+                <dd class="govuk-summary-list__value">[data input]</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Customer voluntary contributions</dt>
+                <dd class="govuk-summary-list__value">[data input]</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Business beneif cost share</dt>
+                <dd class="govuk-summary-list__value">[data input]</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Mandatory cost share</dt>
+                <dd class="govuk-summary-list__value">[data input]</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Threshold deduction</dt>
+                <dd class="govuk-summary-list__value">£300</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Threshold outstanding</dt>
+                <dd class="govuk-summary-list__value">£0</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Total non AtW costs</dt>
+                <dd class="govuk-summary-list__value">£300</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Total AtW costs</dt>
+                <dd class="govuk-summary-list__value">£600</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Total AtW costs alteration amount</dt>
+                <dd class="govuk-summary-list__value">[data input]</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Data submitted for decision</dt>
+                <dd class="govuk-summary-list__value">24/10/2006</dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">Decision</dt>
+                <dd class="govuk-summary-list__value">Approved</dd>
+              </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Date of decision</dt>
+              <dd class="govuk-summary-list__value">24/10/2006</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Authorised officer</dt>
+              <dd class="govuk-summary-list__value">Jane Doe</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Date support recieved</dt>
+              <dd class="govuk-summary-list__value">24/10/2006</dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Date claim recieved</dt>
+              <dd class="govuk-summary-list__value">[data input]</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Anticipated spend</dt>
+              <dd class="govuk-summary-list__value">£600</dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Actutal spend to date</dt>
+              <dd class="govuk-summary-list__value">[data input]</dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">Additional decision information</dt>
+              <dd class="govuk-summary-list__value">[data input]</dd>
+            </div>
+          </dl>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <h3 class="gem-c-related-navigation__main-heading">Other element actions</h3>
+          <p class="govuk-body"><a href="#" class="govuk-link">View all associated payments</a></p>
+          <p class="govuk-body"><a href="../../claims-management/select-payee-for-customer" class="govuk-link">Create payment</a></p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

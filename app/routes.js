@@ -15,7 +15,7 @@ router.use('/atwis/v6', require('./views/atwis/v6/_routes'))
 
 router.use('/disc/v1', require('./views/disc/v1/_routes'))
 
-// Add your routes here
+// Add your routes here 
 
 
 
@@ -175,10 +175,10 @@ router.post('/task-list', function (req, res) {
         const day = parseInt(req.body['self-employed-start-date-day'], 10)
         const month = parseInt(req.body['self-employed-start-date-month'], 10) - 1 // JavaScript months are 0-indexed
         const year = parseInt(req.body['self-employed-start-date-year'], 10)
-       
+
         const enteredDate = new Date(year, month, day)
         const cutoffDate = new Date(2025, 3, 6) // 6 April 2025 (month 3 = April)
-       
+
         if (enteredDate < cutoffDate) {
           res.redirect('/apply/v1/job/started-job/self-employed/tax-year-earnings')
         } else {
@@ -190,10 +190,10 @@ router.post('/task-list', function (req, res) {
         const day = parseInt(req.body['registered-director-start-date-day'], 10)
         const month = parseInt(req.body['registered-director-start-date-month'], 10) - 1 // JavaScript months are 0-indexed
         const year = parseInt(req.body['registered-director-start-date-year'], 10)
-       
+
         const enteredDate = new Date(year, month, day)
         const cutoffDate = new Date(2025, 3, 6) // 6 April 2025 (month 3 = April)
-       
+
         if (enteredDate < cutoffDate) {
           res.redirect('/apply/v1/job/started-job/registered-director/tax-year-earnings')
         } else {
@@ -261,7 +261,7 @@ router.post('/task-list', function (req, res) {
         }
     })
 
-    
+
 
     router.post('/days-will-work-answer', function(request, response) {
 
@@ -543,7 +543,7 @@ router.post('/task-list', function (req, res) {
         }
     })
 
-    
+
 
 router.post('/add-job-started-employed', function (req, res) {
     const newJob = {
@@ -562,7 +562,7 @@ router.post('/add-job-started-employed', function (req, res) {
 
     res.redirect('apply/v1/job/started-job/employed/another-job');
 });
-        
+
 router.post('/add-job-started-registered-director', function (req, res) {
     const newJob = {
         type: 'registered director',
@@ -661,17 +661,17 @@ router.post('/difficulty-driving-answer', function(request, response) {
 
 router.post('/travel-options', function (req, res) {
     const selections = req.body['travel-options'];
-   
+
     // If no checkbox selected
     if (!selections) {
       return res.redirect('/apply/v1/travel-to-work/how-you-travel');
     }
-   
+
     // If Option A is selected (can be a single string or an array)
     if (selections === 'Public transport' || (Array.isArray(selections) && selections.includes('Public transport'))) {
       return res.redirect('/apply/v1/travel-to-work/public-transport');
     }
-   
+
     // If Option A is not selected
     return res.redirect('/apply/v1/travel-to-work/need-travel-support');
   });
@@ -691,7 +691,7 @@ router.post('/need-travel-support', function (req, res) {
     const travelChoice = req.body['need-travel-support'];
 
     const multipleJobs = jobs.length > 1;
-   
+
     if (multipleJobs) {
       // Multiple jobs
       if (travelChoice === 'Taxi') {
@@ -715,9 +715,9 @@ router.post('/need-travel-support', function (req, res) {
 
   router.post('/multiple-jobs', function (req, res) {
     const travelChoice = req.session.data['need-travel-support'];
-   
+
     // No need to use or store req.body['job-for-transport']
-   
+
     // Redirect based on travel choice
     if (travelChoice === 'Taxi') {
       return res.redirect('/apply/v1/travel-to-work/taxi-help');
@@ -744,17 +744,17 @@ router.post('/need-travel-support', function (req, res) {
 
 router.post('/investigation-status', function (req, res) {
     const choice = req.body['investigation-status'];
-   
+
     req.session.data['investigation-status'] = choice;
-   
+
     if (choice === 'Yes') {
       // ✅ clear the checkbox value
       delete req.session.data['why-pause-deletion'];
     }
-   
+
   })
 
-  
+
 
 
 

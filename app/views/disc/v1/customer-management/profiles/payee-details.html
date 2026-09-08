@@ -1,0 +1,385 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "search-for-a-customer",
+          items: [
+              {
+                  href: "search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "select-report",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View customer – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search for a customer",
+      href: "../search/search-for-a-customer"
+    },
+    {
+      text: "Customer details",
+      href: "existing-customer"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">John Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>AA123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h1 class="govuk-tabs__title">Payment details</h1>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#payments">
+            Payments
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#payees">
+            Payees
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#element">
+            Element
+          </a>
+        </li>
+      </ul>
+
+  <div class="govuk-tabs__panel" id="payments">
+
+<style>
+  #payments {
+  overflow-x: auto;
+  width: 100%;
+}
+
+#payments table {
+  min-width: 1200px;
+}  
+</style>
+
+
+      <table class="govuk-table" data-module="moj-sortable-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" aria-sort="none">Element type</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Payment from</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Payment to</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">AtW amount</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Details</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Payee name</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Invoice ref</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Payment ID</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">ATW_Assmt</td>
+            <td class="govuk-table__cell">21/09/2024</td>
+            <td class="govuk-table__cell">21/09/2024</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">£100</td>
+            <td class="govuk-table__cell">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+            <td class="govuk-table__cell">Jules Walker</td>            
+            <td class="govuk-table__cell">123456</td>
+            <td class="govuk-table__cell">ABC1234</td>            
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state" href="add-payee">View</a>
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">ATW_Assmt</td>
+            <td class="govuk-table__cell">21/09/2024</td>
+            <td class="govuk-table__cell">21/09/2024</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">£100</td>
+            <td class="govuk-table__cell">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+            <td class="govuk-table__cell">Jules Walker</td>            
+            <td class="govuk-table__cell">123456</td>
+            <td class="govuk-table__cell">ABC1234</td>            
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state" href="add-payee">View</a>
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">ATW_Assmt</td>
+            <td class="govuk-table__cell">21/09/2024</td>
+            <td class="govuk-table__cell">21/09/2024</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">£100</td>
+            <td class="govuk-table__cell">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+            <td class="govuk-table__cell">Jules Walker</td>            
+            <td class="govuk-table__cell">123456</td>
+            <td class="govuk-table__cell">ABC1234</td>            
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state" href="add-payee">View</a>
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">ATW_Assmt</td>
+            <td class="govuk-table__cell">21/09/2024</td>
+            <td class="govuk-table__cell">21/09/2024</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">£100</td>
+            <td class="govuk-table__cell">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+            <td class="govuk-table__cell">Jules Walker</td>            
+            <td class="govuk-table__cell">123456</td>
+            <td class="govuk-table__cell">ABC1234</td>            
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state" href="add-payee">View</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+
+<!--Payee details-->  
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="payees">
+    <h2 class="govuk-heading-l" style="display: inline-block;">All payees for customer</h2>
+      <a href="search-live-payees#payees" style="float: right; vertical-align: bottom !important;" type="submit" class="govuk-button" data-module="govuk-button">
+      Search live payees
+      </a>
+
+      <table class="govuk-table" data-module="moj-sortable-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" aria-sort="ascending">Payee ID</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Payee type</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Payee name</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Payee status</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Decision</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">DISC0000000000</td>
+            <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
+            <td class="govuk-table__cell">John Smith</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Live</td>
+            <td class="govuk-table__cell">Approved</td>
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="update-payment">Update</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">DISC0000000000</td>
+            <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
+            <td class="govuk-table__cell">John Smith</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Live</td>
+            <td class="govuk-table__cell">Approved</td>
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Update</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">DISC0000000000</td>
+            <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
+            <td class="govuk-table__cell">John Smith</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Live</td>
+            <td class="govuk-table__cell">Approved</td>
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Update</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">DISC0000000000</td>
+            <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
+            <td class="govuk-table__cell">John Smith</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Live</td>
+            <td class="govuk-table__cell">Approved</td>
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Update</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">DISC0000000000</td>
+            <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
+            <td class="govuk-table__cell">John Smith</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Live</td>
+            <td class="govuk-table__cell">Approved</td>
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Update</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">DISC0000000000</td>
+            <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
+            <td class="govuk-table__cell">John Smith</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Live</td>
+            <td class="govuk-table__cell">Approved</td>
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Update</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">DISC0000000000</td>
+            <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
+            <td class="govuk-table__cell">John Smith</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Live</td>
+            <td class="govuk-table__cell">Approved</td>
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Update</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="floatRight">
+        {{ govukPagination({
+          next: {
+            href: "#"
+          },
+          items: [
+            {
+              number: 1,
+              current: true,
+              href: "#"
+            },
+            {
+              number: 2,
+              href: "#"
+            },
+            {
+              number: 3,
+              href: "#"
+            }
+          ]
+        }) }}
+      </div>
+<br>
+<br>
+
+  </div>
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="element">
+    <h2 class="govuk-heading-l">Element</h2>
+<style>
+  #payments {
+  overflow-x: auto;
+  width: 100%;
+}
+
+#payments table {
+  min-width: 1200px;
+}  
+</style>
+
+        <table class="govuk-table" data-module="moj-sortable-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" aria-sort="none">Element type</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Employer</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Description</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">AtW cost</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Decision</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">AtW period</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">APE</td>
+              <td class="govuk-table__cell">Glasgow Disabled Persons Housing</td>
+              <td class="govuk-table__cell">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">£600</td>
+              <td class="govuk-table__cell">Approved</td>
+              <td class="govuk-table__cell"></td>                      
+              <td class="govuk-table__cell">
+                <a class="govuk-link govuk-link--no-visited-state" href="../jobs/jobs">View</a>
+              </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">APE</td>
+              <td class="govuk-table__cell">Glasgow Disabled Persons Housing</td>
+              <td class="govuk-table__cell">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">£600</td>
+              <td class="govuk-table__cell">Approved</td>
+              <td class="govuk-table__cell"></td>                      
+              <td class="govuk-table__cell">
+                <a class="govuk-link govuk-link--no-visited-state" href="">View</a>
+              </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">APE</td>
+              <td class="govuk-table__cell">Glasgow Disabled Persons Housing</td>
+              <td class="govuk-table__cell">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">£600</td>
+              <td class="govuk-table__cell">Approved</td>
+              <td class="govuk-table__cell"></td>                      
+              <td class="govuk-table__cell">
+                <a class="govuk-link govuk-link--no-visited-state" href="">View</a>
+              </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">APE</td>
+              <td class="govuk-table__cell">Glasgow Disabled Persons Housing</td>
+              <td class="govuk-table__cell">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">£600</td>
+              <td class="govuk-table__cell">Approved</td>
+              <td class="govuk-table__cell"></td>                      
+              <td class="govuk-table__cell">
+                <a class="govuk-link govuk-link--no-visited-state" href="">View</a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,127 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+        dwpHeader({
+            serviceName: "Access to Work - Case Management System",
+            serviceHref: '/index',
+            actionHref: "#",
+            container: true,
+            navigation: {
+              selectedItem: "authorise-payments",
+              items: [
+                   {
+                      href: "../customer-management/search/search-for-a-customer",
+                      text: "Customer management"
+                    },
+                    {
+                      href: "authorise-payments",
+                      text: "Claims management"
+                    },
+                    {
+                      href: "select-report",
+                      text: "Business information"
+                    }
+              ]
+          }  
+        })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View payment details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search for a customer",
+      href: "#"
+    },
+    {
+      text: "Customer details",
+      href: "#"
+    },
+    {
+      text: "View jobs",
+      href: "#"
+    },
+    {
+      text: "Employer and job details",
+      href: "#"
+    }
+    
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">John Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span> AA123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>
+     <h2 class="govuk-heading-l">Update payee</h2>
+
+<!--Payment details-->     
+     <h3 class="govuk-heading-m">Payment details</h3>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Payee type</dt>
+          <dd class="govuk-summary-list__value">Employer</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Payee name</dt>
+          <dd class="govuk-summary-list__value">Nameofemployer</dd>
+        </div>        
+      </dl>
+
+<!--Status-->      
+      <div class="govuk-form-group">
+       <label class="govuk-label" for="sort">
+        Status
+       </label>
+       <select class="govuk-select" id="sort" name="sort">
+        <option value="updated" selected>Live</option>
+        <option value="views">Cancelled</option>
+        <option value="comments">Not live</option>
+       </select>
+      </div>
+
+<!--Bank details-->    
+    <h3 class="govuk-heading-m">Bank details</h3>  
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Bank name</dt>
+          <dd class="govuk-summary-list__value">testbank</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Account name</dt>
+          <dd class="govuk-summary-list__value">accountbank</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Sort code</dt>
+          <dd class="govuk-summary-list__value">000000</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Building society number</dt>
+          <dd class="govuk-summary-list__value">29 June 2026</dd>
+        </div>
+      </dl>
+
+  </div>
+</div>
+
+{% endblock %}

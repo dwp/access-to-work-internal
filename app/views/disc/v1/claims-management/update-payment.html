@@ -1,0 +1,394 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+        dwpHeader({
+            serviceName: "Access to Work - Case Management System",
+            serviceHref: '/index',
+            actionHref: "#",
+            container: true,
+            navigation: {
+              selectedItem: "authorise-payments",
+              items: [
+                   {
+                      href: "../customer-management/search/search-for-a-customer",
+                      text: "Customer management"
+                    },
+                    {
+                      href: "authorise-payments",
+                      text: "Claims management"
+                    },
+                    {
+                      href: "select-report",
+                      text: "Business information"
+                    }
+              ]
+          }  
+        })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View payment details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search for a customer",
+      href: "#"
+    },
+    {
+      text: "Customer details",
+      href: "#"
+    },
+    {
+      text: "View jobs",
+      href: "#"
+    },
+    {
+      text: "Employer and job details",
+      href: "#"
+    }
+    
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+    <h2 class="govuk-heading-l">Update payment</h2>
+<!--date claim-->
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h3 class="govuk-fieldset__heading">
+                Payment details
+            </h3>
+            </legend>     
+            <div id="passport-issued-hint" class="govuk-label">
+            Date claim received
+            </div>
+            <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                </div>
+            </div>
+            <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                </div>
+            </div>
+            <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                </div>
+            </div>
+            </div>
+        </fieldset>
+        </div>
+
+<!--additional invoice-->
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+            Additional invoice (optional)
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+        </div>
+
+<!--assessment details-->        
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+            Assessment/Element details (optional)
+        </label>
+        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+        </div>
+
+<!--no. of units-->
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="width-5">
+            No of units (optional)
+        </label>
+        <input class="govuk-input govuk-input--width-5" id="width-5" name="width5" type="text">
+        </div>
+
+<!--payment start date-->
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">    
+            <div id="passport-issued-hint" class="govuk-label">
+            Payment start date
+            </div>
+            <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                </div>
+            </div>
+            <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                </div>
+            </div>
+            <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                </div>
+            </div>
+            </div>
+        </fieldset>
+        </div>
+
+<!--payment end date-->
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">   
+            <div id="passport-issued-hint" class="govuk-label">
+            Payment end date
+            </div>
+            <div class="govuk-date-input" id="passport-issued">
+            <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                    Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                </div>
+            </div>
+            <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                    Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                </div>
+            </div>
+            <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                    Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                </div>
+            </div>
+            </div>
+        </fieldset>
+        </div>  
+        
+<!--payment AtW cost-->     
+        <div class="govuk-form-group">
+        <h3 class="govuk-label-wrapper">
+            <label class="govuk-label" for="cost-per-item">
+            Payment AtW cost
+            </label>
+        </h3>
+        <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-5" id="cost-per-item" name="costPerItem" type="text" spellcheck="false">
+        </div>
+        </div>
+
+<!--additional payment details-->        
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+            Additional payment details (optional)
+        </label>
+        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+        </div>
+
+<!--single table-->
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Payee for customer</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Payee ID</th>
+            <th scope="col" class="govuk-table__header">Payee type</th>
+            <th scope="col" class="govuk-table__header">Payee name</th>
+            <th scope="col" class="govuk-table__header">Payee status</th>
+            <th scope="col" class="govuk-table__header ">Address</th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">DISC0000000000</td>
+            <td class="govuk-table__cell">Customer</td>
+            <td class="govuk-table__cell">Jules Walker</td>
+            <td class="govuk-table__cell">Created</td>
+            <td class="govuk-table__cell">11 Church Street, London <br>Wandsworth</td>
+            <td class="govuk-table__cell"> <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="select-payee-customer">Change</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+<!--table-->
+
+      <table class="govuk-table" data-module="moj-sortable-table">
+        <caption class="govuk-table__caption">All elements for customer </caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col" id="cases-select-all" style="color:#005ea5;">Select</th>
+            <th scope="col" class="govuk-table__header" aria-sort="ascending">Element type</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Employer</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Description</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">AtW cost</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Decision</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">AtW period</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                <input type="checkbox" class="govuk-checkboxes__input" id="case-sam-smith">
+                <label class="govuk-label govuk-checkboxes__label" for="case-sam-smith">
+                  <span class="govuk-visually-hidden">Select Sam Smith</span>
+                </label>
+              </div>
+            </td>  
+            <td class="govuk-table__cell">Sam Smith</td>
+            <td class="govuk-table__cell" data-sort-value="6961">6,961 meters</td>
+            <td class="govuk-table__cell">South America</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">1897</td>
+            <td class="govuk-table__cell">South America</td>
+            <td class="govuk-table__cell">South America</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                <input type="checkbox" class="govuk-checkboxes__input" id="case-sara-williams" value="sara-williams">
+                <label class="govuk-label govuk-checkboxes__label" for="case-sara-williams">
+                  <span class="govuk-visually-hidden">Select Sara Williams</span>
+                </label>
+              </div>
+            </td>
+            <td class="govuk-table__cell">Sara Williams</td>
+            <td class="govuk-table__cell" data-sort-value="6194">6,194 meters</td>
+            <td class="govuk-table__cell">North America</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1913">1913</td>
+            <td class="govuk-table__cell">South America</td>
+            <td class="govuk-table__cell">South America</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                <input type="checkbox" class="govuk-checkboxes__input" id="case-alex-shepherd" value="alex-shepherd">
+                <label class="govuk-label govuk-checkboxes__label" for="case-alex-shepherd">
+                  <span class="govuk-visually-hidden">Select Alex Shepherd</span>
+                </label>
+              </div>
+            </td>
+            <td class="govuk-table__cell">Alex Shepherd</td>
+            <td class="govuk-table__cell" data-sort-value="5642">5,642 meters</td>
+            <td class="govuk-table__cell">Europe</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1874">1874</td>
+            <td class="govuk-table__cell">South America</td>
+            <td class="govuk-table__cell">South America</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                <input type="checkbox" class="govuk-checkboxes__input" id="case-manjit-singh" value="manjit-singh">
+                <label class="govuk-label govuk-checkboxes__label" for="case-manjit-singh">
+                  <span class="govuk-visually-hidden">Select Manjit Singh</span>
+                </label>
+              </div>
+            </td>
+            <td class="govuk-table__cell">Manjit Singh</td>
+            <td class="govuk-table__cell" data-sort-value="8850">8,850 meters</td>
+            <td class="govuk-table__cell">Asia</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1953">1953</td>
+            <td class="govuk-table__cell">South America</td>
+            <td class="govuk-table__cell">South America</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                <input type="checkbox" class="govuk-checkboxes__input" id="case-george-jones" value="george-jones">
+                <label class="govuk-label govuk-checkboxes__label" for="case-george-jones">
+                  <span class="govuk-visually-hidden">Select George Jones</span>
+                </label>
+              </div>
+            </td>
+            <td class="govuk-table__cell">George Jones</td>
+            <td class="govuk-table__cell" data-sort-value="5895">5,895 meters</td>
+            <td class="govuk-table__cell">Africa</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1889">1889</td>
+            <td class="govuk-table__cell">South America</td>
+            <td class="govuk-table__cell">South America</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                <input type="checkbox" class="govuk-checkboxes__input" id="case-ali-mohammed" value="ali-mohammed">
+                <label class="govuk-label govuk-checkboxes__label" for="case-ali-mohammed">
+                  <span class="govuk-visually-hidden">Select Ali Mohammed</span>
+                </label>
+              </div>
+            </td>
+            <td class="govuk-table__cell">Ali Mohammed</td>
+            <td class="govuk-table__cell" data-sort-value="4884">4,884 meters</td>
+            <td class="govuk-table__cell">Australia</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1962">1962</td>
+            <td class="govuk-table__cell">South America</td>
+            <td class="govuk-table__cell">South America</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                <input type="checkbox" class="govuk-checkboxes__input" id="case-tom-edwards" value="tom-edwards">
+                <label class="govuk-label govuk-checkboxes__label" for="case-tom-edwards">
+                  <span class="govuk-visually-hidden">Select Tom Edwards</span>
+                </label>
+              </div>
+            </td>
+            <td class="govuk-table__cell">Tom Edwards</td>
+            <td class="govuk-table__cell" data-sort-value="4897">4,897 meters</td>
+            <td class="govuk-table__cell">Antarctica</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1966">1966</td>
+            <td class="govuk-table__cell">South America</td>
+            <td class="govuk-table__cell">South America</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <a href="confirmation" type="submit" class="govuk-button" data-module="govuk-button">
+      Update payment
+      </a>
+<br>
+      <a class="govuk-link govuk-link--no-visited-state" href="select-payee-customer">Return to payment</a>
+
+    </div>
+</div>
+
+{% endblock %}

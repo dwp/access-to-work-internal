@@ -14,18 +14,20 @@
     "@ministryofjustice/frontend": "^8.0.0",
     "@x-govuk/govuk-prototype-filters": "^2.1.0",
     "govuk-frontend": "^5.13.0",
-    "govuk-prototype-kit": "13.18.1",
+    "govuk-prototype-kit": "^13.20.3",
     "hmrc-frontend": "6.109.0",
     "moment": "^2.30.1",
     "nhsuk-frontend": "^10.0.0",
     "qs": "^6.14.1",
-    "socket.io-parser": "^4.2.6"
+    "socket.io-parser": "^4.2.7"
   },
   "overrides": {
     "govuk-prototype-kit": {
+      "immutable": "5.1.8",
       "express": {
         "qs": "6.14.1"
       },
+      "form-data": "2.5.6",
       "body-parser": {
         "qs": "6.14.1"
       }
@@ -33,6 +35,6 @@
   },
   "devDependencies": {
     "husky": "^9.1.7",
-    "js-yaml": "^4.1.1"
+    "js-yaml": "^4.3.1"
   }
 }

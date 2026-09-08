@@ -69,7 +69,22 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">    
+  <div class="govuk-grid-column-full">   
+    
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+        </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+        New payment created
+        </h3>
+        <!--p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there’s a problem.</p-->
+    </div>
+    </div>
+
     <h2 class="govuk-heading-m">John Doe</h2>
     <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>AA123456B</p>
     <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
@@ -151,7 +166,7 @@
     </div>
     <div class="govuk-grid-column-one-third">
       <h3 class="gem-c-related-navigation__main-heading">Related content</h3>
-      <p class="govuk-body"><a href="payee-details" class="govuk-link">Payee details</a></p>
+      <p class="govuk-body"><a href="payee-details" class="govuk-link">View payee</a></p>
       <p class="govuk-body"><a href="manual-reconciliation" class="govuk-link">Manual reconciliation</a></p>
     </div>
     </div>

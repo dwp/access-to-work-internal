@@ -1,0 +1,175 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "search-for-a-customer",
+          items: [
+              {
+                  href: "search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "select-report",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View customer – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search for a customer",
+      href: "../search/search-for-a-customer"
+    },
+    {
+      text: "Customer details",
+      href: "existing-customer"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">John Smith Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span> AA123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">URN:</span> 12345678</p>
+     <h2 class="govuk-heading-l">Update payee</h2>
+
+<!--Payment details-->     
+     <h3 class="govuk-heading-m">Payment details</h3>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Payee type</dt>
+          <dd class="govuk-summary-list__value">Employer</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Payee name</dt>
+          <dd class="govuk-summary-list__value">Nameofemployer</dd>
+        </div>        
+      </dl>
+
+<!--Status-->      
+      <div class="govuk-form-group">
+       <label class="govuk-label" for="sort">
+        Status
+       </label>
+       <select class="govuk-select" id="sort" name="sort">
+        <option value="updated" selected>Partial</option>
+        <option value="views">Live</option>
+        <option value="views">Cancelled</option>
+        <option value="comments">Not live</option>
+       </select>
+      </div>
+
+<!--Contact details-->    
+    <h3 class="govuk-heading-m">Contact details</h3>  
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Address</dt>
+          <dd class="govuk-summary-list__value">53 Main Street, Wandsworth, SW11 1AB</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Postcode</dt>
+          <dd class="govuk-summary-list__value">SW11 1AB</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Telephone</dt>
+          <dd class="govuk-summary-list__value">01620123456</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Last updated</dt>
+          <dd class="govuk-summary-list__value">29 October 2026</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Extension</dt>
+          <dd class="govuk-summary-list__value">1011</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Email</dt>
+          <dd class="govuk-summary-list__value">email@gmail.com</dd>
+        </div>
+      </dl>
+
+<!--Bank details-->    
+    <h3 class="govuk-heading-m">Bank details</h3>  
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Bank name</dt>
+          <dd class="govuk-summary-list__value">testbank</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Account name</dt>
+          <dd class="govuk-summary-list__value">accountbank</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Sort code</dt>
+          <dd class="govuk-summary-list__value">000000</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Building account number</dt>
+          <dd class="govuk-summary-list__value">00000000</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Building society number</dt>
+          <dd class="govuk-summary-list__value">29000000</dd>
+        </div>
+      </dl>
+
+<!--RM details-->    
+    <h3 class="govuk-heading-m">RM details</h3>  
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+            RM Payee ID (Required for payments)
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+        </div>
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+            RM Payee site code (Required for payments)
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+        </div>   
+
+<!--Buttons-->        
+      <a href="confirmation-update-payee" type="submit" class="govuk-button" data-module="govuk-button">
+      Update payee
+      </a>
+<br>
+      <a class="govuk-link govuk-link--no-visited-state" href="live-payee-results#payees">Return to payee details</a>
+
+  </div>
+</div>
+
+{% endblock %}
