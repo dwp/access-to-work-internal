@@ -1,0 +1,89 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "search-for-a-customer",
+          items: [
+              {
+                  href: "search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "select-report",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View customer – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search for a customer",
+      href: "../search/search-for-a-customer"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">John Smith Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span> QQ123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>
+
+    <h2 class="govuk-heading-l">Update note</h2>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+            Title
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text" value="test note">
+        </div>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+            Details (optional)
+        </label>
+        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5">decription of details of note</textarea>
+        <div id="more-detail-hint" class="govuk-hint">
+            You have 4,0000 characters remaining
+        </div>
+        </div>
+
+<a class="govuk-button" data-module="govuk-button" href="view-notes" class="govuk-link">Update note</a>
+<p><a href="view-notes-customers" class="govuk-link">Return to customer note</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,144 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "search-for-a-customer",
+          items: [
+              {
+                  href: "search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "select-report",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View customer – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search for a customer",
+      href: "../search/search-for-a-customer"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Note deleted successfully.
+    </h3>
+    <p class="govuk-body">Contact <a class="govuk-notification-banner__link" href="#">example@department.gov.uk</a> if you think there’s a problem.</p>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">John Smith Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span> QQ123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>
+    <div class="govuk-tabs">
+      <h1 class="govuk-tabs__title">Customer details</h1>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/profiles/existing-customer">
+            Customer
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/jobs/jobs">
+            Jobs
+          </a>
+        </li>
+      </ul>
+
+      
+      <div class="govuk-tabs__panel" id="customer">
+            <div class="govuk-grid-column-two-thirds"> 
+            <h2 class="govuk-heading-l">Customer notes</h2>
+            </div>
+              <div class="govuk-grid-column-one-third" style="text-align: right;">
+              <form action="create-notes">
+              <button type="submit" class="govuk-button" data-module="govuk-button">Create note</button>
+              </form>
+              </div>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+            <table class="govuk-table govuk-table--small-text-until-tablet" data-module="moj-sortable-table">
+            <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header" aria-sort="none">Title</th>
+                <th scope="col" class="govuk-table__header " aria-sort="none">Text</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Created</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Updated</th>
+                <th scope="col" class="govuk-table__header" aria-sort="none">Actions</th>
+            </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">test note</td>
+                <td class="govuk-table__cell">decription of details of note</td>
+                <td class="govuk-table__cell">09 May 2006</td>
+                <td class="govuk-table__cell">09 May 2006</td>
+                <td class="govuk-table__cell"><a href="update-notes-customer" class="govuk-link">Update</a><a href="view-notes" class="govuk-link" style="border-left: 1px solid; border-left-color: #cecece; margin-left: 10px; padding-left: 10px;">View</a></td>
+            </tr>
+            </tbody>
+
+            <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell">initial contact</td>
+                <td class="govuk-table__cell">decription of details of note</td>
+                <td class="govuk-table__cell">09 May 2006</td>
+                <td class="govuk-table__cell">09 May 2006</td>
+
+                <td class="govuk-table__cell"><a href="../update-customer" class="govuk-link">Update</a><a href="../profiles/existing-customer" class="govuk-link" style="border-left: 1px solid; border-left-color: #cecece; margin-left: 10px; padding-left: 10px;">View</a></td>
+            </tr>
+            </tbody>
+
+            </table>
+            </div>
+        </div>    
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

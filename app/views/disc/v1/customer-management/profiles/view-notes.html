@@ -1,0 +1,105 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "search-for-a-customer",
+          items: [
+              {
+                  href: "search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "select-report",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View customer – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search for a customer",
+      href: "../search/search-for-a-customer"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">John Smith Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span> QQ123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>
+
+    <h2 class="govuk-heading-l">View note</h2>
+
+        <table class="govuk-table">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Title</th>
+            <td scope="col" class="govuk-table__cell">test note</td>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Details</th>
+            <td class="govuk-table__cell">decription of details of note</td>
+            </tr>
+            <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Created on</th>
+            <td class="govuk-table__cell">09 May 2006 11:30am</td>
+            </tr>
+            <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Created by</th>
+            <td class="govuk-table__cell">Kate Dunne</td>
+            </tr>
+            <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Total estimated pay</th>
+            <td class="govuk-table__cell">09 May 2006 11:30am</td>
+            </tr>
+            <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Updated by</th>
+            <td class="govuk-table__cell">Kate Dunne</td>
+            </tr>
+        </tbody>
+        </table>
+
+<a class="govuk-button" data-module="govuk-button" href="update-notes-customer" class="govuk-link">Update note</a>
+<a class="govuk-button govuk-button--secondary" data-module="govuk-button" href="delete-note" class="govuk-link">Delete note</a>
+
+<p><a href="update-notes-customer" class="govuk-link">Return to customer note</a></p>
+
+  </div>
+</div>
+
+{% endblock %}
