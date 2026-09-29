@@ -49,8 +49,8 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h2 class="govuk-heading-m">John Smith Doe</h2>
-    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>QQ123456B</p>
-    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span> QQ123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>
     <form class="form" action="workplace-contact-answer" method="post">
       <h1 class="govuk-heading-l">Update employer and job</h1>
       <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
@@ -110,33 +110,30 @@
               ] 
             }) }} 
 
-            {{ govukSelect({
-              id: "employmentStatus",
+            {{ govukRadios({
               name: "employmentStatus",
-              value: data['employmentStatus'] or "Employed",
-              label: {
-                text: "Employment status (optional)"
+              fieldset: {
+                legend: {
+                  text: "Employment status (optional)",
+                  isPageHeading: true
+                }
               },
-              classes: "govuk-!-width-full",
               items: [
                 {
-                  value: "",
-                  text: ""
-                },  
-                {
-                  value: "Employed",
+                  value: "employed",
                   text: "Employed"
                 },
                 {
-                  value: "Self-employed",
+                  value: "self-employed",
                   text: "Self-employed"
                 },
                 {
-                  value: "Unemployed",
+                  value: "unemployed",
                   text: "Unemployed"
-                } 
+                }
               ]
             }) }}
+
 
             {{ govukSelect({
               id: "jobStatus",
@@ -238,31 +235,7 @@
               }) }}
             {% endset -%}
 
-            {{ govukRadios({
-              name: "limitedCompany",
-              value: data['limitedCompany'] or "No",
-              fieldset: {
-                legend: {
-                  text: "Limited Company"
-                }
-              },
-              items: [
-                {
-                  value: "Yes",
-                  text: "Yes",
-                  conditional: {
-                    html: emailHtml
-                  }
-                },
-                {
-                  value: "No",
-                  text: "No",
-                  conditional: {
-                    html: noHtml
-                  }
-                }
-              ]
-            }) }}
+
           </div>
         </div>
         <div class="govuk-accordion__section">
@@ -500,6 +473,7 @@
                 }
               ]
             }) }}
+            
 
             {{ govukInput({
               label: {

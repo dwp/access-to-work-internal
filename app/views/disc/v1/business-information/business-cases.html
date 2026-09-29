@@ -1,0 +1,254 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "select-report",
+          items: [
+              {
+                  href: "../search/search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "select-report",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View Business cases – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search for a customer",
+      href: "../customer-management/search/search-for-a-customer"
+    },
+    {
+      text: "Customer details",
+      href: "../customer-management/profiles/existing-customer"
+    },
+    {
+      text: "View jobs",
+      href: "../customer-management/jobs/view-jobs"
+    },
+    {
+      text: "Empoloyer and job details",
+      href: "../customer-management/jobs/view-jobs/"
+    },
+    {
+      text: "All applications",
+      href: "../profiles/existing-customer"
+    },
+    {
+      text: "Applications",
+      href: "../customer-management/jobs/view-applicationss"
+    },
+    {
+      text: "Business cases",
+      href: "../business-information/view-business-cases"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">John Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span> AA123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>
+
+
+
+    <div class="govuk-tabs">
+      <h1 class="govuk-tabs__title">View Business cases</h1>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/profiles/existing-customer">
+            Customer
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/business-information/business-cases">
+            Jobs
+          </a>
+        </li>
+      </ul>
+
+
+
+<div class="govuk-tabs__panel" > <!--jobs tab starts here-->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" style="display: inline-block;">Business case</h2>
+      <p class="govuk-body" style="float: right; vertical-align: bottom !important;"><a href="update-business-case" class="govuk-link">Update business case</a></p>
+        <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Cost sharing applies</dt>
+          <dd class="govuk-summary-list__value">Yes</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Threshold outstanding</dt>
+          <dd class="govuk-summary-list__value">£1000</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Job requirements responsibilities and tasks</dt>
+          <dd class="govuk-summary-list__value">Description requirements responsibilities and tasks</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Effects of disability/medical condition - responsibilities task or 
+            targets the customer cannot reach</dt>
+          <dd class="govuk-summary-list__value">Description effects of disability/medical condition - responsibilities task or 
+            targets the customer cannot reach</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Effects of disability/medical condition & reasons</dt>
+          <dd class="govuk-summary-list__value">Description effects of disability/medical condition & reasons</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Standard support/provisions - What could be changed
+            to help the person carry out their job
+          </dt>
+          <dd class="govuk-summary-list__value">Description standard support/provisions - What could be changed
+            to help the person carry out their job</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Assigned officer</dt>
+          <dd class="govuk-summary-list__value">Kate Dunne</dd>
+        </div>
+      </dl>
+    </div> <!--grid 2/3-->
+
+    <div class="govuk-grid-column-one-third">
+      <h3 class="gem-c-related-navigation__main-heading">Other business case actions</h3>
+      <p class="govuk-body govuk-!-margin-bottom-1"><a href="../customer-management/jobs/view-applications" class="govuk-link">View application</a></p>
+      <p class="govuk-body govuk-!-margin-bottom-1"><a href="add-element" class="govuk-link">Add element</a></p>
+      <p class="govuk-body govuk-!-margin-bottom-1"><a href="add-options-business-case" class="govuk-link">Add option</a></p>
+      <p class="govuk-body govuk-!-margin-bottom-1"><a href="add-supplier-quote" class="govuk-link">Add supplier/quote</a></p>
+      <p class="govuk-body govuk-!-margin-bottom-1"><a href="submit-business-case-decision" class="govuk-link">Submit business case for decision</a></p>
+      <p class="govuk-body govuk-!-margin-bottom-1"><a href="record-decision-list" class="govuk-link">Record decision list</a></p>
+    </div>
+  </div> <!--grid-->
+
+
+          <table class="govuk-table" data-module="moj-sortable-table">             
+              <caption class="govuk-table__caption govuk-table__caption--m">AtW elements</caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Type</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Start date</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">End date</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">AtW cost</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Decision</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Submitted for approval date</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Decision date</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Support recieved start date</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">SW</td>
+                  <td class="govuk-table__cell">01 Jan 2027</td>
+                  <td class="govuk-table__cell">01 Jan 2028</td>
+                  <td class="govuk-table__cell">£2614.08</td>
+                  <td class="govuk-table__cell">Awaiting a decision</td>
+                  <td class="govuk-table__cell">21 Jul 2026</td>
+                  <td class="govuk-table__cell">21 Jul 2026</td>
+                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell"><a href="" class="govuk-link">View</a></td>
+                  
+                </tr>
+              </tbody>
+            </table>           
+
+<br>
+
+          <table class="govuk-table" data-module="moj-sortable-table">             
+              <caption class="govuk-table__caption govuk-table__caption--m">Options</caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Description</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Pros</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Cons</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Rec</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Description of business <br>case options</td>
+                  <td class="govuk-table__cell">Some pros of this business <br>case options</td>
+                  <td class="govuk-table__cell">Some cons of this business <br>case options</td>
+                  <td class="govuk-table__cell">Yes</td>
+                  <td class="govuk-table__cell">
+                    <a href="" class="govuk-link govuk-link--no-visited-state">Delete</a> |
+                    <a href="" class="govuk-link govuk-link--no-visited-state">View</a>
+                  </td>                 
+                </tr>
+              </tbody>
+            </table>  
+
+<br>
+
+          <table class="govuk-table" data-module="moj-sortable-table">             
+              <caption class="govuk-table__caption govuk-table__caption--m">Supplier/quote</caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Supplier</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Item</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Costs</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Actions</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">The name and some details of the supplier</td>
+                  <td class="govuk-table__cell">Description of the item</td>
+                  <td class="govuk-table__cell">100</td>
+                  <td class="govuk-table__cell">
+                    <a href="" class="govuk-link govuk-link--no-visited-state">Delete</a> |
+                    <a class="govuk-link govuk-link--no-visited-state" href="">View</a>
+                  </td>                 
+                </tr>
+              </tbody>
+            </table>              
+
+
+
+            
+    </div> <!--tabs close for jobs-->
+  </div> <!--tabs close for Tabs-->
+</div> <!--grid ends here-->
+ 
+
+{% endblock %}
+

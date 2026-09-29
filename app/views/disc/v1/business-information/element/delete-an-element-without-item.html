@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "select-report",
+          items: [
+              {
+                  href: "../search/search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "select-report",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View Business cases – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">John Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span> AA123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>
+
+
+        <div class="govuk-panel govuk-panel--interruption">
+        <h1 class="govuk-panel__title">
+            Are you sure you want to delete these element?
+        </h1>
+        <div class="govuk-panel__body">
+            <p class="govuk-body">You cannot undo this change.</p>
+        </div>
+        <div class="govuk-panel__actions">
+            <div class="govuk-button-group">
+            <a href="#" role="button" draggable="false" class="govuk-button govuk-button--inverse" data-module="govuk-button">
+                Delete element
+            </a>
+            <a class="govuk-link govuk-link--inverse" href="#">Return to business case</a>
+            </div>
+        </div>
+        </div>
+
+</div>
+</div>        
+
+
+{% endblock %}d

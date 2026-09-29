@@ -1,0 +1,86 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "search-for-a-customer",
+          items: [
+              {
+                  href: "../search/search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "select-report",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  Create application – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">John Smith Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span> QQ123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>
+
+      <h1 class="govuk-heading-l">Create application</h1>
+      <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="255">
+        <label class="govuk-label" for="reason-closed">
+          Proof of eligibility (optional)
+        </label>
+        <textarea class="govuk-textarea govuk-js-character-count" id="reason-closed" name="reasonClosed" rows="5" aria-describedby="reason-closed-info"></textarea>
+        <div id="reason-closed-info" class="govuk-hint govuk-character-count__message">
+          You can enter up to 200 characters
+        </div>
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="sort">
+            Owning advisor 
+        </label>
+        <select class="govuk-select" id="sort" name="sort">
+            <option value="Alex Venters" selected>Alex Venters</option>
+            <option value="Alvin Chan" >Alvin Chan</option>
+            <option value="Emilia Bromly">Emilia Bromly</option>
+            <option value="Shehnaz Salim">Shehnaz Salim</option>
+        </select>
+      </div>
+<br>
+      <a href="view-applications.html" class="govuk-button">Create application</a>
+
+    <p class="govuk-body">
+      <a href="all-applications.html" class="govuk-link govuk-link--no-visited-state">Return to all applications</a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}

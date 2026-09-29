@@ -100,26 +100,94 @@
        </select>
       </div>
 
-<!--Bank details-->    
-    <h3 class="govuk-heading-m">Bank details</h3>  
+<!--Contact details-->    
+    <h3 class="govuk-heading-m">Contact details</h3>  
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Bank name</dt>
-          <dd class="govuk-summary-list__value">testbank</dd>
+          <dt class="govuk-summary-list__key">Address</dt>
+          <dd class="govuk-summary-list__value">Street name and number <br> town or city</dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Account name</dt>
-          <dd class="govuk-summary-list__value">accountbank</dd>
+          <dt class="govuk-summary-list__key">Postcode</dt>
+          <dd class="govuk-summary-list__value">A11 1AA</dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Sort code</dt>
-          <dd class="govuk-summary-list__value">000000</dd>
+          <dt class="govuk-summary-list__key">Telephone</dt>
+          <dd class="govuk-summary-list__value"></dd>
         </div>
         <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">Building society number</dt>
+          <dt class="govuk-summary-list__key">Last updated</dt>
           <dd class="govuk-summary-list__value">29 June 2026</dd>
         </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Extension</dt>
+          <dd class="govuk-summary-list__value">+44</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Email</dt>
+          <dd class="govuk-summary-list__value">workemail@testemail.com</dd>
+        </div>        
       </dl>
+
+<!--Bank details--> 
+    <h3 class="govuk-heading-m">Bank details</h3>  
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+          Bank (optional)
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+          Account name (optional)
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="width-5">
+          Sort code (otional)
+        </label>
+        <div id="more-detail-hint" class="govuk-hint">
+          Must be 6 digits long
+        </div>        
+        <input class="govuk-input govuk-input--width-5" id="width-5" name="width5" type="text">
+      </div>  
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="width-10">
+          Account number (optional)
+        </label>
+        <div id="more-detail-hint" class="govuk-hint">
+          Must be 6 or 8 digits long
+        </div>         
+        <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="width-10">
+          Building society number (optional)
+        </label>
+        <div id="more-detail-hint" class="govuk-hint">
+          You can find it on your card, statement or passbook
+        </div>         
+        <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+      </div>          
+
+<!--RM details--> 
+    <h3 class="govuk-heading-m">RM details</h3>  
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+          RM Payee ID (Required for payments)
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+      </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name">
+          RM Payee site code (Required for payments)
+        </label>
+        <input class="govuk-input" id="event-name" name="eventName" type="text">
+      </div>   
+      
+      <a href="manual-reconciliation" class="govuk-button" data-module="govuk-button">Add payee</a>
+      <p class="govuk-body"><a href="manual-reconciliation" class="govuk-link">Return to payees search results</a></p>
 
   </div>
 </div>

@@ -1,0 +1,133 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "select-report",
+          items: [
+              {
+                  href: "../search/search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "select-report",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View Business cases – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">John Smith Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span> QQ123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>
+
+
+      <h2 class="govuk-fieldset__heading">Add business case options</h2>
+           
+<!--textarea fields-->       
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+            Description
+        </label>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-1" id="more-detail" name="moreDetail" rows="5">Description requirements responsibilities and tasks </textarea>
+        <div id="changedName-hint" class="govuk-hint">
+        You have 4,000 characters remaining
+        </div>
+        </div> 
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+            Pros
+        </label>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-1" id="more-detail" name="moreDetail" rows="5">Description effects of disability/medical condition - responsibilities task or targets the customer cannot reach</textarea>
+        <div id="changedName-hint" class="govuk-hint">
+        You have 4,000 characters remaining
+        </div>
+        </div>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+            Cons
+        </label>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-1" id="more-detail" name="moreDetail" rows="5">Description effects of disability/medical condition & reasons</textarea>
+        <div id="changedName-hint" class="govuk-hint">
+        You have 4,000 characters remaining
+        </div>
+        </div>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+            Standard support/provisions - What could be changed to help the person carry out their job
+        </label>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-1" id="more-detail" name="moreDetail" rows="5">Description standard support/provisions - What could be changed to help the person carry out their job</textarea>
+        <div id="changedName-hint" class="govuk-hint">
+        You have 4,000 characters remaining
+        </div>
+        </div>
+
+<!--Radios-->
+        <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+            <legend class="govuk-fieldset__legend">
+                Recommended
+            </legend>
+            
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="changedName">
+                Yes
+                </label>
+            </div>
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                No
+                </label>
+            </div>
+            </div>
+        </fieldset>
+        </div>        
+
+<!--button-->        
+
+        <a href="" class="govuk-button">Add option</a>
+        <p class="govuk-body govuk-!-margin-bottom-1"><a href="record-decision-list" class="govuk-link">Return to view business cases</a></p>
+
+  </div>
+</div>
+
+{% endblock %}
