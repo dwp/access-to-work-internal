@@ -1,0 +1,219 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "../business-information/view-business-cases",
+          items: [
+                {
+                  href: "../customer-management/search/search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "../claims-management/search-for-a-payment",
+                  text: "Claims management"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View Business cases – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">  
+    <div class="govuk-grid-column-three-quarters">
+    <h2 class="govuk-heading-m">John Smith Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span> QQ123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>
+
+<!--Radios-->
+
+    <h2 class="govuk-heading-l">Add element</h2>
+
+    <h3 class="govuk-heading-s">Select an element type</h3>
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="full">
+    Decription
+  </label>
+  <input class="govuk-input govuk-!-width-full" id="full" name="full" type="text">
+</div>
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="cost">
+      Cost
+    </label>
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-20" id="cost" name="cost" type="text" spellcheck="false">
+  </div>
+<br>
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Add item
+</button>
+</div>
+
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="cost">
+      Threshold outstanding
+    </label>
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-10" id="cost" name="cost" type="text" spellcheck="false" value="1000.00">
+  </div>
+</div>
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="cost">
+      Mandatory cost share (Optional)
+    </label>
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-10" id="cost" name="cost" type="text" spellcheck="false" value="1000.00">
+  </div>
+</div>
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="cost">
+      Threshold deduction (optional)
+    </label>
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-10" id="cost" name="cost" type="text" spellcheck="false" value="1000.00">
+  </div>
+</div>
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="cost">
+      Customer voluntary contribution (optional)
+    </label>
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-10" id="cost" name="cost" type="text" spellcheck="false" value="1000.00">
+  </div>
+</div>
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="cost">
+      Employer voluntary contribution (optional)
+    </label>
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-10" id="cost" name="cost" type="text" spellcheck="false" value="1000.00">
+  </div>
+</div>
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="cost">
+      Total AtW cost alteration amount (optional)
+    </label>
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-10" id="cost" name="cost" type="text" spellcheck="false" value="1000.00">
+  </div>
+</div>
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="cost">
+      Business benefit cost share (optional)
+    </label>
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-10" id="cost" name="cost" type="text" spellcheck="false" value="1000.00">
+  </div>
+<br>
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Calculate total
+</button>
+</div>
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="cost">
+      Item sub-total
+    </label>
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-10" id="cost" name="cost" type="text" spellcheck="false" value="1000.00">
+  </div>
+</div>
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="cost">
+      Total non ATW costs
+    </label>
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-10" id="cost" name="cost" type="text" spellcheck="false" value="1000.00">
+  </div>
+</div>
+
+<div class="govuk-form-group">
+    <label class="govuk-label" for="cost">
+      Total AtW cost
+    </label>
+  <div class="govuk-input__wrapper">
+    <div class="govuk-input__prefix" aria-hidden="true">£</div>
+    <input class="govuk-input govuk-input--width-10" id="cost" name="cost" type="text" spellcheck="false" value="1000.00">
+  </div>
+</div>
+
+<h2 class="govuk-heading-m">Additional Information</h2>
+<div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="1024" data-govuk-character-count-init="">
+  <label class="govuk-label" for="payment-team-additional">
+    Payment team additional information (optional)
+  </label>
+  <textarea class="govuk-textarea govuk-input--width-30" id="payment-team-additional" name="payment-team-additional" rows="5" aria-describedby="payment-team-additional-info"></textarea>
+  <div id="payment-team-additional-info" class="govuk-hint govuk-character-count__message govuk-visually-hidden">
+    You can enter up to 1024 characters
+  </div>
+  <div class="govuk-hint govuk-character-count__message govuk-character-count__status" aria-hidden="true">You have 1,024 characters remaining</div>
+  <div class="govuk-character-count__sr-status govuk-visually-hidden" aria-live="polite">You have 1,024 characters remaining</div>
+
+<div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="4000" data-govuk-character-count-init="">
+  <label class="govuk-label" for="additional-information">
+    Additional information (optional)
+  </label>
+  <textarea class="govuk-textarea  govuk-input--width-30" id="additional-information" name="additional-information" rows="5" aria-describedby="additional-information-info"></textarea><div id="additional-information-info" class="govuk-hint govuk-character-count__message govuk-visually-hidden">
+    You can enter up to 4000 characters
+  </div>
+  <div class="govuk-hint govuk-character-count__message govuk-character-count__status" aria-hidden="true">You have 4,000 characters remaining</div><div class="govuk-character-count__sr-status govuk-visually-hidden" aria-live="polite">You have 4,000 characters remaining</div>
+</div>  
+
+</div>
+
+<!--button-->        
+
+        <a href="view-element" class="govuk-button">Continue</a>
+        <p class="govuk-body govuk-!-margin-bottom-1"><a href="business-cases" class="govuk-link">Return to business cases</a></p>
+
+    </div>  
+  </div>
+</div>
+
+{% endblock %}

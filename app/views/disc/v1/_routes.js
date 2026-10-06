@@ -37,3 +37,13 @@ router.post(versionPath + '/claims-management/search-for-a-payment/', function(r
 		response.redirect(versionPath + "/claims-management/no-payment-search-results/")
 	}
 })
+
+router.post(versionPath + '/customer-management/business-cases/add-options-business-case', function(request, response) {
+
+	var match = request.session.data['addoptionsBusiness']
+	if (match == "Yes"){
+		response.redirect(versionPath + "/view-business-case-options/")
+	} else {
+		response.redirect(versionPath + "/claims-management/no-payment-search-results/")
+	}
+})

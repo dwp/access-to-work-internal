@@ -9,19 +9,15 @@
         actionHref: "#",
         container: true,
         navigation: {
-          selectedItem: "select-report",
+          selectedItem: "../business-information/view-business-cases",
           items: [
-              {
-                  href: "../search/search-for-a-customer",
+                {
+                  href: "../customer-management/search/search-for-a-customer",
                   text: "Customer management"
                 },
                 {
-                  href: "search-for-a-payment",
+                  href: "../claims-management/search-for-a-payment",
                   text: "Claims management"
-                },
-                {
-                  href: "select-report",
-                  text: "Business information"
                 }
           ]
       }  
@@ -97,7 +93,7 @@
           </a>
         </li>
         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-          <a class="govuk-tabs__tab" href="{{versionPath}}/business-information/business-cases">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/business-cases/business-cases">
             Jobs
           </a>
         </li>
@@ -149,7 +145,7 @@
 
     <div class="govuk-grid-column-one-third">
       <h3 class="gem-c-related-navigation__main-heading">Other business case actions</h3>
-      <p class="govuk-body govuk-!-margin-bottom-1"><a href="../customer-management/jobs/view-applications" class="govuk-link">View application</a></p>
+      <p class="govuk-body govuk-!-margin-bottom-1"><a href="../jobs/view-applications" class="govuk-link">View application</a></p>
       <p class="govuk-body govuk-!-margin-bottom-1"><a href="add-element" class="govuk-link">Add element</a></p>
       <p class="govuk-body govuk-!-margin-bottom-1"><a href="add-options-business-case" class="govuk-link">Add option</a></p>
       <p class="govuk-body govuk-!-margin-bottom-1"><a href="add-supplier-quote" class="govuk-link">Add supplier/quote</a></p>

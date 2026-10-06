@@ -1,0 +1,122 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "../business-information/view-business-cases",
+          items: [
+                {
+                  href: "../customer-management/search/search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "../claims-management/search-for-a-payment",
+                  text: "Claims management"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View Business cases – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">John Smith Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span> QQ123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>
+
+  <form class="form" action="addoptionsBusiness" method="post">
+      <h2 class=govuk-heading-l>Add business case option </h2>
+
+<!--textarea-->
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+            Description
+        </label>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-1" id="more-detail" name="moreDetail" rows="5" aria-roledescription="description-info"></textarea>
+          <div id="description-info" class="govuk-hint govuk-character-count__message">
+             You can enter up to 2048 characters
+          </div>
+        </div>
+
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+            Pros (optional)
+        </label>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-1" id="more-detail" name="moreDetail" rows="5" aria-roledescription="description-info"></textarea>
+          <div id="description-info" class="govuk-hint govuk-character-count__message">
+             You can enter up to 2048 characters
+          </div>
+        </div>
+        
+        <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+            Cons (optional)
+        </label>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-1" id="more-detail" name="moreDetail" rows="5" aria-roledescription="description-info"></textarea>
+          <div id="description-info" class="govuk-hint govuk-character-count__message">
+             You can enter up to 2048 characters
+          </div>
+        </div>        
+
+<!--radios-->      
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+    <legend class="govuk-fieldset__legend ">
+        Recommended
+    </legend>
+    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+        <label class="govuk-label govuk-radios__label" for="changedName-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+</form>  
+<!--button-->        
+
+
+<a href="view-business-case-options" class="govuk-button">Add option</a>
+
+<!--gov link-->
+        <p class="govuk-body govuk-!-margin-bottom-1"><a href="business-cases" class="govuk-link">Return to business cases</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

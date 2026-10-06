@@ -1,0 +1,144 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "../search/search-for-a-customer",
+          items: [
+              {
+                  href: "../search/search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "../claims-management/search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "../business-information/view-business-cases",
+                  text: "Business information"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  Access to Work periods – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search for a customer",
+      href: "../search/search-for-a-customer"
+    },
+    {
+      text: "Customer details",
+      href: "../profiles/existing-customer"
+    },
+    {
+      text: "View jobs",
+      href: "view-jobs"
+    },
+    {
+      text: "Employer and job details",
+      href: "job-details"
+    },
+    {
+      text: "All applications",
+      href: "all-applications"
+    },
+    {
+      text: "Applications",
+      href: "view-applications"
+    },
+    {
+      text: "Business caess",
+      href: "all-applications"
+    },
+    {
+      text: "Business case",
+      href: "all-applications"
+    }
+    
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">John Smith Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>QQ123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
+
+    <div class="govuk-tabs">
+      <h1 class="govuk-tabs__title">Access to Work periods</h1>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/profiles/existing-customer">
+            Customer
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/jobs/view-jobs">
+            Jobs
+          </a>
+        </li>
+      </ul>
+
+      <div class="govuk-tabs__panel">
+
+            <h2 class="govuk-heading-l" style="display: inline-block;">Business case option</h2>
+
+            <p class="govuk-body" style="float: right; vertical-align: bottom !important;"><a href="add-options-business-case" class="govuk-link govuk-link--no-visited-state">Update supplier/quote</a></p>
+   
+       
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Supplier</th>
+                <td class="govuk-table__cell">The name and some details of the supplier</td>
+                </tr>
+                <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Item</th>
+                <td class="govuk-table__cell">Description of the item</td>
+                </tr>
+                <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Cost</th>
+                <td class="govuk-table__cell">£100.00</td>
+                </tr>
+            </tbody>
+            </table>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

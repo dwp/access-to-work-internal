@@ -9,19 +9,15 @@
         actionHref: "#",
         container: true,
         navigation: {
-          selectedItem: "select-report",
+          selectedItem: "../business-information/view-business-cases",
           items: [
               {
-                  href: "../search/search-for-a-customer",
+                  href: "../customer-management/search/search-for-a-customer",
                   text: "Customer management"
                 },
                 {
-                  href: "search-for-a-payment",
+                  href: "../claims-management/search-for-a-payment",
                   text: "Claims management"
-                },
-                {
-                  href: "select-report",
-                  text: "Business information"
                 }
           ]
       }  
@@ -110,6 +106,7 @@
                       Create Business Cases
                     </a>
                   </div>
+                  
                 </div>
               </div>
             </div>
@@ -122,7 +119,7 @@
                     <strong>Created date:</strong> 21 June 2026
                 </p>
 
-                <a href="{{versionPath}}/business-information/business-cases" class="govuk-link">View Business Cases</a>
+                <a href="{{versionPath}}/customer-management/business-cases/business-cases" class="govuk-link">View Business Cases</a>
 
             </div>
 

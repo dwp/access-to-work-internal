@@ -9,18 +9,18 @@
         actionHref: "#",
         container: true,
         navigation: {
-          selectedItem: "search-for-a-customer",
+          selectedItem: "../search/search-for-a-customer",
           items: [
               {
                   href: "../search/search-for-a-customer",
                   text: "Customer management"
                 },
                 {
-                  href: "search-for-a-payment",
+                  href: "../claims-management/search-for-a-payment",
                   text: "Claims management"
                 },
                 {
-                  href: "select-report",
+                  href: "../business-information/view-business-cases",
                   text: "Business information"
                 }
           ]
@@ -67,7 +67,7 @@
     <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>
 
     <div class="govuk-tabs">
-      <h1 class="govuk-tabs__title">View Jobs</h1>
+      <h2 class="govuk-tabs__title">View Jobs</h2>
       <ul class="govuk-tabs__list">
         <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/profiles/existing-customer">
@@ -80,13 +80,16 @@
           </a>
         </li>
       </ul>
+
       <div class="govuk-tabs__panel">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-full">
+
             <div class="moj-page-header-actions">
               <div class="moj-page-header-actions__title">
                 <h2 class="govuk-heading-l">View jobs</h2>
               </div>
+
               <div class="moj-page-header-actions__actions">
                 <div class="moj-button-group moj-button-group--inline">
                   <form action="create-new-job.html">
@@ -96,7 +99,9 @@
                   </form>
                 </div>
               </div>
+
             </div>
+            
           </div>
         </div>
         <div class="govuk-grid-row">

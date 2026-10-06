@@ -9,19 +9,15 @@
         actionHref: "#",
         container: true,
         navigation: {
-          selectedItem: "select-report",
+          selectedItem: "../business-information/view-business-cases",
           items: [
-              {
-                  href: "../search/search-for-a-customer",
+                {
+                  href: "../customer-management/search/search-for-a-customer",
                   text: "Customer management"
                 },
                 {
-                  href: "search-for-a-payment",
+                  href: "../claims-management/search-for-a-payment",
                   text: "Claims management"
-                },
-                {
-                  href: "select-report",
-                  text: "Business information"
                 }
           ]
       }  
@@ -43,36 +39,33 @@
 }) }}
 
 
+
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">    
-    <h2 class="govuk-heading-m">John Doe</h2>
+    <h2 class="govuk-heading-m">John TestDoe</h2>
     <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span> AA123456B</p>
     <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>
 
 
-        <div class="govuk-panel govuk-panel--interruption">
-        <h1 class="govuk-panel__title">
-            Are you sure you want to delete these element?
-        </h1>
-        <div class="govuk-panel__body">
-            <p class="govuk-body">You cannot undo this change.</p>
+    <div class="govuk-panel govuk-panel--interruption">
+    <h2 class="govuk-panel__title">
+        Are you sure that you want to delete this supplier/quote?
+    </h2>
+    <div class="govuk-panel__body">
+        <p class="govuk-body">You cannot undo this change.</p>
+    </div>
+    <div class="govuk-panel__actions">
+        <div class="govuk-button-group">
+        <a href="#" role="button" draggable="false" class="govuk-button govuk-button--inverse" data-module="govuk-button">
+            Delete supplier/quote
+        </a>
+        <a class="govuk-link govuk-link--inverse" href="business-cases">Return to business case</a>
         </div>
-        <div class="govuk-panel__actions">
-            <div class="govuk-button-group">
-            <a href="#" role="button" draggable="false" class="govuk-button govuk-button--inverse" data-module="govuk-button">
-                Delete element
-            </a>
-            <a class="govuk-link govuk-link--inverse" href="#">Return to business case</a>
-            </div>
-        </div>
-        </div>
+    </div>
+    </div>
 
-</div>
-</div>        
-
-
-{% endblock %}d
+{% endblock %}    

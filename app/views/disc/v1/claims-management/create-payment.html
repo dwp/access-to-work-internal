@@ -9,20 +9,20 @@
             actionHref: "#",
             container: true,
             navigation: {
-              selectedItem: "authorise-payments",
+              selectedItem: "search-for-a-payment",
               items: [
-                   {
-                      href: "../customer-management/search/search-for-a-customer",
-                      text: "Customer management"
-                    },
-                    {
-                      href: "authorise-payments",
-                      text: "Claims management"
-                    },
-                    {
-                      href: "select-report",
-                      text: "Business information"
-                    }
+                {
+                  href: "../customer-management/search/search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "../business-information/view-business-cases",
+                  text: "Business information"
+                }
               ]
           }  
         })
@@ -231,7 +231,46 @@
             </div>
         </fieldset>
         </div>  
-        
+
+<!--Employer threshold outstanding-->     
+        <div class="govuk-form-group">
+        <h3 class="govuk-label-wrapper">
+            <label class="govuk-label" for="cost-per-item">
+            Employer threshold outstanding
+            </label>
+        </h3>
+        <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-5" id="cost-per-item" name="costPerItem" type="text" spellcheck="false">
+        </div>
+        </div>
+
+<!--Employer threshold deduction-->     
+        <div class="govuk-form-group">
+        <h3 class="govuk-label-wrapper">
+            <label class="govuk-label" for="cost-per-item">
+            Employer threshold deduction
+            </label>
+        </h3>
+        <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-5" id="cost-per-item" name="costPerItem" type="text" spellcheck="false">
+        </div>
+        </div>
+
+<!--Employer threshold amount cleared-->     
+        <div class="govuk-form-group">
+        <h3 class="govuk-label-wrapper">
+            <label class="govuk-label" for="cost-per-item">
+            Employer threshold amount cleared
+            </label>
+        </h3>
+        <div class="govuk-input__wrapper">
+            <div class="govuk-input__prefix" aria-hidden="true">£</div>
+            <input class="govuk-input govuk-input--width-5" id="cost-per-item" name="costPerItem" type="text" spellcheck="false">
+        </div>
+        </div>
+
 <!--payment AtW cost-->     
         <div class="govuk-form-group">
         <h3 class="govuk-label-wrapper">
@@ -250,15 +289,18 @@
         <label class="govuk-label" for="more-detail">
             Additional payment details (optional)
         </label>
-        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-1" id="more-detail" name="moreDetail" rows="5"></textarea>
+        <div id="changedName-hint" class="govuk-hint">
+          You have 4,000 characters remaining
+        </div>
         </div>
 
 
-      <a href="confirmation-new-payment-created" type="submit" class="govuk-button" data-module="govuk-button">
+      <a href="view-payment-details" type="submit" class="govuk-button" data-module="govuk-button">
       Create payment
       </a>
 <br>
-      <a class="govuk-link govuk-link--no-visited-state" href="select-payee-for-customer">Return to select a payee for customer</a>
+      <a class="govuk-link govuk-link--no-visited-state" href="select-payee-for-customer">Return to element</a>
 
         
     </div>

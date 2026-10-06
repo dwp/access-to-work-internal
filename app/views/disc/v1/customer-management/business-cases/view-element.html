@@ -1,0 +1,239 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "../business-information/view-business-cases",
+          items: [
+                {
+                  href: "../customer-management/search/search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "../claims-management/search-for-a-payment",
+                  text: "Claims management"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View Business cases – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search for a customer",
+      href: "../customer-management/search/search-for-a-customer"
+    },
+    {
+      text: "Customer details",
+      href: "../customer-management/profiles/existing-customer"
+    },
+    {
+      text: "View jobs",
+      href: "../customer-management/jobs/view-jobs"
+    },
+    {
+      text: "Empoloyer and job details",
+      href: "../customer-management/jobs/view-jobs/"
+    },
+    {
+      text: "All applications",
+      href: "../profiles/existing-customer"
+    },
+    {
+      text: "Applications",
+      href: "../customer-management/jobs/view-applicationss"
+    },
+    {
+      text: "Business cases",
+      href: "../business-information/view-business-cases"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">John Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span> AA123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>
+
+
+
+    <div class="govuk-tabs">
+      <h1 class="govuk-tabs__title">View Business cases</h1>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/profiles/existing-customer">
+            Customer
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/business-cases/business-cases">
+            Jobs
+          </a>
+        </li>
+      </ul>
+
+
+
+<div class="govuk-tabs__panel" > <!--jobs tab starts here-->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l">Business case</h2>
+     
+      <!--table-->
+          <table class="govuk-table" data-module="moj-sortable-table">             
+              <caption class="govuk-table__caption govuk-table__caption--m">AtW elements</caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Description</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Cost</th>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">testelement</td>
+                  <td class="govuk-table__cell">£300</td>                  
+                </tr>
+              </tbody>
+            </table>    
+
+    <!-- table-->        
+        <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Element type</dt>
+          <dd class="govuk-summary-list__value">Special aids and equipment</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Sub total</dt>
+          <dd class="govuk-summary-list__value">£1000.00</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Employer voluntary contribution</dt>
+          <dd class="govuk-summary-list__value">£0.00</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Customer voluntary contribution</dt>
+          <dd class="govuk-summary-list__value">£0.00</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Business benifit cost share</dt>
+          <dd class="govuk-summary-list__value">£0.00</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Mandatory cost share</dt>
+          <dd class="govuk-summary-list__value">£0.00</dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Threshold deduction</dt>
+          <dd class="govuk-summary-list__value"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Threshold outstanding</dt>
+          <dd class="govuk-summary-list__value"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Total non AtW costs</dt>
+          <dd class="govuk-summary-list__value"></dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Total AtW costs</dt>
+          <dd class="govuk-summary-list__value">£300.00</dd>
+        </div> 
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Total AtW costs alteration amount</dt>
+          <dd class="govuk-summary-list__value">£300.00</dd>
+        </div>   
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Date submitted for decision</dt>
+          <dd class="govuk-summary-list__value">17 June 2026</dd>
+        </div>   
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Decision</dt>
+          <dd class="govuk-summary-list__value">Approved</dd>
+        </div>   
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Date of decision</dt>
+          <dd class="govuk-summary-list__value">17 June 2026</dd>
+        </div>           
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Authorising officer</dt>
+          <dd class="govuk-summary-list__value">Kate Dunne</dd>
+        </div>           
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Date support received</dt>
+          <dd class="govuk-summary-list__value">17 June 2026</dd>
+        </div>   
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Date claim received</dt>
+          <dd class="govuk-summary-list__value">17 June 2026</dd>
+        </div>  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Anticipated spend</dt>
+          <dd class="govuk-summary-list__value"></dd>
+        </div>  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Actual spend to date</dt>
+          <dd class="govuk-summary-list__value">£300.00</dd>
+        </div>  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Additional decision information</dt>
+          <dd class="govuk-summary-list__value"></dd>
+        </div>  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Additional information (payment team)</dt>
+          <dd class="govuk-summary-list__value"></dd>
+        </div>  
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Additional information</dt>
+          <dd class="govuk-summary-list__value"></dd>
+        </div>  
+
+    </dl>
+    </div> <!--grid 2/3-->
+
+    <div class="govuk-grid-column-one-third">
+      <h3 class="gem-c-related-navigation__main-heading">Other business case actions</h3>
+      <p class="govuk-body govuk-!-margin-bottom-1"><a href="view-all-payments-associated-element" class="govuk-link">View all associated payments</a></p>
+      <p class="govuk-body govuk-!-margin-bottom-1"><a href="../../claims-management/create-payment" class="govuk-link">Create payment</a></p>
+    </div>
+  </div> 
+  
+  <!--grid-->
+         
+
+
+
+            
+    </div> <!--tabs close for jobs-->
+  </div> <!--tabs close for Tabs-->
+</div> <!--grid ends here-->
+ 
+
+{% endblock %}
+

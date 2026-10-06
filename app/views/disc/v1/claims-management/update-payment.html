@@ -9,20 +9,20 @@
             actionHref: "#",
             container: true,
             navigation: {
-              selectedItem: "authorise-payments",
+              selectedItem: "search-for-a-payment",
               items: [
-                   {
-                      href: "../customer-management/search/search-for-a-customer",
-                      text: "Customer management"
-                    },
-                    {
-                      href: "authorise-payments",
-                      text: "Claims management"
-                    },
-                    {
-                      href: "select-report",
-                      text: "Business information"
-                    }
+                {
+                  href: "../customer-management/search/search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "../business-information/view-business-cases",
+                  text: "Business information"
+                }
               ]
           }  
         })
@@ -70,6 +70,10 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
+    <h2 class="govuk-heading-m">John Doe</h2>
+    <p class="govuk-body govuk-!-margin-bottom-1"><span class="govuk-!-font-weight-bold">National insurance number:</span> AA123456B</p>
+    <p class="govuk-body govuk-!-margin-bottom-1"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>
+
     <h2 class="govuk-heading-l">Update payment</h2>
 <!--date claim-->
         <div class="govuk-form-group">
@@ -88,7 +92,7 @@
                 <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                     Day
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric" value="29">
                 </div>
             </div>
             <div class="govuk-date-input__item">
@@ -96,7 +100,7 @@
                 <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                     Month
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric" value="07">
                 </div>
             </div>
             <div class="govuk-date-input__item">
@@ -104,7 +108,7 @@
                 <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                     Year
                 </label>
-                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric" value="2026">
                 </div>
             </div>
             </div>
@@ -116,7 +120,7 @@
         <label class="govuk-label" for="event-name">
             Additional invoice (optional)
         </label>
-        <input class="govuk-input" id="event-name" name="eventName" type="text">
+        <input class="govuk-input" id="event-name" name="eventName" type="text" value="INV98765">
         </div>
 
 <!--assessment details-->        
@@ -124,7 +128,7 @@
         <label class="govuk-label" for="more-detail">
             Assessment/Element details (optional)
         </label>
-        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5">SW, </textarea>
         </div>
 
 <!--no. of units-->
@@ -134,6 +138,29 @@
         </label>
         <input class="govuk-input govuk-input--width-5" id="width-5" name="width5" type="text">
         </div>
+
+<!-- radios -->        
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
+            <legend class="govuk-fieldset__legend">             
+                Mark as 'RM rejected' (optional)              
+            </legend>
+            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="changedName">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div> 
 
 <!--payment start date-->
         <div class="govuk-form-group">
@@ -223,12 +250,17 @@
         <label class="govuk-label" for="more-detail">
             Additional payment details (optional)
         </label>
-        <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+        <textarea class="govuk-textarea govuk-!-margin-bottom-1" id="more-detail" name="moreDetail" rows="5"></textarea>
+        <div id="changedName-hint" class="govuk-hint">
+          You have 4,000 characters remaining
         </div>
+        </div>
+</div>        
 
 <!--single table-->
+     <div class="govuk-grid-column-full">
       <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--m">Payee for customer</caption>
+        <caption class="govuk-table__caption govuk-table__caption--m">Payee</caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Payee ID</th>
@@ -251,7 +283,33 @@
         </tbody>
       </table>
 
-<!--table-->
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Elements</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Element type</th>
+            <th scope="col" class="govuk-table__header">Employer</th>
+            <th scope="col" class="govuk-table__header">Description</th>
+            <th scope="col" class="govuk-table__header">AtW Cost</th>
+            <th scope="col" class="govuk-table__header ">Decision</th>
+            <th scope="col" class="govuk-table__header ">AtW Period</th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__cell">SW</td>
+            <td class="govuk-table__cell">Employer 2B</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">£6752.27</td>
+            <td class="govuk-table__cell">Approved</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"> <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="select-payee-customer">Change</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+<!--table>
 
       <table class="govuk-table" data-module="moj-sortable-table">
         <caption class="govuk-table__caption">All elements for customer </caption>
@@ -381,14 +439,15 @@
           </tr>
         </tbody>
       </table>
-
+    -->
+  
+<br>    
       <a href="confirmation" type="submit" class="govuk-button" data-module="govuk-button">
       Update payment
       </a>
 <br>
       <a class="govuk-link govuk-link--no-visited-state" href="select-payee-customer">Return to payment</a>
-
-    </div>
+ 
 </div>
-
+</div> 
 {% endblock %}

@@ -9,12 +9,20 @@
             actionHref: "#",
             container: true,
             navigation: {
-              selectedItem: "authorise-payments",
+              selectedItem: "../search/search-for-a-customer",
               items: [
-                   {
-                      href: "search-for-a-customer",
-                      text: "Customer management"
-                    }
+              {
+                  href: "../search/search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "../../claims-management/search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "../../business-information/view-business-cases",
+                  text: "Business information"
+                }
               ]
           }  
         })

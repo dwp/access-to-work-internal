@@ -9,20 +9,20 @@
             actionHref: "#",
             container: true,
             navigation: {
-              selectedItem: "customer-management",
+              selectedItem: "search-for-a-payment",
               items: [
-                   {
-                      href: "../customer-management/search/search-for-a-customer",
-                      text: "Customer management"
-                    },
-                    {
-                      href: "authorise-payments",
-                      text: "Claims management"
-                    },
-                    {
-                      href: "select-report",
-                      text: "Business information"
-                    }
+                {
+                  href: "../customer-management/search/search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "../business-information/view-business-cases",
+                  text: "Business information"
+                }
               ]
           }  
         })
@@ -51,7 +51,7 @@
     <h2 class="govuk-heading-m">John Doe</h2>
     <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>AA123456B</p>
     <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
-    <h1 class="govuk-heading-l">Add payee</h1>
+    <h2 class="govuk-heading-l">Add payee</h2>
     <form action="payee-details" method="post">
       
       <p class="govuk-body govuk-!-font-weight-bold">Are you sure you wish to reconcile payment option manually?</p>

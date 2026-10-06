@@ -9,20 +9,20 @@
             actionHref: "#",
             container: true,
             navigation: {
-              selectedItem: "authorise-payments",
+              selectedItem: "search-for-a-payment",
               items: [
-                   {
-                      href: "../customer-management/search/search-for-a-customer",
-                      text: "Customer management"
-                    },
-                    {
-                      href: "authorise-payments",
-                      text: "Claims management"
-                    },
-                    {
-                      href: "select-report",
-                      text: "Business information"
-                    }
+                {
+                  href: "../customer-management/search/search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                },
+                {
+                  href: "../business-information/view-business-cases",
+                  text: "Business information"
+                }
               ]
           }  
         })
@@ -186,8 +186,8 @@
         <input class="govuk-input" id="event-name" name="eventName" type="text">
       </div>   
       
-      <a href="manual-reconciliation" class="govuk-button" data-module="govuk-button">Add payee</a>
-      <p class="govuk-body"><a href="manual-reconciliation" class="govuk-link">Return to payees search results</a></p>
+      <a href="payee-details#payees" class="govuk-button" data-module="govuk-button">Add payee</a>
+      <p class="govuk-body"><a href="search-live-payee-results" class="govuk-link">Return to payees search results</a></p>
 
   </div>
 </div>
