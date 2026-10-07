@@ -10,17 +10,14 @@
         container: true,
         navigation: {
           selectedItem: "../search/search-for-a-customer",
-              {
+          items: [
+               {
                   href: "../search/search-for-a-customer",
                   text: "Customer management"
                 },
                 {
-                  href: "../claims-management/search-for-a-payment",
+                  href: "../../claims-management/search-for-a-payment",
                   text: "Claims management"
-                },
-                {
-                  href: "../business-information/view-business-cases",
-                  text: "Business information"
                 }
           ]
       }  
@@ -51,7 +48,7 @@
     <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span> QQ123456B</p>
     <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>
 
-      <h1 class="govuk-heading-l">Create application</h1>
+      <h2 class="govuk-heading-l">Create application</h2>
       <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="255">
         <label class="govuk-label" for="reason-closed">
           Proof of eligibility (optional)

@@ -66,7 +66,7 @@
     <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
 
     <div class="govuk-tabs" data-module="govuk-tabs">
-      <h1 class="govuk-tabs__title">Payment details</h1>
+      <h2 class="govuk-tabs__title">Payment details</h2>
       <ul class="govuk-tabs__list">
         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
           <a class="govuk-tabs__tab" href="#payments">
@@ -299,8 +299,10 @@
 
   </div>
 
+<!--element tabs-->  
+
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="element">
-    <h2 class="govuk-heading-l">Element</h2>
+    <h2 class="govuk-heading-l">All AtW elements for customer</h2>
 <style>
   #payments {
   overflow-x: auto;
@@ -333,7 +335,7 @@
               <td class="govuk-table__cell">Approved</td>
               <td class="govuk-table__cell"></td>                      
               <td class="govuk-table__cell">
-                <a class="govuk-link govuk-link--no-visited-state" href="../jobs/jobs">View</a>
+                <a class="govuk-link govuk-link--no-visited-state" href="../business-cases/view-element">View</a>
               </td>
             </tr>
 
@@ -376,9 +378,33 @@
           </tbody>
         </table>
 
-        </div>
+      <div class="floatRight">
+        {{ govukPagination({
+          next: {
+            href: "#"
+          },
+          items: [
+            {
+              number: 1,
+              current: true,
+              href: "#"
+            },
+            {
+              number: 2,
+              href: "#"
+            },
+            {
+              number: 3,
+              href: "#"
+            }
+          ]
+        }) }}
       </div>
-    </div>
+<br>
+<br>
+      </div>
+
+    </div> <!--tabs-->
   </div>
 </div>
 

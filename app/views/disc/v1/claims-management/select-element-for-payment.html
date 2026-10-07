@@ -1,0 +1,205 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+        dwpHeader({
+            serviceName: "Access to Work - Case Management System",
+            serviceHref: '/index',
+            actionHref: "#",
+            container: true,
+            navigation: {
+              selectedItem: "search-for-a-payment",
+              items: [
+                {
+                  href: "../customer-management/search/search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "search-for-a-payment",
+                  text: "Claims management"
+                }
+              ]
+          }  
+        })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View payment details – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+       {
+      text: "Search for a customer",
+      href: "../customer-management/search/search-for-a-customer"
+    },
+    {
+      text: "Customer details",
+      href: "../customer-management/search/customer-search-results"
+    },
+    {
+      text: "View jobs",
+      href: "../customer-management/jobs/view-jobs"
+    },
+    {
+      text: "Employer and job details",
+      href: "../customer-management/jobs/job-details"
+    }
+    
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-m">John Doe</h2>
+    <p class="govuk-body govuk-!-margin-bottom-1"><span class="govuk-!-font-weight-bold">National insurance number:</span> AA123456B</p>
+    <p class="govuk-body govuk-!-margin-bottom-1"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>    
+    <h2 class="govuk-heading-l">Select an element for the payment</h2>
+
+
+    <div class="govuk-inset-text">
+        You cannot select SAE, TiW or APE for this payment
+    </div>
+
+<!--table-->
+
+      <table class="govuk-table" data-module="moj-sortable-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" aria-sort="none">Element type</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Employer</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Description</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">AtW cost</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Decision</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">AtW period</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Actions</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">SW</td>
+            <td class="govuk-table__cell" data-sort-value="6961">Employer 2B</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">£6752.75</td>
+            <td class="govuk-table__cell">Approved</td>
+            <td class="govuk-table__cell">2006-05-12 - 2005-05-11</td>
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="update-payment">Select</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">SW</td>
+            <td class="govuk-table__cell" data-sort-value="6961">Employer 2B</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">£0.00</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>         
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Select</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">APE</td>
+            <td class="govuk-table__cell" data-sort-value="6961">Employer 2B</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">£0.00</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Select</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">APE</td>
+            <td class="govuk-table__cell" data-sort-value="6961">Employer 2B</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">£0.00</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Select</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">AV</td>
+            <td class="govuk-table__cell" data-sort-value="6961">Employer 2B</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">£0.00</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Select</a>
+            </td>
+          </tr>                    
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">AV</td>
+            <td class="govuk-table__cell" data-sort-value="6961">Employer 2B</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">£0.00</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Select</a>
+            </td>
+          </tr> 
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">AV</td>
+            <td class="govuk-table__cell" data-sort-value="6961">Employer 2B</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">£0.00</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Select</a>
+            </td>
+          </tr> 
+
+        </tbody>
+      </table>
+
+            <div class="floatRight">
+        {{ govukPagination({
+          next: {
+            href: "#"
+          },
+          items: [
+            {
+              number: 1,
+              current: true,
+              href: "#"
+            },
+            {
+              number: 2,
+              href: "#"
+            },
+            {
+              number: 3,
+              href: "#"
+            }
+          ]
+        }) }}
+      </div>
+
+
+
+    </div>
+          <p><a class="govuk-link govuk-link--no-visited-state" href="../customer-management/business-cases/view-element">Return to element</a></p>
+ 
+</div>
+
+{% endblock %}

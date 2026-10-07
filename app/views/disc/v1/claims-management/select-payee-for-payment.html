@@ -67,9 +67,9 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
     <h2 class="govuk-heading-m">John Doe</h2>
-    <p class="govuk-body govuk-!-margin-bottom-1"><span class="govuk-!-font-weight-bold">National insurance number:</span> AA123456B</p>
-    <p class="govuk-body govuk-!-margin-bottom-1"><span class="govuk-!-font-weight-bold">Unique reference number:</span> 12345678</p>      
-    <h2 class="govuk-heading-l">Select a payee for customer</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>AA123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
+    <h2 class="govuk-heading-l">Select a payee for payment</h2>
 
 <!--table-->
 
@@ -92,8 +92,7 @@
             <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Certified</td>
             <td class="govuk-table__cell">53 Main Street <br>London Wandsworth</td>
             <td class="govuk-table__cell">
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="payee-details#payees">View</a> |
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="create-payment">Select</a>
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="update-payment">Select</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
@@ -103,7 +102,6 @@
             <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Certified</td>
             <td class="govuk-table__cell">53 Main Street <br>London Wandsworth</td>
             <td class="govuk-table__cell">
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
               <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Select</a>
             </td>
           </tr>
@@ -114,81 +112,13 @@
             <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Certified</td>
             <td class="govuk-table__cell">53 Main Street <br>London Wandsworth</td>
             <td class="govuk-table__cell">
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
               <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Select</a>
             </td>
           </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">DISC0000000000</td>
-            <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
-            <td class="govuk-table__cell">John Smith</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Certified</td>
-            <td class="govuk-table__cell">53 Main Street <br>London Wandsworth</td>
-            <td class="govuk-table__cell">
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Select</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">DISC0000000000</td>
-            <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
-            <td class="govuk-table__cell">John Smith</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Certified</td>
-            <td class="govuk-table__cell">53 Main Street <br>London Wandsworth</td>
-            <td class="govuk-table__cell">
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Select</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">DISC0000000000</td>
-            <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
-            <td class="govuk-table__cell">John Smith</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Certified</td>
-            <td class="govuk-table__cell">53 Main Street <br>London Wandsworth</td>
-            <td class="govuk-table__cell">
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Select</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">DISC0000000000</td>
-            <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
-            <td class="govuk-table__cell">John Smith</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Certified</td>
-            <td class="govuk-table__cell">53 Main Street <br>London Wandsworth</td>
-            <td class="govuk-table__cell">
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Select</a>
-            </td>
-          </tr>
+
+
         </tbody>
       </table>
-
-            <div class="floatRight">
-        {{ govukPagination({
-          next: {
-            href: "#"
-          },
-          items: [
-            {
-              number: 1,
-              current: true,
-              href: "#"
-            },
-            {
-              number: 2,
-              href: "#"
-            },
-            {
-              number: 3,
-              href: "#"
-            }
-          ]
-        }) }}
-      </div>
-
-
 
     </div>
           <p><a class="govuk-link govuk-link--no-visited-state" href="payee-details">Return to payee</a></p>

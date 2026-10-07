@@ -40,7 +40,7 @@
 
 {{ govukBreadcrumbs({
   items: [
-  {
+    {
       text: "Search for a customer",
       href: "../customer-management/search/search-for-a-customer"
     },
@@ -49,12 +49,16 @@
       href: "../customer-management/search/customer-search-results"
     },
     {
-      text: "View jobs",
-      href: "../customer-management/jobs/view-jobs"
+      text: "All payees for customer",
+      href: "view-all-payee-customer"
     },
     {
-      text: "Employer and job details",
-      href: "../customer-management/jobs/job-details"
+      text: "Search for a live payee",
+      href: "search-live-payee-results#payees"
+    }
+    {
+      text: "Live payee search results",
+      href: "search-live-payee#payees"
     }
     
   ]
@@ -177,74 +181,72 @@
 
 <!-- tab for payees--> 
   <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="payees">
-<!--button and h2 tag-->
+<!--h2 tag-->
 
-    <div style="display: flex; justify-content: space-between; align-items: center;">
         <h2 class="govuk-heading-l" style="margin-bottom: 0;">
-            All payee for customer
+            Select payee type
         </h2>
 
-        <a href="search-live-payee-results#payees"
-        class="govuk-button"
-        style="margin-right: 0; margin-bottom: 0;">
-            Search live payee
-        </a>
-    </div>
 <br>
 
             <table class="govuk-table" data-module="moj-sortable-table">
               <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
-                  <th scope="col" class="govuk-table__header" aria-sort="none">Payee ID</th>
                   <th scope="col" class="govuk-table__header" aria-sort="none">Payee type</th>
-                  <th scope="col" class="govuk-table__header" aria-sort="none">Payee name</th>
-                  <th scope="col" class="govuk-table__header" aria-sort="none">Payee status</th>
-                  <th scope="col" class="govuk-table__header" aria-sort="none">Decision</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Employer name</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Contact type</th>
+                  <th scope="col" class="govuk-table__header" aria-sort="none">Address</th>                  
                   <th scope="col" class="govuk-table__header" aria-sort="none">Actions</th>
-
                 </tr>
               </thead>
+
               <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">DISC0000000000</td>
-                  <td class="govuk-table__cell">Other</td>
-                  <td class="govuk-table__cell">testpayee</td>
-                  <td class="govuk-table__cell">Live</td>
-                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell">Employer</td>
+                  <td class="govuk-table__cell">Nameofemployer</td>
+                  <td class="govuk-table__cell">Correspondence</td>
+                  <td class="govuk-table__cell">Street name, city and postcode</td>                 
                   <td class="govuk-table__cell">
-                    <a href="" class="govuk-link">View</a> | 
-                    <a href="" class="govuk-link">Update</a>
+                    <a href="payee-update.html" class="govuk-link">Select</a>
                   </td>
                 </tr>
               </tbody>
 
               <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">DISC0000000000</td>
-                  <td class="govuk-table__cell">Other</td>
-                  <td class="govuk-table__cell">testpayee</td>
-                  <td class="govuk-table__cell">Live</td>
-                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell">Employer</td>
+                  <td class="govuk-table__cell">Nameofemployer</td>
+                  <td class="govuk-table__cell">Correspondence</td>
+                  <td class="govuk-table__cell">Street name, city and postcode</td>                 
                   <td class="govuk-table__cell">
-                    <a href="" class="govuk-link">View</a> | 
-                    <a href="" class="govuk-link">Update</a>
+                    <a href="" class="govuk-link">Select</a>
                   </td>
                 </tr>
               </tbody>
 
               <tbody class="govuk-table__body">
                 <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">DISC0000000000</td>
-                  <td class="govuk-table__cell">Other</td>
-                  <td class="govuk-table__cell">testpayee</td>
-                  <td class="govuk-table__cell">Live</td>
-                  <td class="govuk-table__cell"></td>
+                  <td class="govuk-table__cell">Employer</td>
+                  <td class="govuk-table__cell">Nameofemployer</td>
+                  <td class="govuk-table__cell">Correspondence</td>
+                  <td class="govuk-table__cell">Street name, city and postcode</td>                 
                   <td class="govuk-table__cell">
-                    <a href="" class="govuk-link">View</a> | 
-                    <a href="" class="govuk-link">Update</a>
+                    <a href="" class="govuk-link">Select</a>
                   </td>
                 </tr>
               </tbody>
+              
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">Employer</td>
+                  <td class="govuk-table__cell">Nameofemployer</td>
+                  <td class="govuk-table__cell">Correspondence</td>
+                  <td class="govuk-table__cell">Street name, city and postcode</td>                 
+                  <td class="govuk-table__cell">
+                    <a href="" class="govuk-link">Select</a>
+                  </td>
+                </tr>
+              </tbody>              
 
             </table>
 
@@ -252,33 +254,6 @@
 
       </div>
     </div>
-
-    <!--table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Case manager</th>
-          <th scope="col" class="govuk-table__header">Cases opened</th>
-          <th scope="col" class="govuk-table__header">Cases closed</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">David Francis</td>
-          <td class="govuk-table__cell">24</td>
-          <td class="govuk-table__cell">18</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Paul Farmer</td>
-          <td class="govuk-table__cell">16</td>
-          <td class="govuk-table__cell">20</td>
-        </tr>
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Rita Patel</td>
-          <td class="govuk-table__cell">24</td>
-          <td class="govuk-table__cell">27</td>
-        </tr>
-      </tbody>
-    </table-->
   </div>
 <!-- tab for payees ends here--> 
 

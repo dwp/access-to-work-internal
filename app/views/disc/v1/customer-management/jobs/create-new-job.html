@@ -16,12 +16,8 @@
                   text: "Customer management"
                 },
                 {
-                  href: "../claims-management/search-for-a-payment",
+                  href: "../../claims-management/search-for-a-payment",
                   text: "Claims management"
-                },
-                {
-                  href: "../business-information/view-business-cases",
-                  text: "Business information"
                 }
               ]
           }  
@@ -110,31 +106,28 @@
               ] 
             }) }} 
 
-            {{ govukSelect({
-              id: "employmentStatus",
+            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+            {{ govukRadios({
               name: "employmentStatus",
-              value: data['employmentStatus'],
-              label: {
-                text: "Employment status (optional)"
+              fieldset: {
+                legend: {
+                  text: "Employment status"
+                }
               },
-              classes: "govuk-!-width-full",
               items: [
                 {
-                  value: "",
-                  text: ""
-                },  
-                {
-                  value: "Employed",
+                  value: "employed",
                   text: "Employed"
                 },
                 {
-                  value: "Self-employed",
-                  text: "Self-employed"
+                  value: "self-employed",
+                  text: "Self employed"
                 },
                 {
-                  value: "Unemployed",
+                  value: "unemployed",
                   text: "Unemployed"
-                } 
+                }
               ]
             }) }}
 
@@ -237,31 +230,7 @@
               }) }}
             {% endset -%}
 
-            {{ govukRadios({
-              name: "limitedCompany",
-              value: data['limitedCompany'],
-              fieldset: {
-                legend: {
-                  text: "Limited Company"
-                }
-              },
-              items: [
-                {
-                  value: "Yes",
-                  text: "Yes",
-                  conditional: {
-                    html: emailHtml
-                  }
-                },
-                {
-                  value: "No",
-                  text: "No",
-                  conditional: {
-                    html: noHtml
-                  }
-                }
-              ]
-            }) }}
+
           </div>
         </div>
         <div class="govuk-accordion__section">
@@ -533,9 +502,9 @@
           </div>
         </div>
       </div>
-      {{ govukButton({
-        text: "Continue"
-      }) }}
+
+      <a href="create-job-success" class="govuk-button">Continue</a>
+
       <p class="govuk-body">
         <a href="view-jobs" class="govuk-link govuk-link--no-visited-state">Return to view jobs</a>
       </p>
