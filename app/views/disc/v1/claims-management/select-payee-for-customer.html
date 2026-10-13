@@ -38,27 +38,6 @@
   html: 'This is a prototype. It is not a real service.'
 }) }}
 
-{{ govukBreadcrumbs({
-  items: [
-    {
-      text: "Search for a customer",
-      href: "../customer-management/search/search-for-a-customer"
-    },
-    {
-      text: "Customer details",
-      href: "../customer-management/search/customer-search-results"
-    },
-    {
-      text: "View jobs",
-      href: "../customer-management/jobs/view-jobs"
-    },
-    {
-      text: "Employer and job details",
-      href: "../customer-management/jobs/job-details"
-    }
-    
-  ]
-}) }}
 
 {% endblock %}
 
@@ -86,10 +65,10 @@
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">DISC0000000000</td>
-            <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
+            <td class="govuk-table__cell">97191356</td>
+            <td class="govuk-table__cell" data-sort-value="6961">Other</td>
             <td class="govuk-table__cell">John Smith</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Certified</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Live</td>
             <td class="govuk-table__cell">53 Main Street <br>London Wandsworth</td>
             <td class="govuk-table__cell">
               <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="payee-details#payees">View</a> |
@@ -97,10 +76,10 @@
             </td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">DISC0000000000</td>
+            <td class="govuk-table__cell">97191355</td>
             <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
-            <td class="govuk-table__cell">John Smith</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Certified</td>
+            <td class="govuk-table__cell">testpayee</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Live</td>
             <td class="govuk-table__cell">53 Main Street <br>London Wandsworth</td>
             <td class="govuk-table__cell">
               <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
@@ -108,53 +87,9 @@
             </td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">DISC0000000000</td>
-            <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
-            <td class="govuk-table__cell">John Smith</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Certified</td>
-            <td class="govuk-table__cell">53 Main Street <br>London Wandsworth</td>
-            <td class="govuk-table__cell">
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Select</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">DISC0000000000</td>
-            <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
-            <td class="govuk-table__cell">John Smith</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Certified</td>
-            <td class="govuk-table__cell">53 Main Street <br>London Wandsworth</td>
-            <td class="govuk-table__cell">
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Select</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">DISC0000000000</td>
-            <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
-            <td class="govuk-table__cell">John Smith</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Certified</td>
-            <td class="govuk-table__cell">53 Main Street <br>London Wandsworth</td>
-            <td class="govuk-table__cell">
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Select</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">DISC0000000000</td>
-            <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
-            <td class="govuk-table__cell">John Smith</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Certified</td>
-            <td class="govuk-table__cell">53 Main Street <br>London Wandsworth</td>
-            <td class="govuk-table__cell">
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">Select</a>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">DISC0000000000</td>
-            <td class="govuk-table__cell" data-sort-value="6961">Customer</td>
-            <td class="govuk-table__cell">John Smith</td>
+            <td class="govuk-table__cell">97191354</td>
+            <td class="govuk-table__cell" data-sort-value="6961">Employer</td>
+            <td class="govuk-table__cell">testpayee</td>
             <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Certified</td>
             <td class="govuk-table__cell">53 Main Street <br>London Wandsworth</td>
             <td class="govuk-table__cell">
@@ -165,33 +100,9 @@
         </tbody>
       </table>
 
-            <div class="floatRight">
-        {{ govukPagination({
-          next: {
-            href: "#"
-          },
-          items: [
-            {
-              number: 1,
-              current: true,
-              href: "#"
-            },
-            {
-              number: 2,
-              href: "#"
-            },
-            {
-              number: 3,
-              href: "#"
-            }
-          ]
-        }) }}
-      </div>
-
-
 
     </div>
-          <p><a class="govuk-link govuk-link--no-visited-state" href="payee-details">Return to payee</a></p>
+          <p><a class="govuk-link govuk-link--no-visited-state" href="payee-details#payees">Return to payee</a></p>
  
 </div>
 

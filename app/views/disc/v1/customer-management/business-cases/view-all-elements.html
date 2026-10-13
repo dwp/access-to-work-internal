@@ -11,7 +11,7 @@
         navigation: {
           selectedItem: "../search/search-for-a-customer",
           items: [
-              {
+                {
                   href: "../search/search-for-a-customer",
                   text: "Customer management"
                 },
@@ -79,27 +79,17 @@
         </li>
 
         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/business-cases/view-all-elements">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/profiles/payee-details#element">
             Element
           </a>
         </li>
       </ul>
 
-
 <!--element tabs-->  
 
-  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="element">
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="elements">
     <h2 class="govuk-heading-l">All AtW elements for customer</h2>
-<style>
-  #payments {
-  overflow-x: auto;
-  width: 100%;
-}
 
-#payments table {
-  min-width: 1200px;
-}  
-</style>
 
         <table class="govuk-table" data-module="moj-sortable-table">
           <thead class="govuk-table__head">
@@ -187,10 +177,11 @@
           ]
         }) }}
       </div>
-<br>
-<br>
-      </div>
 
+<br>
+<br>
+
+      </div>
     </div> <!--tabs-->
   </div>
 </div>
