@@ -1,0 +1,198 @@
+{% extends "layouts/main.html" %}
+
+{% block header %}
+
+{{
+    dwpHeader({
+        serviceName: "Access to Work - Case Management System",
+        serviceHref: '/index',
+        actionHref: "#",
+        container: true,
+        navigation: {
+          selectedItem: "../search/search-for-a-customer",
+          items: [
+              {
+                  href: "../search/search-for-a-customer",
+                  text: "Customer management"
+                },
+                {
+                  href: "../../claims-management/search-for-a-payment",
+                  text: "Claims management"
+                }
+          ]
+      }  
+    })
+}}
+{% endblock %}
+
+
+{% block pageTitle %}
+  View customer – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype. It is not a real service.'
+}) }}
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Search for a customer",
+      href: "../search/search-for-a-customer"
+    },
+    {
+      text: "Customer details",
+      href: "existing-customer"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">    
+    <h2 class="govuk-heading-m">John Doe</h2>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">National insurance number:</span>AA123456B</p>
+    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Unique reference number:</span>12345678</p>
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">Payment details</h2>
+
+     <ul class="govuk-tabs__list">
+
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/claims-management/view-all-payments-customer#payments">
+            Payments
+          </a>
+        </li>
+
+        <li class="govuk-tabs__list-item ">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/profiles/payee-details#payees">
+            Payees
+          </a>
+        </li>
+
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="{{versionPath}}/customer-management/business-cases/view-all-elements">
+            Element
+          </a>
+        </li>
+      </ul>
+
+
+<!--element tabs-->  
+
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="element">
+    <h2 class="govuk-heading-l">All AtW elements for customer</h2>
+<style>
+  #payments {
+  overflow-x: auto;
+  width: 100%;
+}
+
+#payments table {
+  min-width: 1200px;
+}  
+</style>
+
+        <table class="govuk-table" data-module="moj-sortable-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header" aria-sort="none">Element type</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Employer</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Description</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">AtW cost</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Decision</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">AtW period</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">Actions</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">APE</td>
+              <td class="govuk-table__cell">Glasgow Disabled Persons Housing</td>
+              <td class="govuk-table__cell">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">£600</td>
+              <td class="govuk-table__cell">Approved</td>
+              <td class="govuk-table__cell"></td>                      
+              <td class="govuk-table__cell">
+                <a class="govuk-link govuk-link--no-visited-state" href="../business-cases/view-element">View</a>
+              </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">APE</td>
+              <td class="govuk-table__cell">Glasgow Disabled Persons Housing</td>
+              <td class="govuk-table__cell">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">£600</td>
+              <td class="govuk-table__cell">Approved</td>
+              <td class="govuk-table__cell"></td>                      
+              <td class="govuk-table__cell">
+                <a class="govuk-link govuk-link--no-visited-state" href="">View</a>
+              </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">APE</td>
+              <td class="govuk-table__cell">Glasgow Disabled Persons Housing</td>
+              <td class="govuk-table__cell">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">£600</td>
+              <td class="govuk-table__cell">Approved</td>
+              <td class="govuk-table__cell"></td>                      
+              <td class="govuk-table__cell">
+                <a class="govuk-link govuk-link--no-visited-state" href="">View</a>
+              </td>
+            </tr>
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">APE</td>
+              <td class="govuk-table__cell">Glasgow Disabled Persons Housing</td>
+              <td class="govuk-table__cell">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">£600</td>
+              <td class="govuk-table__cell">Approved</td>
+              <td class="govuk-table__cell"></td>                      
+              <td class="govuk-table__cell">
+                <a class="govuk-link govuk-link--no-visited-state" href="">View</a>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+
+      <div class="floatRight">
+        {{ govukPagination({
+          next: {
+            href: "#"
+          },
+          items: [
+            {
+              number: 1,
+              current: true,
+              href: "#"
+            },
+            {
+              number: 2,
+              href: "#"
+            },
+            {
+              number: 3,
+              href: "#"
+            }
+          ]
+        }) }}
+      </div>
+<br>
+<br>
+      </div>
+
+    </div> <!--tabs-->
+  </div>
+</div>
+
+{% endblock %}

@@ -18,10 +18,6 @@
                 {
                   href: "../../claims-management/search-for-a-payment",
                   text: "Claims management"
-                },
-                {
-                  href: "../../business-information/view-business-cases",
-                  text: "Business information"
                 }
           ]
       }  
@@ -68,16 +64,19 @@
     <div class="govuk-tabs" data-module="govuk-tabs">
       <h2 class="govuk-tabs__title">Payment details</h2>
       <ul class="govuk-tabs__list">
+        
         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
           <a class="govuk-tabs__tab" href="#payments">
             Payments
           </a>
         </li>
+
         <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#payees">
             Payees
           </a>
         </li>
+        
         <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#element">
             Element
@@ -98,6 +97,7 @@
 }  
 </style>
 
+  <h2 class="govuk-heading-l">All payments for customer</h2>
 
       <table class="govuk-table" data-module="moj-sortable-table">
         <thead class="govuk-table__head">
@@ -124,7 +124,7 @@
             <td class="govuk-table__cell">123456</td>
             <td class="govuk-table__cell">ABC1234</td>            
             <td class="govuk-table__cell">
-              <a class="govuk-link govuk-link--no-visited-state" href="add-payee">View</a>
+              <a class="govuk-link govuk-link--no-visited-state" href="view-payee-details.html">View</a>
             </td>
           </tr>
 
@@ -138,7 +138,7 @@
             <td class="govuk-table__cell">123456</td>
             <td class="govuk-table__cell">ABC1234</td>            
             <td class="govuk-table__cell">
-              <a class="govuk-link govuk-link--no-visited-state" href="add-payee">View</a>
+              <a class="govuk-link govuk-link--no-visited-state" href="">View</a>
             </td>
           </tr>
 
@@ -152,7 +152,7 @@
             <td class="govuk-table__cell">123456</td>
             <td class="govuk-table__cell">ABC1234</td>            
             <td class="govuk-table__cell">
-              <a class="govuk-link govuk-link--no-visited-state" href="add-payee">View</a>
+              <a class="govuk-link govuk-link--no-visited-state" href="">View</a>
             </td>
           </tr>
 
@@ -166,7 +166,7 @@
             <td class="govuk-table__cell">123456</td>
             <td class="govuk-table__cell">ABC1234</td>            
             <td class="govuk-table__cell">
-              <a class="govuk-link govuk-link--no-visited-state" href="add-payee">View</a>
+              <a class="govuk-link govuk-link--no-visited-state" href="">View</a>
             </td>
           </tr>
         </tbody>
@@ -199,8 +199,8 @@
             <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Live</td>
             <td class="govuk-table__cell">Approved</td>
             <td class="govuk-table__cell">
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="">View</a> |
-              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="update-payment">Update</a>
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="view-payee-details#payees">View</a> |
+              <a class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" href="update-payee">Update</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
